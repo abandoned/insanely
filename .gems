@@ -7,3 +7,5 @@ inherited_resources --version '>= 0.9.2' --source http://gemcutter.org
 paperclip  --version '>= 2.3.1.1' --source http://gemcutter.org
 RedCloth  --version '>= 4.2.2' --source http://gemcutter.org
 will_paginate --version '>= 2.3.11' --source http://gemcutter.org
+rails --version 2.3.5 --source http://gemcutter.org
+rack --version '>= 1.0.1' --source http://gemcutter.org
