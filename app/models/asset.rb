@@ -31,11 +31,11 @@ class Asset < ActiveRecord::Base
     :s3_protocol => 'http',
     :bucket => {
      'development' => 'insanely_dev',
-     'production'  => 'insanely',
+     'production'  => 'insanely_production',
     }[RAILS_ENV],
     :path => ':attachment/:id/:style/:basename.:extension',
     :styles => {
-      :thumb => '180x180>' }
+      :thumb => '240x240>' }
   before_post_process :image?
 
   def authenticated_s3_url(style=nil)
