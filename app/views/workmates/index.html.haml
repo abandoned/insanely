@@ -1,0 +1,21 @@
+- title 'Workmates', false
+
+-if @workmates.count == 0
+  You have no workmates.
+  = link_to('Invite workmate', new_workmate_path)
+- else
+  %p
+    = link_to('Invite workmate', new_workmate_path)
+  %table.workmates
+    %tr
+      %th Workmates
+    - for workmate in @workmates
+      %tr
+        %td
+          = image_tag workmate.gravatar_url(:size => 48)
+        %td
+          = workmate.login
+        %td
+          = current_user.collaborations.find_by_workmate_id(workmate.id).status.capitalize
+        %td
+          = link_to 'Remove', workmate_path(workmate), :method => :delete

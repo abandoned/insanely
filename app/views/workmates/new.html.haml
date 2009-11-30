@@ -1,0 +1,11 @@
+- title "Invite workmate", false
+
+- form_for :workmate, @workmate, :url => workmates_path do |f|
+  = f.error_messages
+  %ul
+    %li
+      = f.label :email
+      = f.text_field :email
+    %li
+      = f.submit 'Invite workmate'
+

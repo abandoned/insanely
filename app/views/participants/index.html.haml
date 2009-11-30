@@ -1,0 +1,12 @@
+- title "Participants of #{@project.name}"
+
+%p= "There are #{collection.count} participants"
+%table
+  %tfoot
+    %tr
+      %td{:colspan => 2}
+        = link_to "Add a person to the project", "#"
+  - for participant in collection
+    %tr
+      %td= participant.login
+      %td= participant.email

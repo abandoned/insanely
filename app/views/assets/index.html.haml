@@ -1,0 +1,8 @@
+- title @project.title, true, project_tasks_path(@project)
+
+.image-assets
+  = render :partial => 'asset', :collection => @images
+
+.file-assets
+  = render :partial => 'asset', :collection => @files
+    

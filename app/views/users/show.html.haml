@@ -1,0 +1,16 @@
+- title "Your Account", false
+
+%p= image_tag @user.gravatar_url
+
+%p You are:
+%ul
+  %li=h @user.login
+  %li= mail_to(@user.email)
+
+%p
+  Your API key:
+  = @user.single_access_token
+%p
+  =link_to 'Edit account', edit_account_path
+  %br/
+  = link_to 'Change avatar', 'http://gravatar.com'

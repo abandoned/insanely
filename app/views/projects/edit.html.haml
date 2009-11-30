@@ -1,0 +1,5 @@
+- title @project.title, true, project_tasks_path(@project)
+
+= render :partial => 'form'
+
+= link_to "Delete project", @project, :confirm => 'Are you sure?', :method => :delete

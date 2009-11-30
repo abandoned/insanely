@@ -1,0 +1,22 @@
+- title 'Insanely'
+
+- unless @projects.blank?
+  %h2
+    %span Projects:
+  
+  %ol#projects
+    - for project in @projects
+      %li.project
+        = link_to(project.title, project_tasks_path(project))
+        %ul.project-statuses
+          %li= pluralize(project.tasks.active.count, 'active task')
+          - if project.tasks.completed.count > 0
+            %li= pluralize(project.tasks.completed.count, 'completed task')
+          - if project.tasks.iceboxed.count > 0
+            %li= pluralize(project.tasks.iceboxed.count, 'frozen task')
+          - if project.tasks.assigned_to(current_user).count > 0
+            %li= pluralize(project.tasks.assigned_to(current_user).count, 'assignment')
+          %li= pluralize(project.participants.count, 'participant')
+
+%p
+  = link_to('Create new project', new_resource_path)

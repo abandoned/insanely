@@ -1,0 +1,16 @@
+- form_for resource, :url => account_path, :method => @user.new_record? ? :post : :put do |form|
+  %ul
+    %li
+      = form.label :login
+      = form.text_field :login
+    %li
+      = form.label :email
+      = form.text_field :email
+    %li
+      = form.label :password, "Password"
+      = form.password_field :password
+    %li
+      = form.label :password_confirmation, "Confirm"
+      = form.password_field :password_confirmation
+    %li
+      = form.submit resource.new_record? ? 'Register account' : 'Update account'

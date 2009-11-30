@@ -1,0 +1,13 @@
+- title @project.title, true, project_tasks_path(@project)
+
+- unless @tasks.blank?
+  #aside
+    = render :partial => 'search_form'
+    = render :partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags}
+  %table.tasks
+    = render :partial => 'task', :collection => @tasks, :locals => { :show_comments => true }
+- else
+  %p
+    No tasks found.
+    - unless params[:query] || params[:status]
+      = link_to('Add one.', new_project_task_path(@project))

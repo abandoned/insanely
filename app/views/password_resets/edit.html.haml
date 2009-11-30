@@ -1,0 +1,13 @@
+- title "Reset password", false
+ 
+- form_for @user, :url => password_reset_path, :method => :put do |f|
+  = f.error_messages
+  %ul
+    %li
+      = f.label :password
+      = f.password_field :password
+    %li
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+    %li
+      = submit_tag 'Reset password'

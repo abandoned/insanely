@@ -1,0 +1,26 @@
+class UserSessionsController < ApplicationController
+  before_filter :require_no_user, :only => [:new, :create]
+
+  def new
+    @user_session = UserSession.new
+  end
+
+  def create
+    @user_session = UserSession.new(params[:user_session])
+    if @user_session.save
+      flash[:notice] = "Hi there, #{@user_session.login}."
+      redirect_back_or_default(projects_path)
+    else
+      flash.now[:error] = "Please check your login and password."
+      render :action => :new
+    end
+  end
+
+  def destroy
+    if current_user
+      current_user_session.destroy
+      flash[:notice] = "You are logged out."
+    end
+    redirect_back_or_default(root_path)
+  end
+end

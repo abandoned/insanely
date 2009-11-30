@@ -1,0 +1,47 @@
+= Authlogic Haapi (Http Auth API)
+
+Authlogic Haapi Adds support for HTTP Authentication with an API key instead of username password. You can use it with Active Resource
+like so:
+
+  require 'rubygems'
+  require 'activeresource'
+
+  API_KEY= 'YourApiKeyHere'
+  URL = 'example.com'
+
+  class Api < ActiveResource::Base
+    self.site = URL
+    self.user = API_KEY
+  end
+
+  class User < Api
+  end
+
+  users = User.find(:all)
+ 
+
+Credits go to Matthew and Saro at http://matthewtodd.org/2009/02/19/using-authlogic-and-active_resource.html for inspiration and guidance.
+
+== Helpful links
+
+*	<b>Authlogic:</b> http://github.com/binarylogic/authlogic
+
+== Install and use
+
+=== 1. Install the Authlogic Haapi gem
+
+  $ sudo gem install quantipay-authlogic_haapi
+
+Now add the gem dependency in your config:
+
+  config.gem "quantipay-authlogic_haapi", :lib => "authlogic_haapi"
+
+Or for older version of rails, install it as a plugin:
+
+  $ script/plugin install git://github.com/quantipay/authlogic_haapi.git
+
+=== 2. Configuration options:
+
+<b>allow_http_basic_auth_with_api_key, default = true</b> Indicates whether you wish to allow logging in by HTTP Auth using the API Key.
+
+Copyright (c) 2009 Joe Scharf of [QuantiPay](http://quantipay.com), released under the MIT license

@@ -1,0 +1,30 @@
+%tr[task]
+  %td= image_tag(task.author.gravatar_url(:size => 48), :class => 'avatar', :title => task.author.login, :onerror => 'missing_avatar(this)')
+  %td
+    .bubble
+      .nipple
+      = insanely_format(task.message)
+      = render :partial => 'assets/asset', :collection => task.assets
+    .meta-info
+      - if show_comments
+        = link_to(pluralize(task.comments_count, 'comment'), project_task_path(@project, task), set_up_readership_css(task))
+        |
+      - if task.created_at == task.updated_at
+        = "Posted #{time_ago_in_words(task.created_at)} ago"
+      - else
+        = "Updated #{time_ago_in_words(task.updated_at)} ago"
+      |
+      - if task.completed?
+        = link_to('Uncomplete', uncomplete_project_task_path(@project, task), :method => :put)
+      - else
+        = link_to('Complete', complete_project_task_path(@project, task), :method => :put)
+      |
+      - if task.iceboxed?
+        = link_to('Unfreeze', unfreeze_project_task_path(@project, task), :method => :put)
+      - else
+        = link_to('Freeze', freeze_project_task_path(@project, task), :method => :put)
+      |
+      = link_to('Delete', project_task_path(@project, task), :confirm => 'Are you sure?', :method => :delete)
+      - if task.author == current_user && !show_comments
+        |
+        = link_to('Edit', edit_project_task_path(@project, task), :class => 'highlighted')

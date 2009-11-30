@@ -1,0 +1,9 @@
+- title "Request to reset password", false
+ 
+- form_tag password_resets_path do
+  %ul
+    %li
+      %label Email:
+      = text_field_tag 'email'
+    %li
+      = submit_tag 'Reset my password'

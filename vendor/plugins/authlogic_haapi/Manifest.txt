@@ -1,0 +1,15 @@
+CHANGELOG.rdoc
+MIT-LICENSE
+Manifest.txt
+README.rdoc
+Rakefile
+init.rb
+lib/authlogic_haapi.rb
+lib/authlogic_haapi/session.rb
+lib/authlogic_haapi/version.rb
+test/fixtures/users.yml
+test/libs/rails_trickery.rb
+test/libs/user.rb
+test/libs/user_session.rb
+test/session_test.rb
+test/test_helper.rb

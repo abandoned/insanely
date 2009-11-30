@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: readerships
+#
+#  id         :integer         not null, primary key
+#  task_id    :integer
+#  user_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  task: 
+  user: 
+
+two:
+  task: 
+  user: 
