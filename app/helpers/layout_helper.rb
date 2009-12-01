@@ -27,9 +27,6 @@ module LayoutHelper
       
         if @project && !@project.new_record?
           project_options = [['Switch to another project', projects_path]]
-          if current_user == @project.creator
-            project_options << ['Edit current project', edit_project_path(@project)]
-          end
           project_options << ['List assets in current project', project_assets_path(@project)]
         
           task_options = [

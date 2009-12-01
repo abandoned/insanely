@@ -1,5 +1,5 @@
 Feature: Hashtags
-  In order to organize tasks
+  In order to use Insane.ly
   As a user
   I want to create, edit, and delete hashtags
   

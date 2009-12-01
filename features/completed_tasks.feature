@@ -1,5 +1,5 @@
 Feature: Complete Tasks
-  In order to organize tasks
+  In order to use Insane.ly
   As a user
   I want to complete tasks
   

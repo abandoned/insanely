@@ -8,15 +8,27 @@
     - for project in @projects
       %li.project
         = link_to(project.title, project_tasks_path(project))
+        - if current_user.id == project.creator_id
+          = link_to('(Edit)', edit_project_path(project), :class => 'small')
         %ul.project-statuses
-          %li= pluralize(project.tasks.active.count, 'active task')
+          %li
+            This project has 
+            = pluralize(project.tasks.active.count, 'active task') + '.'
           - if project.tasks.completed.count > 0
-            %li= pluralize(project.tasks.completed.count, 'completed task')
+            %li
+              This project has 
+              = pluralize(project.tasks.completed.count, 'completed task') + '.'
           - if project.tasks.iceboxed.count > 0
-            %li= pluralize(project.tasks.iceboxed.count, 'frozen task')
+            %li
+              This project has 
+              = pluralize(project.tasks.iceboxed.count, 'frozen task') + '.'
+          %li
+            This project has
+            = link_to(pluralize(project.participants.count, 'participant'), project_participants_path(project)) + '.'
           - if project.tasks.assigned_to(current_user).count > 0
-            %li= pluralize(project.tasks.assigned_to(current_user).count, 'assignment')
-          %li= pluralize(project.participants.count, 'participant')
+            %li
+              You have 
+              = pluralize(project.tasks.assigned_to(current_user).count, 'assignment') + '.'
 
 %p
   = link_to('Create new project', new_resource_path)

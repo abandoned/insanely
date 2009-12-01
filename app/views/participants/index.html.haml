@@ -1,12 +1,17 @@
-- title "Participants of #{@project.name}"
+- title @project.title, true, project_tasks_path(@project)
 
-%p= "There are #{collection.count} participants"
-%table
-  %tfoot
-    %tr
-      %td{:colspan => 2}
-        = link_to "Add a person to the project", "#"
+%p= "This project has #{collection.count} participants."
+%table.participants
   - for participant in collection
     %tr
-      %td= participant.login
-      %td= participant.email
+      %td
+        = image_tag participant.gravatar_url(:size => 48)
+      %td
+        = participant.login
+      %td
+        = mail_to(participant.email, truncate(participant.email))
+      %td
+        - if participant.id != @project.creator_id
+          = button_to('Remove', project_participant_path(@project, participant), :method => :delete)
+
+= link_to "Add a person to the project", new_project_participant_path(@project)

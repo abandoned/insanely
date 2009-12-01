@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091127180530) do
+ActiveRecord::Schema.define(:version => 20091201173838) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20091127180530) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active",              :default => false, :null => false
   end
 
 end

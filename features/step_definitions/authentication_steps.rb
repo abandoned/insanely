@@ -7,3 +7,7 @@ Given /^I am logged in$/ do
     And I press "Log in"
   }
 end
+
+Given /^#{capture_model} is activated$/ do |name|
+  model(name).update_attribute(:perishable_token, 'a')
+end
