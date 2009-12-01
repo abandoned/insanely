@@ -4,7 +4,7 @@ class HashtagsController < InheritedResources::Base
   actions :show
   
   def show
-    @tasks = @hashtag.tasks.paginate(:page => params[:page], :include => [:assets], :conditions => 'tasks.status = "active"')
+    @tasks = resource.tasks.paginate(:page => params[:page], :include => [:assets], :conditions => 'tasks.status = "active"')
     show!
   end
 end

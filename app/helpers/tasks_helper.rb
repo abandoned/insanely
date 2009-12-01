@@ -1,7 +1,7 @@
 module TasksHelper
   def highlight_tags(msg)
     msg.dup.scan(/\B#(\w+)/i) do |m|
-      msg.gsub!(/##{m}/i, "\"##{m}\":#{project_hashtag_path(@project, m)}")
+      msg.gsub!(/##{m}/i, "\"##{m}\":#{project_hashtag_path(@project, @project.hashtags.find_by_title(m.to_s.downcase))}")
     end
     msg
   end
