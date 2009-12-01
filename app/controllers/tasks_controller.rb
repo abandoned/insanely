@@ -26,7 +26,7 @@ class TasksController < InheritedResources::Base
   end
   
   def destroy
-    destroy!{ collection_path(:status => params[:status]) }
+    destroy!{ collection_path(:status => params[:status], :page => params[:page]) }
   end
   
   def complete
@@ -36,7 +36,7 @@ class TasksController < InheritedResources::Base
       flash[:error] = "Could not complete task!"
     end
     respond_to do |format|
-      format.html { redirect_to :action => :index }
+      format.html { redirect_to(collection_path(:status => params[:status], :page => params[:page])) }
       format.xml  { render :xml => @task }
     end    
   end
@@ -47,7 +47,7 @@ class TasksController < InheritedResources::Base
     else
       flash[:error] = "Could not uncomplete task!"
     end
-    redirect_to :action => :index
+    redirect_to(collection_path(:status => params[:status], :page => params[:page]))
   end
   
   def freeze
@@ -56,7 +56,7 @@ class TasksController < InheritedResources::Base
     else
       flash[:error] = "Could not freeze task!"
     end
-    redirect_to :action => :index
+    redirect_to(collection_path(:status => params[:status], :page => params[:page]))
   end
   
   def unfreeze
@@ -65,7 +65,7 @@ class TasksController < InheritedResources::Base
     else
       flash[:error] = "Could not unfreeze task!"
     end
-    redirect_to :action => :index
+    redirect_to(collection_path(:status => params[:status], :page => params[:page]))
   end
   
   def assigned
