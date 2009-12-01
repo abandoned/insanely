@@ -24,7 +24,7 @@
       - else
         = link_to('Freeze', freeze_project_task_path(@project, task), :method => :put)
       |
-      = link_to('Delete', project_task_path(@project, task), :confirm => 'Are you sure?', :method => :delete)
+      = link_to('Delete', project_task_path(@project, task, :status => params[:status]), :confirm => 'Are you sure?', :method => :delete)
       - if task.author == current_user && !show_comments
         |
         = link_to('Edit', edit_project_task_path(@project, task), :class => 'highlighted')

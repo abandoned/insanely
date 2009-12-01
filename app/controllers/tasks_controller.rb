@@ -25,6 +25,10 @@ class TasksController < InheritedResources::Base
     @task.update_attribute(:author, current_user)
   end
   
+  def destroy
+    destroy!{ collection_path(:status => params[:status]) }
+  end
+  
   def complete
     if @task.complete!
       flash[:notice] = "Task completed!"
