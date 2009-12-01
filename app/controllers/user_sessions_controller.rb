@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
       if @user_session.errors.full_messages == ["Your account is not active"]
         flash.now[:error] = "Your account is not active."
       else
-        flash.now[:error] = "#{}Please check your login and password."
+        flash.now[:error] = "Please check your login and password."
       end
       render :action => :new
     end

@@ -13,5 +13,5 @@ class Participation < ActiveRecord::Base
   belongs_to :participant, :class_name => "User"
   belongs_to :project
   
-  attr_accessible :participant, :project
+  attr_accessible :participant
 end

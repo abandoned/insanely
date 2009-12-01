@@ -1,6 +1,6 @@
 - title @project.title, true, project_tasks_path(@project)
 
-%p= "This project has #{collection.count} participants."
+%p= "This project has #{pluralize(collection.count, 'participant')}."
 %table.participants
   - for participant in collection
     %tr
@@ -14,4 +14,4 @@
         - if participant.id != @project.creator_id
           = button_to('Remove', project_participant_path(@project, participant), :method => :delete)
 
-= link_to "Add a person to the project", new_project_participant_path(@project)
+= link_to "Add a person", new_project_participant_path(@project)

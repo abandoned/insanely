@@ -1,0 +1,9 @@
+- title @project.title, true, project_tasks_path(@project)
+
+- form_for @participation, :url => project_participants_path(@project) do |f|
+  = f.error_messages
+  %ul
+    %li
+      = select(:participant, :participant_id, @nonparticipants.collect { |w| [w.login, w.id] }, :prompt => 'Select workmate...')
+    %li
+      = f.submit 'Add to project', :class => 'no-margin'
