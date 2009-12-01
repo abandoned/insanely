@@ -1,9 +1,9 @@
 - title @project.title, true, project_tasks_path(@project)
 
+#aside
+  = render :partial => 'search_form'
+  = render :partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags}
 - unless @tasks.blank?
-  #aside
-    = render :partial => 'search_form'
-    = render :partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags}
   %table.tasks
     %tfoot
       %tr

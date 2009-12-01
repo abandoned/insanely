@@ -15,3 +15,11 @@ Feature: Complete Tasks
     Then I should see "Task completed!"
     When I go to path "/projects/1/tasks?status=completed"
     Then I should see "lorem #ipsum"
+  
+  Scenario: I should be able to search completed tasks
+    Given a task "Completed Task" exists with message: "foobar #completed", project: project "My Project", author: user "self", status: "completed"
+      And I am on the path "/projects/1/tasks?status=completed"
+    Then I should see "foobar #completed"
+    When I fill in "query" with "foobar #completed"
+      And I press "Search"
+    Then I should see "foobar #completed"
