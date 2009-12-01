@@ -12,6 +12,7 @@ class ParticipantsController < InheritedResources::Base
   end
   
   def create
+    flash[:notice] = 'Not working yet.'
     redirect_to collection_url(parent)
   end
   
