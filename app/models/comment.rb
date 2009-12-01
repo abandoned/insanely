@@ -11,6 +11,11 @@
 #
 
 class Comment < ActiveRecord::Base
+  validates_associated :assets
+  
+  validates_length_of :message, :maximum => 1000
+  validates_length_of :message, :minimum => 1,
+    :unless => Proc.new{|record| record.assets.size > 0 }
   
   # Setting the dependent option on has_many :assets to destroy triggered a 
   # bug where a blank comment with an asset would not destroy due to failed
@@ -18,12 +23,8 @@ class Comment < ActiveRecord::Base
   
   belongs_to :task, :counter_cache => true, :touch => true
   belongs_to :author, :class_name => 'User'
-  has_many :assets, :as => :attachable, :dependent => :delete_all
   
-  validates_associated :assets
-  validates_length_of :message, :maximum => 1000
-  validates_length_of :message, :minimum => 1,
-    :unless => Proc.new{|record| record.assets.size > 0 }
+  has_many :assets, :as => :attachable, :dependent => :delete_all
   
   attr_accessible :message, :author, :assets_attributes
   

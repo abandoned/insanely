@@ -3,7 +3,7 @@
   %td
     .bubble
       .nipple
-      = insanely_format(task.message)
+      = insanely_format(task)
       = render :partial => 'assets/asset', :collection => task.assets
     .meta-info
       - if show_comments

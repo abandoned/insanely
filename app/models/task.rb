@@ -13,8 +13,15 @@
 #
 
 class Task < ActiveRecord::Base
+  include AASM
+  
+  validates_length_of :message, :maximum => 255
+  validates_length_of :message, :minimum => 1,
+    :unless => Proc.new{|s| s.assets.size > 0 }
+  
   belongs_to :project,  :touch => true
   belongs_to :author,   :class_name => "User"
+  
   has_many :comments
   has_many :hashtagships
   has_many :hashtags,     :through => :hashtagships
@@ -22,10 +29,6 @@ class Task < ActiveRecord::Base
   has_many :assignees,    :through => :assignments, :class_name => 'User'
   has_many :assets, :as => :attachable, :dependent => :delete_all
   has_many :readerships, :dependent => :destroy
-  
-  validates_length_of :message, :maximum => 255
-  validates_length_of :message, :minimum => 1,
-    :unless => Proc.new{|s| s.assets.size > 0 }
   
   after_save    :reload_associations
   after_destroy :reload_associations
@@ -40,15 +43,16 @@ class Task < ActiveRecord::Base
       :conditions => ['assignments.assignee_id = ?', user.id]
     }
   }
-  named_scope :query, proc { |query| { :include => [:comments], :conditions => ['tasks.message LIKE ? OR comments.message LIKE ?', "%#{query}%", "%#{query}%"] } }
+  named_scope :query, proc { |query| {
+    :include => [:comments],
+    :conditions => ['tasks.message LIKE ? OR comments.message LIKE ?', "%#{query}%", "%#{query}%"]
+  } }
   
-  include AASM
-  
-  aasm_column :status
-  aasm_initial_state :active
-  aasm_state :active
-  aasm_state :iceboxed
-  aasm_state :completed
+  aasm_column         :status
+  aasm_initial_state  :active
+  aasm_state          :active
+  aasm_state          :iceboxed
+  aasm_state          :completed
   
   aasm_event :icebox do
     transitions :to => :iceboxed, :from => [:active]

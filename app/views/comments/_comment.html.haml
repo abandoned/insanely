@@ -2,7 +2,7 @@
   %td
     = image_tag(comment.author.gravatar_url(:size => 48), :class => 'avatar', :title => comment.author.login, :onerror => 'missing_avatar(this)')
   %td
-    = insanely_format(comment.message)
+    = insanely_format(comment)
     = render :partial => 'assets/asset', :collection => comment.assets
     .meta-info
       = "Posted #{time_ago_in_words(comment.created_at)} ago"

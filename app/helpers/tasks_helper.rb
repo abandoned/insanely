@@ -1,14 +1,17 @@
 module TasksHelper
-  def highlight_tags(msg)
+  def highlight_tags(msg, hashtags)
     msg.dup.scan(/\B#(\w+)/i) do |m|
-      msg.gsub!(/##{m}/i, "\"##{m}\":#{project_hashtag_path(@project, @project.hashtags.find_by_title(m.to_s.downcase))}")
+      hashtag = hashtags.find_by_title(m.to_s.downcase)
+      unless hashtag.nil?
+        msg.gsub!(/##{m}/i, "\"##{m}\":#{project_hashtag_path(@project, hashtag)}")
+      end
     end
     msg
   end
   
-  def highlight_assigns(msg)
+  def highlight_assigns(msg, participants)
     msg.dup.scan(/(\B)@(\w+)/i) do |b, m|
-      participant = @project.participants.find_by_login(m.downcase)
+      participant = participants.find_by_login(m.downcase)
       unless participant.nil?
         msg.gsub!(/#{b}@#{m}/i, "#{b}\"@#{m.downcase}\":#{assigned_project_participant_tasks_path(@project, participant)}")
       end
@@ -16,8 +19,20 @@ module TasksHelper
     msg
   end
   
-  def insanely_format(msg)
-    textilize(highlight_assigns(highlight_tags(auto_link(h(msg)) { |text| truncate(text) })))
+  def insanely_format(obj)
+    return false if @project.nil?
+    
+    if obj.respond_to?('hashtags') && obj.respond_to?('project')
+      hashtags      = obj.hashtags
+      participants  = obj.project.participants
+    elsif obj.respond_to?('task')
+      hashtags      = obj.task.hashtags
+      participants  = obj.task.project.participants
+    else
+      return false
+    end
+    
+    textilize(highlight_assigns(highlight_tags(auto_link(h(obj.message)) { |text| truncate(text) }, hashtags), participants))
   end
   
   def set_up_readership_css(task)
