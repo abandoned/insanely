@@ -6,4 +6,8 @@
     = render :partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags}
 
 %table.tasks
-  = render :partial => 'tasks/task', :collection => @hashtag.tasks, :locals => { :show_comments => true }
+  %tfoot
+    %tr
+      %td{:colspan => 2}
+        = will_paginate @tasks
+  = render :partial => 'tasks/task', :collection => @tasks, :locals => { :show_comments => true }

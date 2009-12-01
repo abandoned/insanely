@@ -8,10 +8,9 @@ class TasksController < InheritedResources::Base
   has_scope :iceboxed
   
   def index
-    index! {
-      status = params[:status] && %w{completed iceboxed}.include?(params[:status]) ? params[:status].to_sym : :active
-      @tasks = end_of_association_chain.send(status).all(:include => [:assets])
-    }
+    status = params[:status] && %w{completed iceboxed}.include?(params[:status]) ? params[:status] : 'active'
+    @tasks = end_of_association_chain.paginate(:page => params[:page], :include => [:assets], :conditions => ['tasks.status = ?', status])
+    index!
   end
   
   def show
@@ -68,7 +67,7 @@ class TasksController < InheritedResources::Base
   def assigned
     @project = current_user.projects.find(params[:project_id])
     @participant = @project.participants.find(params[:participant_id])
-    @tasks = @project.tasks.assigned_to(@participant)
+    @tasks = @project.tasks.assigned_to(@participant).paginate(:page => params[:page], :include => [:assets])
     if @tasks.size == 0
       flash[:error] = "#{@participant.login.capitalize} has no assignments in this project."
       redirect_to(:action => :index)
@@ -79,10 +78,6 @@ class TasksController < InheritedResources::Base
   
   def begin_of_association_chain
     current_user
-  end
-  
-  def collection
-    @tasks ||= end_of_association_chain.paginate(:page => params[:page])
   end
   
   def touch_readership

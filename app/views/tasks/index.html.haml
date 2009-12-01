@@ -5,6 +5,10 @@
     = render :partial => 'search_form'
     = render :partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags}
   %table.tasks
+    %tfoot
+      %tr
+        %td{:colspan => 2}
+          = will_paginate @tasks
     = render :partial => 'task', :collection => @tasks, :locals => { :show_comments => true }
 - else
   %p
