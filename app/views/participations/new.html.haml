@@ -6,7 +6,7 @@
   %ul
     %li
       = f.label(:participant_id, 'Workmate')
-      = f.collection_select(:participant_id, @nonparticipants, :id, :login, :prompt => 'Select workmate...')
+      = f.collection_select(:participant_id, @participants, :id, :login, :prompt => 'Select workmate...')
     %li
       %div - or invite a new person -
       = f.label(:invitee_email, 'Email')
