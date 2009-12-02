@@ -78,7 +78,7 @@ $(document).ready(function() {
     // Dress up search form
     $('form#search').find('input[type=submit]').remove();
     $('form#search').find('#query').map(function() {
-      if($(this).val() == '') {
+      if($(this).val() == '' || $(this).val() == 'Type your query') {
         $(this).val('Type your query').addClass('labeled').focus(function() {
           $(this).val('').removeClass('labeled')
         });
