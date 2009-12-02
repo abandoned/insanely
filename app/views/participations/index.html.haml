@@ -1,6 +1,6 @@
 - title @project.title, true, project_tasks_path(@project)
 
-%p= "#{pluralize(@participations.count, 'person')} #{pluralize_verb(@participations.count, 'participate')} in this project."
+%p= "#{pluralize(@participations.size, 'person')} #{pluralize_verb(@participations.size, 'participate')} in this project."
 %table.participants
   - for participation in @participations
     %tr[participation]

@@ -8,7 +8,7 @@ class CommentsController < InheritedResources::Base
     create! do |success, failure|
       @comment.update_attribute(:author, current_user)
       success.html { redirect_to project_task_path(@project, @task) }
-      failure.html { return render :template => 'tasks/show' }
+      failure.html { return(render :template => 'tasks/show') }
     end
   end
   

@@ -30,7 +30,7 @@ class ParticipationsController < InheritedResources::Base
     else
       flash[:error] = 'Person not added to project!'
     end
-    return redirect_to collection_url(@project)
+    return(redirect_to collection_url(@project))
   end
   
   def destroy
