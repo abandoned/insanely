@@ -1,0 +1,15 @@
+- title @project.title, true, project_tasks_path(@project)
+
+- form_for [@project, @participation] do |f|
+  - unless f.error_messages.blank?
+    = f.error_messages
+  %ul
+    %li
+      = f.label(:participant_id, 'Workmate')
+      = f.collection_select(:participant_id, @nonparticipants, :id, :login, :prompt => 'Select workmate...')
+    %li
+      %div - or invite a new person -
+      = f.label(:invitee_email, 'Email')
+      = text_field_tag :invitee_email, nil, :disabled => true
+    %li
+      = f.submit 'Add to project'

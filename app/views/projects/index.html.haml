@@ -24,7 +24,7 @@
               = pluralize(project.tasks.iceboxed.count, 'frozen task') + '.'
           %li
             This project has
-            = link_to(pluralize(project.participants.count, 'participant'), project_participants_path(project)) + '.'
+            = link_to(pluralize(project.participants.count, 'participant'), project_participations_path(project)) + '.'
           - if project.tasks.assigned_to(current_user).count > 0
             %li
               You have 

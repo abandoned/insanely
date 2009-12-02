@@ -1,0 +1,17 @@
+- title @project.title, true, project_tasks_path(@project)
+
+%p= "#{pluralize(collection.count, 'person')} #{pluralize_verb(collection.count, 'participate')} in this project."
+%table.participants
+  - for participation in @participations
+    %tr[participation]
+      %td
+        = image_tag participation.participant.gravatar_url(:size => 48)
+      %td
+        = participation.participant.login
+      %td
+        = mail_to(participation.participant.email, truncate(participation.participant.email))
+      %td
+        - if can_remove?(participation.participant)
+          = button_to('Remove', project_participation_path(@project, participation), :method => :delete)
+
+= link_to "Add a person", new_project_participation_path(@project)

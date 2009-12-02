@@ -4,9 +4,10 @@ ActionController::Routing::Routes.draw do |map|
       task.resources :comments
     end
     project.resources :hashtags
-    project.resources :participants, :except => [:show, :edit, :update] do |participant|
+    project.resources :participants, :only => [] do |participant|
       participant.resources :tasks, :only => [], :collection => { :assigned => :get }
     end
+    project.resources :participations, :except => [:show, :edit, :update]
     project.resources :assets, :only => [:index]
   end
   map.resources :workmates
