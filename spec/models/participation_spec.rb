@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: participations
+#
+#  id             :integer         not null, primary key
+#  project_id     :integer
+#  participant_id :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Participation do

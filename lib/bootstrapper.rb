@@ -14,9 +14,7 @@ class Bootstrapper
         :email => "john.doe@example.com"
       }
     ])
-    @snl.workmates << @john
-    @project = @snl.created_projects.create!(
-        :title => "My first project!"
-    )
+    
+    [@snl, @john].each { |u| u.update_attribute(:active, true) }
   end
 end
