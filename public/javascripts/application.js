@@ -4,19 +4,8 @@ function missing_avatar(el) {
 
 $(document).ready(function() {
   
-  $.fn.count_chars = function() {
-    var val = $(this).attr('value')
-    var cur = 0
-    if(val) {
-      cur = val.length
-    }
-    var left = max_chars - cur
-    $("div.counter").text(left.toString())
-    return this;
-  }
-  
   $.fn.appendAttachment = function() {
-    var parent = $(this).parent();
+    var parent = $(this).parent()
     var ts = new Date().getTime()
     var input = parent.html().replace(/attributes]\[\d+]/, 'attributes][' + ts + ']').replace(/attributes_\d+_/, 'attributes_' + ts + '_')
     var wrapper = $('<li/>').html(input)
@@ -41,24 +30,39 @@ $(document).ready(function() {
       var max_chars = 1000
     }
     
-    $("textarea").each(function() {  
-      $("textarea").parent().before('<div class="counter"></div>')
+    $('textarea').each(function() {  
+      $('textarea').parent().before('<div class="counter"></div>')
     })
     
-    $("textarea").each(function() {
-      var old = $(this).attr("value");
-      $(this).count_chars()
-
-      $(this).keypress(function() {
-        old = $(this).attr("value")
+    $('textarea').each(function() {
+      
+      var countChars = function(val) {
+        var cur = 0
+        if(val) {
+          cur = val.length
+        }
+        var left = max_chars - cur
+        $('div.counter').text(left.toString())
+      }
+      
+      var old = $(this).attr('value')
+      countChars($(this).attr('value'))
+      
+      var limitChars = function() {
+        old = $(this).attr('value')
+        if (old.length > max_chars) { alert(old.length)}
         return (old.length < max_chars)
-      })
+      }
+      
+      $(this)
+        .bind('keypress', limitChars)
+        .bind('paste', limitChars)
 
       $(this).keyup(function() {
         if ($(this).attr("value").length > max_chars) {
           $(this).attr("value", old)
         }
-        $(this).count_chars()
+        countChars($(this).attr('value'))
       })
     })
     
