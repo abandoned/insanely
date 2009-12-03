@@ -7,7 +7,7 @@
 =centered-block
   width: 75%
   margin: 0 auto
-  min-width: 320px
+  min-width: 312px
   
 *
   margin: 0
@@ -43,7 +43,7 @@ a
     +centered-block
     padding-bottom: 0.2em
     color: #908d4e
-    font-size: 2.3em
+    font-size: 2.2em
     line-height: 0.8em
     border-bottom: 4px solid
     
@@ -159,7 +159,7 @@ a
     float: left
     width: 24%
     padding-right: 1.5em
-  
+      
     .tag-cloud
       line-height: 1.4
   
@@ -187,8 +187,8 @@ a
     .avatar
       margin:
         top: 0.3em
-        right: 1.5em
-            
+        right: 1em
+                
     .bubble
       position: relative
       padding: 1em 0.8em 0.7em
@@ -196,16 +196,7 @@ a
       background-color: #1b3f50
       -moz-border-radius: 1em
       -webkit-border-radius: 1em
-      
-      .nipple
-        position: absolute
-        z-index:-1
-        top: 22px
-        left: -12px
-        height: 14px
-        width: 12px
-        background: url(/images/nipple_sprite.png) 0 0 no-repeat
-      
+            
       a
         color: #ffa
       
@@ -316,24 +307,31 @@ a
   width: 100%
   height: 1.5em
   line-height: 1.5
-  text-align: right
   background-color: #833a42
   
   a
     +small-font
-    margin-right: 0.5em
+    margin-right: 0.4em
     text-decoration: none
     color: #c4e9e1
   
   a:last-child
-    margin-right: 1.5em
+    margin-right: 0
   
   a#assignment-count
-    padding: 0 0.5em
-    margin-right: 0.8em
+    padding: 0.1em 0.5em
     -moz-border-radius: 6px
     -webkit-border-radius: 6px
     background-color: #908d4e
+  
+  .left, .right
+    position: absolute
+    
+  .left
+    left: 0.4em
+  
+  .right
+    right: 0.7em
 
 #footer
   +centered-block

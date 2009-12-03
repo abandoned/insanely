@@ -20,12 +20,15 @@
       = yield
     #nav
       -if current_user
-        - if @project && !@project.new_record?
-          = link_to project_assignment_count, assigned_project_participant_tasks_path(@project, current_user), :id => 'assignment-count'
-          = link_to_unless_current('Add task', new_project_task_path(@project)) {}
-        = link_to_unless_current('Dashboard', projects_path) {}
-        = link_to('Log out', logout_path)
+        .left
+          = link_to_unless_current('Dashboard', projects_path, :id => 'home') {}
+        .right
+          - if @project && !@project.new_record?
+            = link_to project_assignment_count, assigned_project_participant_tasks_path(@project, current_user), :id => 'assignment-count'
+            = link_to_unless_current('Add task', new_project_task_path(@project)) {}
+          = link_to('Log out', logout_path)
       - else
-        = link_to_unless_current('Log in', new_user_session_path) {}
+        .right
+          = link_to_unless_current('Log in', new_user_session_path) {}
     #footer
       = link_to("&nbsp;&copy;#{Time.now.year} Paper Cavalier", 'https://papercavalier.com', :class => 'small')

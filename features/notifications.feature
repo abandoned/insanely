@@ -6,7 +6,6 @@ Feature: Notifications
   Background:
     Given I am logged in
       And a project "My Project" exists with title: "My Project", creator: user "self"
-      And a participation exists with project: project "My Project", participant: user "self"
       And a user "other" exists with password: "secret", password_confirmation: "secret", login: "other", email: "other@example.com", perishable_token: ""
       
   Scenario: Invite user to collaborate

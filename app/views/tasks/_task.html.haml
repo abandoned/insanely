@@ -2,7 +2,6 @@
   %td= image_tag(task.author.gravatar_url(:size => 48), :class => 'avatar', :title => task.author.login, :onerror => 'missing_avatar(this)')
   %td
     .bubble
-      .nipple
       = insanely_format(task)
       = render :partial => 'assets/asset', :collection => task.assets
     .meta-info

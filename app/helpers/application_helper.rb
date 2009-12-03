@@ -12,10 +12,8 @@ module ApplicationHelper
           ['Account', account_path],
           ['Workmates', workmates_path]
         ]
-        grouped_options = [
-          ['Profile', user_options]
-        ]
-      
+        projects_options = Project.all.reject{ |p| p == @project if @project }.collect{ |p| [p.title, project_tasks_path(p)]}
+        grouped_options = [['Projects', projects_options]]
         if @project && !@project.new_record?
           project_options = [
             ['Active tasks', project_tasks_path(@project)],
@@ -23,9 +21,9 @@ module ApplicationHelper
             ['Completed tasks', project_tasks_path(@project, :status => 'completed')],
             ['Assets', project_assets_path(@project)]
           ]
-          grouped_options << ['Project', project_options]
+          grouped_options << [@project.title, project_options]
         end
-      
+        grouped_options << ['User', user_options]
         haml_concat(select_tag('actions', grouped_options_for_select(grouped_options, nil, 'Go to...')))
       end
     end

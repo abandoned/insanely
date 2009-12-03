@@ -6,7 +6,6 @@ Feature: Complete Tasks
   Background:
     Given I am logged in
       And a project "My Project" exists with title: "My Project", creator: user "self"
-      And a participation exists with project: project "My Project", participant: user "self"
       And a task "My Task" exists with message: "lorem #ipsum", project: project "My Project", author: user "self"
   
   Scenario: I should be able to complete a task

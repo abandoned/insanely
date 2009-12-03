@@ -6,7 +6,6 @@ Feature: Tasks
   Background:
     Given I am logged in
       And a project "My Project" exists with title: "My Project", creator: user "self"
-      And a participation exists with project: project "My Project", participant: user "self"
   
   Scenario: I should be able to destroy a task with no message and an attachment
     Given a task_with_asset "My task" exists with project: project "My Project", author: user "self", message: ""
