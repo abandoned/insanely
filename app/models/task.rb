@@ -45,7 +45,7 @@ class Task < ActiveRecord::Base
   }
   named_scope :query, proc { |query| {
     :include => [:comments],
-    :conditions => ['tasks.message LIKE ? OR comments.message LIKE ?', "%#{query}%", "%#{query}%"]
+    :conditions => ['UPPER(tasks.message) LIKE ? OR UPPER(comments.message) LIKE ?', "%#{query.upcase}%", "%#{query.upcase}%"]
   } }
   
   aasm_column         :status
