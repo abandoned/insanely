@@ -13,8 +13,8 @@ class Project < ActiveRecord::Base
   belongs_to :creator, :class_name => 'User'
   has_many :participations, :dependent => :destroy
   has_many :participants, :through => :participations
-  has_many :tasks, :order => 'tasks.updated_at DESC', :dependent => :destroy
-  has_many :hashtags, :dependent => :destroy
+  has_many :tasks, :order => '"tasks".updated_at DESC', :dependent => :destroy
+  has_many :hashtags, :dependent => :destroy, :order => '"hashtags".title'
   
   validates_uniqueness_of :title, :scope => :creator_id, :message => 'must be unique'
   
