@@ -4,7 +4,7 @@ class TasksController < InheritedResources::Base
   belongs_to :project
   respond_to :html, :xml
   has_scope :query
-  has_scope :status
+  has_scope :status, :default => 'active'
   
   def show
     show! {
@@ -73,7 +73,7 @@ class TasksController < InheritedResources::Base
   
   private
   
-  def collection  
+  def collection
     @tasks ||= end_of_association_chain.paginate(:page => params[:page], :include => [:assets])
   end
   
