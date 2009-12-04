@@ -4,7 +4,7 @@ class TasksController < InheritedResources::Base
   belongs_to :project
   respond_to :html, :xml
   has_scope :query
-  has_scope :status, :default => 'active'
+  has_scope :status, :default => 'active', :only => :index
   
   def show
     show! {
