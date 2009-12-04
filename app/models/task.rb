@@ -37,7 +37,7 @@ class Task < ActiveRecord::Base
   
   accepts_nested_attributes_for :assets, :allow_destroy => true, :reject_if => proc { |attributes| attributes['file'].blank? }
   
-  named_scope :assigned_to, lambda { |user|
+  named_scope :assigned_to, proc { |user|
     {
       :joins => :assignments,
       :conditions => ['assignments.assignee_id = ?', user.id]
@@ -47,6 +47,8 @@ class Task < ActiveRecord::Base
     :include => [:comments],
     :conditions => ['UPPER(tasks.message) LIKE ? OR UPPER(comments.message) LIKE ?', "%#{query.upcase}%", "%#{query.upcase}%"]
   } }
+  
+  named_scope :most_recent, :order => 'updated_at DESC', :limit => 1
   
   aasm_column         :status
   aasm_initial_state  :active
@@ -69,7 +71,11 @@ class Task < ActiveRecord::Base
   aasm_event :unfreeze do
     transitions :to => :active, :from => [:iceboxed]
   end
-      
+  
+  def not_active?
+    self.completed? || self.iceboxed? || self.frozen?
+  end
+  
   private
   
   def reload_associations
@@ -79,7 +85,7 @@ class Task < ActiveRecord::Base
   end
   
   def reload_tags
-    if self.completed? || self.iceboxed? || self.frozen?
+    if self.not_active?
       self.hashtagships.destroy_all
     else
       old_hashtags = self.hashtags.collect { |h| h.title } || []
