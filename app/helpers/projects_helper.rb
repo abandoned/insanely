@@ -5,7 +5,7 @@ module ProjectsHelper
       links << link_to("#{project.tasks.completed.count} completed tasks", project_tasks_path(project, :status => 'completed'))
     end
     if project.tasks.iceboxed.count > 0
-      links << link_to("#{project.tasks.iceboxed.count} frozen tasks", project_tasks_path(project, :status => 'frozen'))
+      links << link_to("#{project.tasks.iceboxed.count} frozen tasks", project_tasks_path(project, :status => 'iceboxed'))
     end
     links << link_to(pluralize(project.participants.count, 'participants'), project_participations_path(project))
     if project.tasks.assigned_to(current_user).count > 0

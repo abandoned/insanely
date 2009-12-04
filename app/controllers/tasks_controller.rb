@@ -4,14 +4,7 @@ class TasksController < InheritedResources::Base
   belongs_to :project
   respond_to :html, :xml
   has_scope :query
-  has_scope :completed
-  has_scope :iceboxed
-  
-  def index
-    status = params[:status] && %w{completed iceboxed}.include?(params[:status]) ? params[:status] : 'active'
-    @tasks = end_of_association_chain.paginate(:page => params[:page], :include => [:assets], :conditions => ['tasks.status = ?', status])
-    index!
-  end
+  has_scope :status
   
   def show
     show! {
@@ -79,6 +72,10 @@ class TasksController < InheritedResources::Base
   end
   
   private
+  
+  def collection  
+    @tasks ||= end_of_association_chain.paginate(:page => params[:page], :include => [:assets])
+  end
   
   def begin_of_association_chain
     current_user
