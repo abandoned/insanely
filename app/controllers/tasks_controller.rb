@@ -6,11 +6,16 @@ class TasksController < InheritedResources::Base
   has_scope :query
   has_scope :status, :default => 'active', :only => :index
   
+  def index
+    index!
+    touch_readership(@project)
+  end
+  
   def show
     show! {
       @comment = resource.comments.new
-      touch_readership
     } rescue redirect_to(:action => :index)
+    touch_readership(@task)
   end
   
   def create
@@ -81,8 +86,8 @@ class TasksController < InheritedResources::Base
     current_user
   end
   
-  def touch_readership
-    readership = current_user.readerships.find_or_initialize_by_task_id(@task.id)
+  def touch_readership(readable)
+    readership = current_user.readerships.find_or_initialize_by_readable_id_and_readable_type(readable.id, readable.class.to_s)
     readership.touch
   end
 end

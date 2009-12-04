@@ -28,7 +28,7 @@ class Task < ActiveRecord::Base
   has_many :assignments
   has_many :assignees,    :through => :assignments, :class_name => 'User'
   has_many :assets, :as => :attachable, :dependent => :delete_all
-  has_many :readerships, :dependent => :destroy
+  has_many :readerships, :as => :readable, :dependent => :destroy
   
   after_save    :reload_associations
   after_destroy :reload_associations

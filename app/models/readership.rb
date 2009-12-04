@@ -10,6 +10,6 @@
 #
 
 class Readership < ActiveRecord::Base
-  belongs_to :task
+  belongs_to :readable, :polymorphic => true
   belongs_to :user
 end

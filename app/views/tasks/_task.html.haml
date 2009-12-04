@@ -6,7 +6,7 @@
       = render :partial => 'assets/asset', :collection => task.assets
     .meta-info
       - if show_comments
-        = link_to(pluralize(task.comments_count, 'comment'), project_task_path(@project, task), set_up_readership_css(task))
+        = link_to(pluralize(task.comments_count, 'comment'), project_task_path(@project, task), readership_html(task))
         |
       - if task.created_at == task.updated_at
         = "Posted #{time_ago_in_words(task.created_at)} ago"
@@ -27,4 +27,4 @@
       = link_to('Delete', project_task_path(@project, task, :status => params[:status], :page => params[:page]), :confirm => 'Are you sure?', :method => :delete)
       - if task.author == current_user
         |
-        = link_to('Edit', edit_project_task_path(@project, task), :class => 'highlighted')
+        = link_to('Edit', edit_project_task_path(@project, task))

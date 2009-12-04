@@ -35,12 +35,17 @@ module TasksHelper
     textilize(highlight_assigns(highlight_tags(auto_link(h(obj.message)) { |text| truncate(text) }, hashtags), participants))
   end
   
-  def set_up_readership_css(task)
+  def readership_html(readable,status=nil)
     html_options = {}
-    if task.comments_count > 0
-      readership = current_user.readerships.find_by_task_id(task.id)
-      html_options.merge!({ :class => "unread" }) if readership.nil? || task.updated_at > readership.updated_at
+    class_name = readable.class.to_s
+    readership = current_user.readerships.find_by_readable_id_and_readable_type(readable.id, class_name)
+    if class_name == 'Task'
+      return html_options if readable.comments_count == 0
+      html_options.merge!({ :class => "highlighted" }) if readership.nil? || readable.updated_at > readership.updated_at
+    elsif class_name == 'Project'
+      html_options.merge!({ :class => "highlighted" }) if readership.nil? || readable.tasks.status(status).most_recent.first.updated_at > readership.updated_at
     end
     html_options
   end
 end
+

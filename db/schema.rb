@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091201173838) do
+ActiveRecord::Schema.define(:version => 20091204024138) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -107,13 +107,14 @@ ActiveRecord::Schema.define(:version => 20091201173838) do
   add_index "projects", ["creator_id"], :name => "index_projects_on_creator_id"
 
   create_table "readerships", :force => true do |t|
-    t.integer  "task_id"
+    t.integer  "readable_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "readable_type"
   end
 
-  add_index "readerships", ["task_id"], :name => "index_readerships_on_task_id"
+  add_index "readerships", ["readable_id"], :name => "index_readerships_on_task_id"
   add_index "readerships", ["user_id"], :name => "index_readerships_on_user_id"
 
   create_table "tasks", :force => true do |t|

@@ -15,6 +15,7 @@ class Project < ActiveRecord::Base
   has_many :participants, :through => :participations
   has_many :tasks, :order => '"tasks".updated_at DESC', :dependent => :destroy
   has_many :hashtags, :order => '"hashtags".title', :dependent => :destroy
+  has_many :readerships, :as => :readable, :dependent => :destroy
   
   validates_uniqueness_of :title, :scope => :creator_id, :message => 'must be unique'
   
