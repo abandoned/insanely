@@ -11,6 +11,7 @@ Rails::Initializer.run do |config|
   config.gem 'authlogic', :source => 'http://gemcutter.org', :version => '>= 2.1.3'
   config.gem 'aws-s3', :lib => "aws/s3", :source => 'http://gemcutter.org', :version => '>= 0.6.2'
   config.gem 'delayed_job', :lib => 'delayed_job', :source => 'http://gemcutter.org', :version => '>= 1.8.4'
+  config.gem 'gchartrb', :lib => 'google_chart', :version => '>= 0.8.0'
   config.gem 'gravtastic', :source => 'http://gemcutter.org', :version => '>= 2.1.3'
   config.gem 'haml', :source => 'http://gemcutter.org', :version => '>= 2.2.13'
   config.gem 'inherited_resources', :source => 'http://gemcutter.org', :version => '>= 0.9.2'
