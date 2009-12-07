@@ -42,4 +42,9 @@ class ApplicationController < ActionController::Base
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end
+  
+  def touch_readership(readable)
+    readership = current_user.readerships.find_or_initialize_by_readable_id_and_readable_type(readable.id, readable.class.to_s)
+    readership.touch
+  end
 end

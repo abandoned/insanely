@@ -1,6 +1,7 @@
 class TasksController < InheritedResources::Base
   before_filter :require_user
   before_filter :resource, :only => [:complete, :uncomplete, :freeze, :unfreeze]
+  after_filter :touch_task, :only => [:show, :complete, :uncomplete, :freeze, :unfreeze]
   belongs_to :project
   respond_to :html, :xml
   has_scope :query
@@ -15,7 +16,6 @@ class TasksController < InheritedResources::Base
     show! {
       @comment = resource.comments.new
     } rescue redirect_to(:action => :index)
-    touch_readership(@task)
   end
   
   def create
@@ -86,8 +86,7 @@ class TasksController < InheritedResources::Base
     current_user
   end
   
-  def touch_readership(readable)
-    readership = current_user.readerships.find_or_initialize_by_readable_id_and_readable_type(readable.id, readable.class.to_s)
-    readership.touch
+  def touch_task
+    touch_readership(@task)
   end
 end

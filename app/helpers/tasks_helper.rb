@@ -31,7 +31,6 @@ module TasksHelper
     else
       return false
     end
-    
     textilize(highlight_assigns(highlight_tags(auto_link(h(obj.message)) { |text| truncate(text) }, hashtags), participants))
   end
   

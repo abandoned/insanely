@@ -10,7 +10,10 @@ class CommentsController < InheritedResources::Base
     @comment = @task.comments.build(params[:comment])
     @comment.author = current_user
     create! do |success, failure|
-      success.html { redirect_to project_task_path(@project, @task) }
+      success.html do
+        touch_readership(@task)
+        redirect_to project_tasks_path(@project)
+      end
       failure.html do
         return(render :template => 'tasks/show')
       end
