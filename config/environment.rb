@@ -7,17 +7,17 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem 'aasm', :source => 'http://gemcutter.org', :version => '2.1.3'
-  config.gem 'authlogic', :source => 'http://gemcutter.org', :version => '>= 2.1.3'
-  config.gem 'aws-s3', :lib => "aws/s3", :source => 'http://gemcutter.org', :version => '>= 0.6.2'
-  config.gem 'delayed_job', :lib => 'delayed_job', :source => 'http://gemcutter.org', :version => '>= 1.8.4'
-  config.gem 'gchartrb', :lib => 'google_chart', :version => '>= 0.8.0'
-  config.gem 'gravtastic', :source => 'http://gemcutter.org', :version => '>= 2.1.3'
-  config.gem 'haml', :source => 'http://gemcutter.org', :version => '>= 2.2.13'
-  config.gem 'inherited_resources', :source => 'http://gemcutter.org', :version => '>= 0.9.2'
-  config.gem 'paperclip', :source => 'http://gemcutter.org', :version => '>= 2.3.1.1'
-  config.gem 'RedCloth', :source => 'http://gemcutter.org', :version => '>= 4.2.2'
-  config.gem 'will_paginate', :source => 'http://gemcutter.org', :version => '>= 2.3.11'
+  config.gem 'aasm', :version => '2.1.3'
+  config.gem 'authlogic', :version => '>= 2.1.3'
+  config.gem 'aws-s3', :lib => "aws/s3", :version => '>= 0.6.2'
+  config.gem 'delayed_job', :lib => 'delayed_job', :version => '>= 1.8.4'
+  config.gem 'googlecharts', :lib => 'gchart', :version => '>= 1.4.0'
+  config.gem 'gravtastic', :version => '>= 2.1.3'
+  config.gem 'haml', :version => '>= 2.2.13'
+  config.gem 'inherited_resources', :version => '>= 0.9.2'
+  config.gem 'paperclip', :version => '>= 2.3.1.1'
+  config.gem 'RedCloth', :version => '>= 4.2.2'
+  config.gem 'will_paginate', :version => '>= 2.3.11'
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers

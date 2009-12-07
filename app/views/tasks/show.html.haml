@@ -1,7 +1,7 @@
 - title @project.title, true, project_tasks_path(@project)
 
 #aside
-  = render :partial => 'search_form'
+  = render :partial => 'tasks/search_form'
   = render(:partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags})
 %table.tasks
   %tfoot
@@ -10,4 +10,4 @@
       %td
         = render(:partial => 'comments/form')
   = render(:partial => 'tasks/task', :locals => { :task => @task, :show_comments => false })
-  = render(:partial => 'comments/comment', :collection => @task.comments)
+  = render(:partial => 'comments/comment', :collection => @task.comments.reject{ |c| c.new_record? })

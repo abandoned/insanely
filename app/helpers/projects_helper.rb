@@ -15,12 +15,27 @@ module ProjectsHelper
   end
   
   def chart(project)
-    lc = GoogleChart::LineChart.new("400x200", "My Results", false)
-    lc.data "Line green", [3,5,1,9,0,2], '00ff00'
-    lc.data "Line red", [2,4,0,6,9,3], 'ff0000'
-    lc.axis :y, :range => [0,10], :font_size => 10, :alignment => :center
-    lc.show_legend = false
-    lc.shape_marker :circle, :color => '0000ff', :data_set_index => 0, :data_point_index => -1, :pixel_size => 10
-    lc.to_url
+    data = []
+    bar_colors = []
+    if project.tasks.active.count
+      data << [project.tasks.active.count]
+      bar_colors << '333333'
+    end
+    if project.tasks.completed.count
+      data << [project.tasks.completed.count]
+      bar_colors << '999999'
+    end
+    if project.tasks.iceboxed.count
+      data << [project.tasks.iceboxed.count]
+      bar_colors << 'cccccc'
+    end
+    Gchart.bar(:data => data,
+               :bar_colors => bar_colors,
+               :stacked => false,
+               :size => '90x60',
+               :axis_colors => 'ffffff',
+               :background => 'c4e9e2',
+               # this is a bit of a hack to remove axes
+               :custom => 'chxt=x,y&chxs=0,c4e9e2,1,0,t,c4e9e2|1,c4e9e2,1,0,t,c4e9e2')
   end
 end

@@ -5,10 +5,15 @@ class CommentsController < InheritedResources::Base
   actions :all, :except => [:show, :edit, :update]
   
   def create
+    @project = Project.find(params[:project_id])
+    @task = @project.tasks.find(params[:task_id])
+    @comment = @task.comments.build(params[:comment])
+    @comment.author = current_user
     create! do |success, failure|
-      @comment.update_attribute(:author, current_user)
       success.html { redirect_to project_task_path(@project, @task) }
-      failure.html { return(render :template => 'tasks/show') }
+      failure.html do
+        return(render :template => 'tasks/show')
+      end
     end
   end
   
