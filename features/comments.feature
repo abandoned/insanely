@@ -12,9 +12,10 @@ Feature: Hashtags
     Given I am on the path "/projects/1/tasks/1"
     When I fill in "comment_message" with "this is a #comment"
       And I press "Leave comment"
-    Then I should see "this is a #comment"
+    Then I should see "Comment created!"
       And I should see "ipsum" within ".tag-cloud"
       And I should see "comment" within ".tag-cloud"
+      And a comment should exist with task: task "My Task"
   
   Scenario: I should be able to destroy a comment with no message and an attachment
     Given a comment_with_asset "My comment" exists with task: task "My Task", author: user "self", message: ""

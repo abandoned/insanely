@@ -23,6 +23,10 @@ class TasksController < InheritedResources::Base
     @task.update_attribute(:author, current_user)
   end
   
+  def update
+    update!{ collection_path }
+  end
+  
   def destroy
     destroy!{ collection_path(:status => params[:status], :page => params[:page]) }
   end
