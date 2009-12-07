@@ -10,7 +10,7 @@
         = link_to(project.title, project_tasks_path(project))
         - if current_user.id == project.creator_id
           = link_to('(Edit)', edit_project_path(project), :class => 'small')
-        - if project.tasks.count > 0
+        - if project.tasks.active.count > 0 && (project.tasks.complete.count > 0 || project.tasks.frozen.count > 0)
           = image_tag(chart(project), :class => 'gchart')
         .project-statuses
           = synopsis_of(project)
