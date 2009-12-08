@@ -8,6 +8,8 @@
 !counter = #8ea9a5
 !assignment_counter_color = #396962
 !assignment_counter_background = #99b6b2
+!code_color = #ffb
+!code_background = #333
 
 =large-font
   font-size: 1.25em
@@ -18,7 +20,7 @@
 =centered-block
   width: 75%
   margin: 0 auto
-  min-width: 312px
+  min-width: 300px
   
 *
   margin: 0
@@ -86,6 +88,16 @@ a
         left: 2em
         bottom: 0.5em
   
+  pre
+    margin: 1em 0.6em 1em 0
+    padding: 0.5em
+    color = !code_color
+    background-color = !code_background
+    -moz-border-radius: 0.3em
+    -webkit-border-radius: 0.3em
+    +small-font
+    white-space: pre-wrap
+    
   #projects
   
     .project-statuses
