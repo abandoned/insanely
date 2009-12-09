@@ -48,6 +48,21 @@ a
   clear: both
   visibility: hidden
 
+.button
+  display: inline-block
+  padding: 0 0.5em
+  height: 1.85em
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border: rgb(153, 153, 153) solid 1px
+  position: relative
+  cursor: pointer
+  +small-font
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(221, 221, 221)))
+
+.button:active
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(204, 204, 204)), to(rgb(221, 221, 221)))
+
 #header
   padding: 2.5em 0 1em
   margin-bottom: 0.5em
