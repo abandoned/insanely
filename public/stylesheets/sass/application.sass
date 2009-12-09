@@ -50,18 +50,23 @@ a
 
 .button
   display: inline-block
-  padding: 0 0.5em
-  height: 1.85em
+  padding: 0.3em 0.5em
+  margin: 0.4em 0
   -moz-border-radius: 3px
   -webkit-border-radius: 3px
   border: rgb(153, 153, 153) solid 1px
   position: relative
   cursor: pointer
   +small-font
+  text-decoration: none
+  color: #333
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(221, 221, 221)))
 
 .button:active
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(204, 204, 204)), to(rgb(221, 221, 221)))
+
+.button:after
+  content: ' »'
 
 #header
   padding: 2.5em 0 1em
@@ -267,10 +272,10 @@ a
     
     .meta-info
       clear: left
-      color: #aaa
+      color: #999
       
       a
-        color: #aaa
+        color: #999
     
     tr.task
       .meta-info

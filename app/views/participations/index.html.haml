@@ -14,4 +14,4 @@
         - if can_remove?(participation.participant)
           = button_to('Remove', project_participation_path(@project, participation), :method => :delete)
 
-= link_to "Add a person", new_project_participation_path(@project)
+= link_to('Add a person', new_project_participation_path(@project), :class => 'button')
