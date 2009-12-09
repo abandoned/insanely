@@ -12,6 +12,6 @@
         = mail_to(participation.participant.email, truncate(participation.participant.email))
       %td
         - if can_remove?(participation.participant)
-          = button_to('Remove', project_participation_path(@project, participation), :method => :delete)
+          = button_to('Remove »', project_participation_path(@project, participation), :method => :delete, :class => 'button')
 
-= link_to('Add a person', new_project_participation_path(@project), :class => 'button')
+= link_to('Add person', new_project_participation_path(@project), :class => 'button')
