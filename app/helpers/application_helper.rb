@@ -12,7 +12,7 @@ module ApplicationHelper
           ['Account', account_path],
           ['Workmates', workmates_path]
         ]
-        projects_options = Project.all.reject{ |p| p == @project if @project }.collect{ |p| [p.title, project_tasks_path(p)]}
+        projects_options = current_user.projects.reject{ |p| p == @project if @project }.collect{ |p| [p.title, project_tasks_path(p)]}
         grouped_options = [['Projects', projects_options]]
         if @project && !@project.new_record?
           project_options = [
