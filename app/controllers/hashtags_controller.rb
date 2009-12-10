@@ -4,7 +4,17 @@ class HashtagsController < InheritedResources::Base
   actions :show
   
   def show
-    @tasks = resource.tasks.paginate(:page => params[:page], :include => [:assets], :conditions => ['"tasks".status = ?', 'active'])
+    @tasks = resource.tasks.paginate(
+      :page     => params[:page],
+      :include  => :assets,
+      :order    => 'tasks.updated_at DESC'
+    )
     show!
+  end
+  
+  private
+  
+  def begin_of_association_chain
+    current_user
   end
 end
