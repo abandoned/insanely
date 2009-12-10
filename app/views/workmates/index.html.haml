@@ -18,4 +18,4 @@
         %td
           = current_user.collaborations.find_by_workmate_id(workmate.id).status.capitalize
         %td
-          = link_to 'Remove', workmate_path(workmate), :method => :delete
+          = link_to 'Remove', workmate_path(workmate), :method => :delete, :class => 'button'

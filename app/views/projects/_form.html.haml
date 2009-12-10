@@ -5,4 +5,4 @@
       = f.label :title
       = f.text_field :title
     %li
-      = f.submit f.object.new_record? ? 'Create project' : 'Update project'
+      = f.submit((f.object.new_record? ? 'Create' : 'Update') + '  project »', :class => 'button')

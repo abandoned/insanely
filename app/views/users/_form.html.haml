@@ -13,4 +13,4 @@
       = form.label :password_confirmation, 'Confirm'
       = form.password_field :password_confirmation
     %li
-      = form.submit resource.new_record? ? 'Register account' : 'Update account'
+      = form.submit((@user.new_record? ? 'Register' : 'Update') + ' account »', :class => 'button')

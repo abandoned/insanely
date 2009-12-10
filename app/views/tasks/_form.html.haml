@@ -5,4 +5,4 @@
       = f.text_area :message, :rows => 5
     = render :partial => 'assets/form', :locals => { :form => f }
     %li
-      = f.submit f.object.new_record? ? 'Create task' : 'Update task', :class => "no-margin"
+      = f.submit((f.object.new_record? ? 'Create' : 'Update') +  ' task »', :class => 'no-margin button')
