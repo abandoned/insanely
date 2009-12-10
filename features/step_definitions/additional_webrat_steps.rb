@@ -23,7 +23,3 @@ Then /^(?:|I )press "([^\"]*)" within "([^\"]*)"$/ do |button, selector|
     click_button(button)
   end
 end
-
-Then /^the field with id "([^\"]*)" should contain "([^\"]*)"$/ do |id, value|
-  field_with_id(id).should contain(value)
-end
