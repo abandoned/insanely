@@ -12,7 +12,8 @@ class CommentsController < InheritedResources::Base
     create! do |success, failure|
       success.html do
         touch_readership(@task)
-        redirect_to project_tasks_path(@project)
+        touch_readership(@project)
+        redirect_to project_task_path(@project, @task)
       end
       failure.html do
         return(render :template => 'tasks/show')
