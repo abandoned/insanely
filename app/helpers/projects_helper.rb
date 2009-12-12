@@ -11,7 +11,7 @@ module ProjectsHelper
     if project.tasks.assigned_to(current_user).count > 0
       links << link_to(pluralize(project.tasks.assigned_to(current_user).count, 'assignment'), assigned_project_participant_tasks_path(project, current_user))
     end
-    links.join(' ')
+    links.join(' ').html_safe!
   end
   
   def chart(project)
