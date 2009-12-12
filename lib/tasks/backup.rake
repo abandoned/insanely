@@ -10,13 +10,13 @@ task :backup do
     heroku = Heroku::Client.new(*credentials)
     
     if bundle_type == 'single'
+      puts 'Destroying existing bundles'
       heroku.bundles(app_name).each do |bundle|
         heroku.bundle_destroy(app_name, bundle[:name])
       end
-      puts 'Destroyed existing bundles'
     end    
     
+    puts 'Capturing new bundle'
     heroku.bundle_capture(app_name)
-    puts 'Captured new bundle'
   end
 end
