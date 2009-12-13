@@ -3,6 +3,6 @@
     = link_to image_tag(asset.authenticated_s3_url(:thumb), :class => 'attached_thumb'), asset.authenticated_s3_url
   - else
     - #link_to(image_tag('file.png', :class => 'attached_file'), asset.authenticated_s3_url)
-    - haml_tag(:span, asset.file_file_name.match(/\w+$/), :class => 'file-extension')
+    - #haml_tag(:span, asset.file_file_name.match(/\w+$/), :class => 'file-extension')
     = link_to(truncate(asset.file_file_name), asset.authenticated_s3_url)
     
