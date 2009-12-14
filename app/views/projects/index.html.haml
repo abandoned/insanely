@@ -1,9 +1,6 @@
 - title 'Insanely'
 
 - unless @projects.blank?
-  %h2
-    %span Projects:
-  
   %ol#projects
     - for project in @projects
       %li.project
@@ -14,5 +11,6 @@
           = image_tag(chart(project), :class => 'gchart')
         .project-statuses
           = synopsis_of(project)
+
 %p
   = link_to('Create new project', new_project_path, :class => 'button')
