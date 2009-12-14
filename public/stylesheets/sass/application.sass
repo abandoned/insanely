@@ -17,6 +17,9 @@
 =small-font
   font-size: 0.8em
 
+=smaller-font
+  font-size: 0.6em
+  
 =centered-block
   width: 75%
   margin: 0 auto
@@ -227,11 +230,6 @@ hr
     
   table.tasks
     
-    tfoot
-      
-      td
-        +small-font
-    
     td
       vertical-align: top
       padding-bottom: 1em
@@ -279,10 +277,10 @@ hr
     
     .meta-info
       clear: left
-      color: #999
+      color: #aaa
       
       a
-        color: #999
+        color: #aaa
     
     tr.task
       .meta-info
@@ -318,7 +316,7 @@ hr
     .asset
       margin-bottom: 0.5em
   
-  table.workmates, table.participants
+  table.workmates, table.participations
     border-collapse: collapse
     margin-bottom: 1em
     
@@ -359,13 +357,8 @@ hr
     color = !assignment_counter_color
     background-color = !assignment_counter_background
   
-  .left, .right
-    position: absolute
-    
-  .left
-    left: 0.4em
-  
   .right
+    position: absolute
     right: 0.7em
 
 #footer
@@ -381,17 +374,17 @@ hr
   a
     text-decoration: none
 
-#flash_notice, #flash_error
+#flash_success, #flash_failure
   padding: 0.4em
   margin-bottom: 1.5em
 
-#flash_notice
+#flash_success
   background-color: #cfc
   border: solid 1px #6c6
 
-#flash_error
-  background-color: #FCC
-  border: solid 1px #C66
+#flash_failure
+  background-color: #fcc
+  border: solid 1px #c66
 
 .fieldWithErrors
   display: inline
@@ -433,6 +426,9 @@ hr
   
 .small
   +small-font
+
+.smaller
+  +smaller-font
 
 .highlighted
   background-color: #ffa

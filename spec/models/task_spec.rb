@@ -22,8 +22,7 @@ describe Task do
     )
     @project = Factory(
       :project,
-      :creator => @user,
-      :participants => [@user]
+      :creator => @user
     )
     @task = Factory(
       :task,

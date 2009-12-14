@@ -1,0 +1,6 @@
+= sanitize(textilize(@comment.message))
+- if @comment.assets.size > 0
+  %p
+    = "[#{pluralize(@comment.assets.size, 'attachment')}]"
+%p
+  = project_task_url(@comment.task.project, @comment.task)

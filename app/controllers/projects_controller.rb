@@ -15,7 +15,11 @@ class ProjectsController < InheritedResources::Base
   
   def create
     @project = current_user.created_projects.new(params[:project])
-    create!{ edit_resource_path }
+    create! do |success, failure|
+      success.html do
+        redirect_to edit_resource_path
+      end
+    end
   end
   
   def update

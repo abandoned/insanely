@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
     return(redirect_to(projects_path)) if current_user
     if internet_explorer?
-      flash.now[:notice] = 'My appearance is subpar on Internet Explorer. Please consider switching to another browser.'
+      flash.now[:failure] = 'My appearance is subpar on Internet Explorer. Please consider switching to another browser.'
     end
   end
   

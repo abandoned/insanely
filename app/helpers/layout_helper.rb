@@ -14,7 +14,7 @@ module LayoutHelper
   end
   
   def flash_message
-    flash.delete(:success)
+    flash.delete(:notice)
     flash.each do |name, msg|
       haml_tag(:div, msg, :id => "flash_#{name}")
     end

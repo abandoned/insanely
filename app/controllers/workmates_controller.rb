@@ -11,13 +11,13 @@ class WorkmatesController < InheritedResources::Base
      unless user.nil?
        unless current_user.workmates.include?(user)
          current_user.workmates << user
-         flash[:notice] = 'Added workmate.'
+         flash[:success] = 'Added workmate!'
        else
-         flash[:error] = 'User is already your workmate.'
+         flash[:failure] = 'User is already your workmate!'
        end
        redirect_to workmates_path
      else
-       flash.now[:error] = 'Could not add workmate.'
+       flash.now[:failure] = 'Could not add workmate!'
        @workmate = current_user.workmates.build(params[:workmate])
        render :action => 'new'
      end

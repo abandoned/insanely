@@ -75,7 +75,7 @@ class Task < ActiveRecord::Base
     transitions :to => :active, :from => [:completed]
   end
   
-  aasm_event :unfreeze do
+  aasm_event :defrost do
     transitions :to => :active, :from => [:iceboxed]
   end
   

@@ -1,4 +1,4 @@
-Feature: Hashtags
+Feature: Comments
   In order to use Insane.ly
   As a user
   I want to create, edit, and delete comments

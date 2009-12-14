@@ -2,14 +2,14 @@ en:
   flash:
     actions:
       create:
-        notice: "{{resource_name}} created!"
+        success: "{{resource_name}} created!"
       update:
-        notice: "{{resource_name}} updated!"
+        success: "{{resource_name}} updated!"
       destroy:
-        notice: "{{resource_name}} deleted!"
+        success: "{{resource_name}} deleted!"
     participations:
       destroy:
-        notice: "Person removed from project!"
+        success: "Person removed from project!"
     projects:
       update:
-        notice: "Project renamed!"
+        success: "Project renamed!"

@@ -13,6 +13,9 @@ class CommentsController < InheritedResources::Base
       success.html do
         touch_readership(@task)
         touch_readership(@project)
+        if params[:notify]
+          Notifier.send_later(:deliver_new_comment, @comment)
+        end
         redirect_to project_task_path(@project, @task)
       end
       failure.html do

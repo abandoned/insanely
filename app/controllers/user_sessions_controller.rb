@@ -8,13 +8,13 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Hi there, #{@user_session.login}."
+      flash[:success] = "Hi there, #{@user_session.login}."
       redirect_back_or_default(projects_path)
     else
       if @user_session.errors.full_messages == ["Your account is not active"]
-        flash.now[:error] = "Your account is not active."
+        flash.now[:failure] = "Your account is not active."
       else
-        flash.now[:error] = "Please check your login and password."
+        flash.now[:failure] = "Please check your login and password."
       end
       render :action => :new
     end
@@ -23,7 +23,7 @@ class UserSessionsController < ApplicationController
   def destroy
     if current_user
       current_user_session.destroy
-      flash[:notice] = "You are logged out."
+      flash[:success] = "You are logged out."
     end
     redirect_back_or_default(root_path)
   end

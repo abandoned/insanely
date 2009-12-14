@@ -1,7 +1,8 @@
 class TasksController < InheritedResources::Base
   before_filter :require_user
-  before_filter :resource, :only => [:complete, :uncomplete, :freeze, :unfreeze]
-  after_filter :touch_task, :only => [:show, :complete, :uncomplete, :freeze, :unfreeze]
+  before_filter :resource, :only => [:complete, :uncomplete, :icebox, :defrost]
+  after_filter :touch_task, :only => [:show, :complete, :uncomplete, :icebox, :defrost]
+  
   belongs_to :project
   respond_to :html, :xml
   has_scope :query
@@ -19,8 +20,15 @@ class TasksController < InheritedResources::Base
   end
   
   def create
-    create!{ collection_path }
-    @task.update_attribute(:author, current_user)
+    create! do |success, failure|
+      success.html do
+        @task.update_attribute(:author, current_user)
+        if params[:notify]
+          Notifier.send_later(:deliver_new_task, @task)
+        end
+        redirect_to collection_path
+      end
+    end
   end
   
   def update
@@ -33,9 +41,9 @@ class TasksController < InheritedResources::Base
   
   def complete
     if @task.complete!
-      flash[:notice] = "Task completed!"
+      flash[:success] = "Task completed!"
     else
-      flash[:error] = "Could not complete task!"
+      flash[:failure] = "Could not complete task!"
     end
     respond_to do |format|
       format.html { redirect_to(collection_path(:status => params[:status], :page => params[:page])) }
@@ -45,27 +53,27 @@ class TasksController < InheritedResources::Base
   
   def uncomplete
     if @task.uncomplete!
-      flash[:notice] = "Task uncompleted!"
+      flash[:success] = "Task uncompleted!"
     else
-      flash[:error] = "Could not uncomplete task!"
+      flash[:failure] = "Could not uncomplete task!"
     end
     redirect_to(collection_path(:status => params[:status], :page => params[:page]))
   end
   
-  def freeze
+  def icebox
     if @task.icebox!
-      flash[:notice] = "Task frozen!"
+      flash[:success] = "Task iceboxed!"
     else
-      flash[:error] = "Could not freeze task!"
+      flash[:failure] = "Could not icebox task!"
     end
     redirect_to(collection_path(:status => params[:status], :page => params[:page]))
   end
   
-  def unfreeze
-    if @task.unfreeze!
-      flash[:notice] = "Task unfrozen!"
+  def defrost
+    if @task.defrost!
+      flash[:success] = "Task defrosted!"
     else
-      flash[:error] = "Could not unfreeze task!"
+      flash[:failure] = "Could not defrost task!"
     end
     redirect_to(collection_path(:status => params[:status], :page => params[:page]))
   end
@@ -75,7 +83,7 @@ class TasksController < InheritedResources::Base
     @participant = @project.participants.find(params[:participant_id])
     @tasks = @project.tasks.assigned_to(@participant).paginate(:page => params[:page], :include => [:assets])
     if @tasks.size == 0
-      flash[:error] = "#{@participant.login.capitalize} has no assignments in this project."
+      flash[:failure] = "#{@participant.login.capitalize} has no assignments in this project."
       redirect_to(:action => :index)
     end
   end

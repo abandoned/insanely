@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :projects do |project|
-    project.resources :tasks, :member => { :complete => :put, :uncomplete => :put, :freeze => :put, :unfreeze => :put } do |task|
+    project.resources :tasks, :member => { :complete => :put, :uncomplete => :put, :icebox => :put, :defrost => :put } do |task|
       task.resources :comments
     end
     project.resources :hashtags
