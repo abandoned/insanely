@@ -1,8 +1,13 @@
 class ProjectsController < InheritedResources::Base
+  include ProjectRights
+  
   before_filter :require_user
-  before_filter :must_be_creator, :only => [:edit, :update, :destroy]
+  before_filter :creator?, :only => [:update, :destroy]
+  
   respond_to :html, :xml
   actions :all, :except => [:show]
+  
+  helper_method :creator?, :can_remove?
   
   def show
     @tasks = resource.tasks
@@ -10,11 +15,11 @@ class ProjectsController < InheritedResources::Base
   
   def create
     @project = current_user.created_projects.new(params[:project])
-    create!{ project_tasks_path(@project) }
+    create!{ edit_resource_path }
   end
   
   def update
-    update!{ project_tasks_path(@project) }
+    update!{ edit_resource_path }
   end
   
   private
@@ -23,7 +28,7 @@ class ProjectsController < InheritedResources::Base
     current_user
   end
   
-  def must_be_creator
+  def creator?
     resource.creator == current_user
   end
 end

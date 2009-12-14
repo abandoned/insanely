@@ -1,5 +1,30 @@
-- title @project.title, true, project_tasks_path(@project)
+- title 'Project Settings', true, edit_resource_path
 
-= render :partial => 'form'
+- if creator?
+  - form_for @project do |f|
+    = f.error_messages
+    %ul
+      %li
+        = f.text_field :title
+      %li
+        = f.submit('Update title »', :class => 'button no-margin')
+  %hr
 
-= link_to "Delete project", @project, :confirm => 'Are you sure?', :method => :delete, :class => 'button'
+%table.participants
+  %tfoot
+    %tr
+      %td{:colspan => 4}
+        = link_to('Add new person', new_project_participation_path(@project), :class => 'button')
+  - for participation in @project.participations
+    %tr[participation]
+      %td
+        = image_tag participation.participant.gravatar_url(:size => 48)
+      %td
+        = participation.participant.login
+      %td
+        = mail_to(participation.participant.email, truncate(participation.participant.email))
+      %td
+        - if can_remove?(participation.participant)
+          = button_to('Remove »', project_participation_path(@project, participation), :method => :delete, :class => 'button').html_safe!
+%hr
+%p= link_to "Delete project", @project, :confirm => 'Are you sure?', :method => :delete, :class => 'button'

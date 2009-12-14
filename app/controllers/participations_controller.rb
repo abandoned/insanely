@@ -1,4 +1,6 @@
 class ParticipationsController < ApplicationController
+  include ProjectRights
+  
   before_filter :require_user
   before_filter :find_project
   
@@ -35,7 +37,7 @@ class ParticipationsController < ApplicationController
       flash[:error] = 'Person not added to project!'
     end
     
-    return(redirect_to project_participations_path(@project))
+    return(redirect_to edit_project_path(@project))
   end
   
   def destroy
@@ -49,29 +51,12 @@ class ParticipationsController < ApplicationController
     else
       flash[:error] = 'Person not removed from project!'
     end
-    redirect_to project_participations_path
+    redirect_to edit_project_path(@project)
   end
   
   private
   
   def find_project
     @project = @current_user.projects.find(params[:project_id])
-  end
-  
-  def can_remove?(participant)
-    (created?(@project) && !i_am?(participant) && !project_created_by?(participant)) ||
-      (!created?(@project) && i_am?(participant))
-  end
-  
-  def i_am?(participant)
-    participant.id == @current_user.id
-  end
-  
-  def created?(project)
-    @current_user.id == @project.creator_id
-  end
-  
-  def project_created_by?(participant)
-    participant.id == @project.creator_id
   end
 end
