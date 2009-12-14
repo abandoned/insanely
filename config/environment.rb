@@ -14,7 +14,7 @@ Rails::Initializer.run do |config|
   config.gem 'googlecharts', :lib => 'gchart', :version => '>= 1.4.0'
   config.gem 'gravtastic', :version => '>= 2.1.3'
   config.gem 'haml', :version => '>= 2.2.13'
-  config.gem 'inherited_resources', :version => '>= 0.9.2'
+  config.gem 'inherited_resources', :version => '>= 0.9.4'
   config.gem 'paperclip', :version => '>= 2.3.1.1'
   config.gem 'RedCloth', :version => '>= 4.2.2'
   config.gem 'will_paginate', :version => '>= 2.3.11'
