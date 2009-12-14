@@ -1,4 +1,4 @@
-- title 'Project Settings', true, edit_resource_path
+- title @project.title, true, project_tasks_path(@project)
 
 - if creator?
   - form_for @project do |f|

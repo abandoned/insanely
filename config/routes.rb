@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
     project.resources :participants, :only => [] do |participant|
       participant.resources :tasks, :only => [], :collection => { :assigned => :get }
     end
-    project.resources :participations, :except => [:show, :edit, :update]
+    project.resources :participations, :only => [:new, :create, :destroy]
     project.resources :assets, :only => [:index]
   end
   map.resources :workmates

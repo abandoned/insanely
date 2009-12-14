@@ -1,8 +1,0 @@
-- form_for @project do |f|
-  = f.error_messages
-  %ul
-    %li
-      = f.label :title
-      = f.text_field :title
-    %li
-      = f.submit((f.object.new_record? ? 'Create' : 'Update') + ' project »', :class => 'button')

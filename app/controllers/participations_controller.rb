@@ -6,10 +6,6 @@ class ParticipationsController < ApplicationController
   
   helper_method :can_remove?
   
-  def index
-    @participations = @project.participations
-  end
-  
   def new
     @participants = @current_user.workmates.reject{ |w| @project.participants.include?(w) }
     if @participants.empty?
