@@ -2,6 +2,7 @@ class TasksController < InheritedResources::Base
   before_filter :require_user
   before_filter :resource, :only => [:complete, :uncomplete, :icebox, :defrost]
   after_filter :touch_task, :only => [:show, :complete, :uncomplete, :icebox, :defrost]
+  after_filter :let_others_know, :only => [:complete, :uncomplete, :icebox, :defrost]
   
   belongs_to :project
   respond_to :html, :xml
@@ -100,5 +101,9 @@ class TasksController < InheritedResources::Base
   
   def touch_task
     touch_readership(@task)
+  end
+  
+  def let_others_know
+    Notifier.send_later(:deliver_status_update, @task, action_name)
   end
 end

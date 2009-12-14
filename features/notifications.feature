@@ -35,3 +35,8 @@ Feature: Notifications
     When I fill in "comment_message" with "foo bar"
     And I press "Leave comment"
     Then 0 messages should be queued for notification
+  
+  Scenario: Notify of completion of a task
+    Given I am on the path "/projects/1/tasks/1"
+    When I follow "Complete"
+    Then 1 message should be queued for notification

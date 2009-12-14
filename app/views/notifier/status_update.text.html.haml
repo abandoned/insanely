@@ -1,0 +1,6 @@
+= sanitize(textilize(truncate(@task.message, :length => 48)))
+- if @task.assets.size > 0
+  %p
+    = "[#{pluralize(@task.assets.size, 'attachment')}]"
+%p
+  = project_task_url(@task.project, @task)
