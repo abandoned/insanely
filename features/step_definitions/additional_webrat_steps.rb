@@ -1,7 +1,3 @@
-Then /^my query string should be "([^"]+)"$/ do |query_string|
-  URI.parse(current_url).query.should == query_string
-end
-
 Then /^I should see a button called "([^\"]*)"$/ do |button|
   response.should have_selector("input[type='submit']", :value => button)
 end

@@ -6,7 +6,7 @@ class TasksController < InheritedResources::Base
   
   belongs_to :project
   respond_to :html, :xml
-  has_scope :query
+  has_scope :query, :only => [:index]
   
   def index
     index!
@@ -36,7 +36,7 @@ class TasksController < InheritedResources::Base
   end
   
   def destroy
-    destroy!{ request.referer || projects_path }
+    destroy! { !request.referer.nil? && request.referer !~ /tasks\/[0-9]+$/ ? request.referer : active_project_tasks_path(@project) }
   end
   
   def complete
@@ -90,15 +90,9 @@ class TasksController < InheritedResources::Base
   
   resource_class.aasm_states.each do |state|
     unless method_defined?(state.name)
+      has_scope(state.name, :only => [state.name])
       define_method(state.name) do
-        self.class.send(:alias_method, :apply_remaining_scopes_to, :apply_scope_to) unless self.class.method_defined?(:apply_remaining_scopes_to)
-        self.class.send(:define_method, :apply_scope_to) do |target_object|
-          #self.apply_remaining_scopes_to(target_object)
-          @ok ||= 0
-          @ok += 1
-          p @ok
-          self.apply_remaining_scopes_to(target_object.send(state.name))
-        end
+        params[state.name] = 1
         collection
         render :action => :index
       end
