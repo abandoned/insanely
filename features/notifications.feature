@@ -5,7 +5,9 @@ Feature: Notifications
   
   Background:
     Given I am logged in
+    And a user "other" exists with password: "secret", login: "jdoe", email: "other@example.com", active: true
     And a project "My Project" exists with title: "My Project", creator: user "self"
+    And a participation exists with project: project "My Project", participant: user "other"
     And a task "My Task" exists with message: "lorem #ipsum", project: project "My Project", author: user "self"
       
   Scenario: Notify others of new task

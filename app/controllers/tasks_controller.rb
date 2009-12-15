@@ -114,6 +114,6 @@ class TasksController < InheritedResources::Base
   end
   
   def notify
-    Notifier.send_later(:deliver_status_update, @task, action_name)
+    Notifier.send_later(:deliver_status_update, current_user, action_name, @task)
   end
 end

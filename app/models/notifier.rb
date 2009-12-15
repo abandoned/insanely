@@ -25,10 +25,10 @@ class Notifier < ActionMailer::Base
     body          :comment => comment, :task_excerpt => awesome_truncate(comment.task.message, 81)
   end
   
-  def status_update(task, action)
+  def status_update(user, action, task)
     subject       "[#{task.project.title}] #{task.author.login.capitalize} #{past(action)} a task"
     from          'rhizome@insane.ly'
-    recipients    task.project.participants.reject{ |u| u == task.author }.map{ |u| u.email }
+    recipients    task.project.participants.reject{ |u| u == user }.map{ |u| u.email }
     sent_on       Time.now
     body          :task => task
   end

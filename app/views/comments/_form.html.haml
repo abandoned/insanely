@@ -4,8 +4,9 @@
     %li
       = f.text_area :message, :rows => 5
     = render :partial => 'assets/form', :locals => { :form => f }
-    %li
-      = check_box_tag :notify
-      %span.small Notify others by email
+    - if @project.participants.count > 1
+      %li
+        = check_box_tag :notify
+        %span.small Notify others by email
     %li
       = f.submit('Leave comment »', :class => 'no-margin button')

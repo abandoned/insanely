@@ -4,7 +4,7 @@
     %li
       = f.text_area :message, :rows => 5
     = render :partial => 'assets/form', :locals => { :form => f }
-    -if f.object.new_record?
+    -if f.object.new_record? && @project.participants.count > 1
       %li
         = check_box_tag :notify
         %span.small Notify others by email
