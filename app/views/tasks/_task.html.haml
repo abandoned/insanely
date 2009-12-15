@@ -14,17 +14,17 @@
         = "Updated #{time_ago_in_words(task.updated_at)} ago"
       |
       - if task.completed?
-        = link_to('Uncomplete', uncomplete_project_task_path(@project, task, :status => params[:status], :page => params[:page]), :method => :put)
+        = link_to('Uncomplete', uncomplete_project_task_path(@project, task), :method => :put)
       - else
-        = link_to('Complete', complete_project_task_path(@project, task, :status => params[:status], :page => params[:page]), :method => :put)
+        = link_to('Complete', complete_project_task_path(@project, task), :method => :put)
       |
       - if task.iceboxed?
-        = link_to('Defrost', defrost_project_task_path(@project, task, :status => params[:status], :page => params[:page]), :method => :put)
+        = link_to('Defrost', defrost_project_task_path(@project, task), :method => :put)
         |
       - elsif task.active?
-        = link_to('Icebox', icebox_project_task_path(@project, task, :status => params[:status], :page => params[:page]), :method => :put)
+        = link_to('Icebox', icebox_project_task_path(@project, task), :method => :put)
         |
-      = link_to('Delete', project_task_path(@project, task, :status => params[:status], :page => params[:page]), :confirm => 'Are you sure?', :method => :delete)
+      = link_to('Delete', project_task_path(@project, task), :confirm => 'Are you sure?', :method => :delete)
       - if task.author == current_user
         |
         = link_to('Edit', edit_project_task_path(@project, task))

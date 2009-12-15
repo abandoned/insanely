@@ -43,6 +43,10 @@ class ApplicationController < ActionController::Base
     session[:return_to] = nil
   end
   
+  def go_back
+    redirect_to(request.referer || projects_path)
+  end
+  
   def touch_readership(readable)
     readership = current_user.readerships.find_or_initialize_by_readable_id_and_readable_type(readable.id, readable.class.to_s)
     readership.touch

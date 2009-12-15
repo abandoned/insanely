@@ -4,7 +4,7 @@
   %ol#projects
     - for project in @projects
       %li.project
-        = link_to(project.title, project_tasks_path(project))
+        = link_to(project.title, active_project_tasks_path(project))
         - if current_user.id == project.creator_id
           = link_to('(Settings)', edit_project_path(project), :class => 'small')
         - if project.tasks.active.count > 0 && (project.tasks.completed.count > 0 || project.tasks.iceboxed.count > 0)

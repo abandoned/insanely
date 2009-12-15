@@ -1,9 +1,6 @@
-- form_tag(request.path, :method => :get, :id => 'search') do
+- form_tag(project_tasks_path(@project), :method => :get, :id => 'search') do
   %ul
     %li
       = text_field_tag 'query', params[:query]
-    - unless params[:status].nil?
-      %li
-        = hidden_field_tag 'status', params[:status]
     %li
       = submit_tag 'Search', :class => 'no-margin'

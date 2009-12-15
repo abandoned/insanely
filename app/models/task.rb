@@ -49,11 +49,6 @@ class Task < ActiveRecord::Base
       :conditions => ['UPPER(tasks.message) LIKE ? OR UPPER(comments.message) LIKE ?', "%#{query.upcase}%", "%#{query.upcase}%"]
     } 
   }
-  named_scope :status, proc { |status|
-    {
-      :conditions => ['status = ?', status]
-    }
-  }
   
   named_scope :most_recent, :order => 'updated_at DESC', :limit => 1
   

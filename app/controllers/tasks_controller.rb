@@ -1,13 +1,13 @@
 class TasksController < InheritedResources::Base
   before_filter :require_user
-  before_filter :resource, :only => [:complete, :uncomplete, :icebox, :defrost]
+  before_filter :resource,  :only => [:complete, :uncomplete, :icebox, :defrost]
   after_filter :touch_task, :only => [:show, :complete, :uncomplete, :icebox, :defrost]
-  after_filter :let_others_know, :only => [:complete, :uncomplete, :icebox, :defrost]
+  after_filter :notify,     :only => [:complete, :uncomplete, :icebox, :defrost]
   
   belongs_to :project
   respond_to :html, :xml
   has_scope :query
-  has_scope :status, :default => 'active', :only => :index
+  has_state
   
   def index
     index!
@@ -17,7 +17,7 @@ class TasksController < InheritedResources::Base
   def show
     show! {
       @comment = resource.comments.new
-    } rescue redirect_to(:action => :index)
+    } rescue redirect_to(active_project_tasks_path(@project))
   end
   
   def create
@@ -27,17 +27,17 @@ class TasksController < InheritedResources::Base
         if params[:notify]
           Notifier.send_later(:deliver_new_task, @task)
         end
-        redirect_to collection_path
+        redirect_to(active_project_tasks_path(@project))
       end
     end
   end
   
   def update
-    update!{ collection_path }
+    update!{ active_project_tasks_path(@project) }
   end
   
   def destroy
-    destroy!{ collection_path(:status => params[:status], :page => params[:page]) }
+    destroy!{ request.referer || projects_path }
   end
   
   def complete
@@ -47,7 +47,7 @@ class TasksController < InheritedResources::Base
       flash[:failure] = "Could not complete task!"
     end
     respond_to do |format|
-      format.html { redirect_to(collection_path(:status => params[:status], :page => params[:page])) }
+      format.html { go_back }
       format.xml  { render :xml => @task }
     end    
   end
@@ -58,7 +58,7 @@ class TasksController < InheritedResources::Base
     else
       flash[:failure] = "Could not uncomplete task!"
     end
-    redirect_to(collection_path(:status => params[:status], :page => params[:page]))
+    go_back
   end
   
   def icebox
@@ -67,7 +67,7 @@ class TasksController < InheritedResources::Base
     else
       flash[:failure] = "Could not icebox task!"
     end
-    redirect_to(collection_path(:status => params[:status], :page => params[:page]))
+    go_back
   end
   
   def defrost
@@ -76,7 +76,7 @@ class TasksController < InheritedResources::Base
     else
       flash[:failure] = "Could not defrost task!"
     end
-    redirect_to(collection_path(:status => params[:status], :page => params[:page]))
+    go_back
   end
   
   def assigned
@@ -103,7 +103,7 @@ class TasksController < InheritedResources::Base
     touch_readership(@task)
   end
   
-  def let_others_know
+  def notify
     Notifier.send_later(:deliver_status_update, @task, action_name)
   end
 end
