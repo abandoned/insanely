@@ -29,7 +29,7 @@ module TasksHelper
     else
       return false
     end
-    sanitize(textilize(highlight_assigns(highlight_tags(auto_link(obj.message) { |text| truncate(text, :length => 24) }, hashtags), participants))).html_safe!
+    sanitize(auto_link(textilize(highlight_assigns(highlight_tags(obj.message, hashtags), participants))) { |text| truncate(text, :length => 24) }).html_safe!
   end
   
   def readership_html(readable,status=nil)
