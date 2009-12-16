@@ -22,6 +22,7 @@ class ParticipationsController < ApplicationController
       if participant
         flash[:success] = 'Person added to project!'
         @project.participants << participant
+        Notifier.send_later(:deliver_new_project, participant, @project)
       else
         flash[:failure] = 'Person not added to project!'
       end
