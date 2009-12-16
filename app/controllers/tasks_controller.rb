@@ -7,6 +7,7 @@ class TasksController < InheritedResources::Base
   belongs_to :project
   respond_to :html, :xml
   has_scope :query, :only => [:index]
+  inherit_states
   
   def index
     index!
@@ -87,19 +88,6 @@ class TasksController < InheritedResources::Base
       redirect_to(:action => :index)
     end
   end
-  
-  resource_class.aasm_states.each do |state|
-    unless method_defined?(state.name)
-      has_scope(state.name, :only => [state.name])
-      define_method(state.name) do
-        params[state.name] = 1
-        collection
-        render :action => :index
-      end
-    end
-  end
-  
-  private
   
   def collection
     @tasks ||= end_of_association_chain.paginate(:page => params[:page], :include => [:assets])
