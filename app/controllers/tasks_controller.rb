@@ -7,6 +7,7 @@ class TasksController < InheritedResources::Base
   belongs_to :project
   respond_to :html, :xml
   has_scope :query, :only => [:index]
+  has_states
   
   def index
     index!
@@ -85,17 +86,6 @@ class TasksController < InheritedResources::Base
     if @tasks.size == 0
       flash[:failure] = "#{@participant.login.capitalize} has no assignments in this project."
       redirect_to(:action => :index)
-    end
-  end
-  
-  resource_class.aasm_states.each do |state|
-    unless method_defined?(state.name)
-      has_scope(state.name, :only => [state.name])
-      define_method(state.name) do
-        params[state.name] = 1
-        collection
-        render :action => :index
-      end
     end
   end
   

@@ -6,6 +6,7 @@ class ProjectsController < InheritedResources::Base
   
   respond_to :html, :xml
   actions :all, :except => [:show]
+  has_states
   
   helper_method :creator?, :can_remove?
   

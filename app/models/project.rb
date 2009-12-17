@@ -10,6 +10,8 @@
 #
 
 class Project < ActiveRecord::Base
+  include AASM
+  
   belongs_to :creator, :class_name => 'User'
   has_many :participations, :dependent => :destroy
   has_many :participants, :through => :participations
@@ -22,6 +24,19 @@ class Project < ActiveRecord::Base
   after_create :creator_participates_in_project
   
   attr_accessible :title
+  
+  aasm_column         :status
+  aasm_initial_state  :active
+  aasm_state          :active
+  aasm_state          :archived
+  
+  aasm_event :archive do
+    transitions :to => :archived, :from => [:active]
+  end
+  
+  aasm_event :activate do
+    transitions :to => :active, :from => [:archived]
+  end
   
   private
   

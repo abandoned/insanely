@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :projects do |project|
+  map.resources(:projects, :collection => { :active => :get, :archived => :get }) do |project|
     project.resources(:tasks,
       :member => { :complete => :put, :uncomplete => :put, :icebox => :put, :defrost => :put },
       :collection => { :active => :get, :completed => :get, :iceboxed => :get }
