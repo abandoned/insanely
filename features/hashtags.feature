@@ -63,3 +63,14 @@ Feature: Hashtags
     When I follow "Delete" within "#task_2"
     Then I should see "untitled" within ".tag-cloud"
     And I should not see "lorem" within ".tag-cloud"
+    
+  Scenario: Hashtag of a task with an attachment should destroy if message is edited
+    Given a task exists with id: 1, project: project "My Project", author: user "self", status: "active", message: "Lorem ipsum"
+    And an asset exists with attachable_id: 1, attachable_type: "Task"
+    When I am on the path "/projects/1/tasks/1"
+    Then I should see "untitled" within ".tag-cloud"
+    When I follow "Edit"
+    And I fill in "task_message" with "#Lorem ipsum"
+    And I press "Update task"
+    Then I should see "lorem" within ".tag-cloud"
+    And I should not see "untitled" within ".tag-cloud"

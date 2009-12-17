@@ -7,7 +7,7 @@ class TasksController < InheritedResources::Base
   belongs_to :project
   respond_to :html, :xml
   has_scope :query, :only => [:index]
-  has_states
+  inherits_states
   
   def index
     index!

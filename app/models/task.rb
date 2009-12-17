@@ -86,6 +86,9 @@ class Task < ActiveRecord::Base
     reload_assignments
   end
   
+  # These reload methods get called multiple times when the task has attachments,
+  # which end up "touching" back whenever the task is edited etc. Must be a cleaner
+  # way of doing this. For now, I deal with the situation with the nil? checks.
   def reload_tags
     if self.not_active?
       self.hashtagships.destroy_all
@@ -97,7 +100,7 @@ class Task < ActiveRecord::Base
       # Destroy obsolete hashtagships
       (old_hashtags - new_hashtags).each do |t|
         hashtag = self.hashtags.find_by_title(t)
-        self.hashtagships.find_by_hashtag_id(hashtag.id).destroy
+        self.hashtagships.find_by_hashtag_id(hashtag.id).destroy unless hashtag.nil?
       end
       
       # Create new hashtagships
