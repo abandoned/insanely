@@ -7,7 +7,7 @@ Feature: Comments
     Given I am logged in
       And a project "My Project" exists with title: "My Project", creator: user "self"
       And a task "My Task" exists with message: "lorem #ipsum", project: project "My Project", author: user "self"
-      
+  
   Scenario: Post a comment
     Given I am on the path "/projects/1/tasks/1"
     When I fill in "comment_message" with "this is a #comment"
