@@ -55,12 +55,6 @@ q, blockquote {
 img a {
   border: none; }
 
-/* line 9, ../../../app/stylesheets/partials/_base.sass */
-.wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px; }
-
 /* line 3, ../../../app/stylesheets/partials/_links.sass */
 a {
   text-decoration: none;
@@ -78,16 +72,18 @@ body {
   font-family: helvetica, arial; }
 
 /* line 5, ../../../app/stylesheets/partials/_typography.sass */
-h1 {
-  font-size: 2.4em; }
-
-/* line 7, ../../../app/stylesheets/partials/_typography.sass */
-h2 {
-  font-size: 1.5em; }
-
-/* line 9, ../../../app/stylesheets/partials/_typography.sass */
 .large {
-  font-size: 1.2em; }
+  font-size: 1.25em; }
+
+/* line 1, ../../../app/stylesheets/partials/_layout.sass */
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px; }
+
+/* line 1, ../../../app/stylesheets/partials/_colors.sass */
+body {
+  background-color: #e5e5e5; }
 
 /* line 1, ../../../app/stylesheets/partials/_button.sass */
 .button {
@@ -171,23 +167,12 @@ pre {
 
 /* line 1, ../../../app/stylesheets/partials/_header.sass */
 #header {
-  color: #eee;
+  padding-top: 1em;
+  color: #fff;
   background-color: #3185c5; }
-
-/* line 5, ../../../app/stylesheets/partials/_header.sass */
-#brand h1 {
-  margin-bottom: 0.2em; }
-  /* line 7, ../../../app/stylesheets/partials/_header.sass */
-  #brand h1 a:hover {
-    text-decoration: none; }
-/* line 9, ../../../app/stylesheets/partials/_header.sass */
-#brand h1, #brand h1 a {
-  color: #c63c1e; }
-/* line 11, ../../../app/stylesheets/partials/_header.sass */
-#brand hr {
-  border: none;
-  height: 2px;
-  background-color: #c4e9e1; }
+  /* line 6, ../../../app/stylesheets/partials/_header.sass */
+  #header a {
+    color: #fff; }
 
 /* line 1, ../../../app/stylesheets/partials/_projects.sass */
 #projects {
@@ -218,26 +203,3 @@ pre {
 #copyright a {
   color: #ccc;
   text-decoration: none; }
-
-/* line 1, ../../../app/stylesheets/partials/_navigation.sass */
-#navigation {
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  line-height: 1.4;
-  background-color: #f4f4f4;
-  text-align: right; }
-  /* line 9, ../../../app/stylesheets/partials/_navigation.sass */
-  #navigation a {
-    margin-right: 1em; }
-
-/* line 13, ../../../app/stylesheets/partials/_navigation.sass */
-#container {
-  margin-top: 4em; }
-
-/* line 19, ../../../app/stylesheets/screen.sass */
-body.regular #container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px; }

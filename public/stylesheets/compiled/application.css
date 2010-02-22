@@ -1,67 +1,46 @@
 /*
-Sass::SyntaxError: Undefined mixin 'large-font'.
-on line 83 of /Users/snl/Dropbox/Theorydot/DesktopProjects/insanely/app/stylesheets/application.sass
+Sass::SyntaxError: Undefined mixin 'centered-block'.
+on line 186 of /Users/snl/Dropbox/Theorydot/DesktopProjects/insanely/app/stylesheets/application.sass
 
-79:         color = !bubble_link_color
-80:       
-81:       strong
-82:         color: #fff
-83:         +large-font
-84:         font-weight: normal
-85:         text-decoration: underline
-86:         
-87:       em
-88:         text-decoration: underline
-89:       
+182:     position: absolute
+183:     right: 0.7em
+184: 
+185: #footer
+186:   +centered-block
+187:   margin:
+188:     top: 3em
+189:     bottom: 1em
+190:   padding:
+191:     top: 0.1em
+192:     bottom: 0.3em
 
 
 Backtrace:
-/Users/snl/Dropbox/Theorydot/DesktopProjects/insanely/app/stylesheets/application.sass:83
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/mixin_node.rb:27:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `map'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:193:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/rule_node.rb:159:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:181:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `map'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:193:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/rule_node.rb:159:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:181:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `map'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:193:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/rule_node.rb:159:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:181:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `map'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:193:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/rule_node.rb:159:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:181:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `map'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:193:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:181:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:103:in `render'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:96:in `update_stylesheet'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:82:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:77:in `each'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:77:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:75:in `each'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:75:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:62:in `check_for_updates'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin/rails.rb:18:in `process_without_compass'
+/Users/snl/Dropbox/Theorydot/DesktopProjects/insanely/app/stylesheets/application.sass:186
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/mixin_node.rb:27:in `_perform'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:158:in `perform'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:202:in `perform_children'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:202:in `map'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:202:in `perform_children'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:193:in `perform!'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/rule_node.rb:160:in `perform!'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:181:in `_perform'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:158:in `perform'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:202:in `perform_children'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:202:in `map'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:202:in `perform_children'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:193:in `perform!'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:181:in `_perform'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:158:in `perform'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/tree/node.rb:103:in `render'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/plugin.rb:97:in `update_stylesheet'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/plugin.rb:83:in `update_stylesheets'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/plugin.rb:78:in `each'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/plugin.rb:78:in `update_stylesheets'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/plugin.rb:76:in `each'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/plugin.rb:76:in `update_stylesheets'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/plugin.rb:63:in `check_for_updates'
+/Users/snl/.gem/ruby/1.8/gems/haml-2.2.20/lib/sass/plugin/rails.rb:19:in `process_without_compass'
 /Library/Ruby/Gems/1.8/gems/compass-0.8.17/lib/compass/app_integration/rails/action_controller.rb:7:in `process'
 /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
 /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
@@ -93,25 +72,23 @@ Backtrace:
 /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
 /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
 /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
-/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
 /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
-/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3:in `require'
 ./script/server:3
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Sass::SyntaxError: Undefined mixin 'large-font'.\A on line 83 of /Users/snl/Dropbox/Theorydot/DesktopProjects/insanely/app/stylesheets/application.sass\A \A 79:         color = !bubble_link_color\A 80:       \A 81:       strong\A 82:         color: #fff\A 83:         +large-font\A 84:         font-weight: normal\A 85:         text-decoration: underline\A 86:         \A 87:       em\A 88:         text-decoration: underline\A 89:       \A "; }
+  content: "Sass::SyntaxError: Undefined mixin 'centered-block'.\A on line 186 of /Users/snl/Dropbox/Theorydot/DesktopProjects/insanely/app/stylesheets/application.sass\A \A 182:     position: absolute\A 183:     right: 0.7em\A 184: \A 185: #footer\A 186:   +centered-block\A 187:   margin:\A 188:     top: 3em\A 189:     bottom: 1em\A 190:   padding:\A 191:     top: 0.1em\A 192:     bottom: 0.3em\A "; }

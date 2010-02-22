@@ -2,6 +2,7 @@ source :gemcutter
 
 gem 'rails', '~> 2.3.5', :require => nil
 gem 'rack', '1.0.1'
+gem 'mongrel'
 
 gem 'compass', '>= 0.8.17'
 gem 'haml', '>= 2.2.20'
