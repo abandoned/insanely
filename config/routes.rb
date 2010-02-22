@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
     :collection => { :active => :get, :archived => :get },
     :member => { :archive => :put, :unarchive => :put }
     ) do |project|
+    project.resources(:notes)
     project.resources(:tasks,
       :member => { :complete => :put, :uncomplete => :put, :icebox => :put, :defrost => :put },
       :collection => { :active => :get, :completed => :get, :iceboxed => :get }

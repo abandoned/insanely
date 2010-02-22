@@ -1,7 +1,17 @@
 @import compass/reset.sass
 
+body, html
+  :height 100%
+  
 = centered_block(!width = 960px)
   :margin
     :left auto
     :right auto
   :width= !width
+
+.clearfix:after
+  content: "."
+  display: block
+  height: 0
+  clear: both
+  visibility: hidden

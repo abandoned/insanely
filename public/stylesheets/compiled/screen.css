@@ -55,6 +55,18 @@ q, blockquote {
 img a {
   border: none; }
 
+/* line 3, ../../../app/stylesheets/partials/_base.sass */
+body, html {
+  height: 100%; }
+
+/* line 12, ../../../app/stylesheets/partials/_base.sass */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
 /* line 3, ../../../app/stylesheets/partials/_links.sass */
 a {
   text-decoration: none;
@@ -69,11 +81,7 @@ a {
 /* line 1, ../../../app/stylesheets/partials/_typography.sass */
 body {
   font-size: 16px;
-  font-family: helvetica, arial; }
-
-/* line 5, ../../../app/stylesheets/partials/_typography.sass */
-.large {
-  font-size: 1.25em; }
+  font-family: Helvetica, Arial, sans-serif; }
 
 /* line 1, ../../../app/stylesheets/partials/_layout.sass */
 .wrapper {
@@ -81,9 +89,9 @@ body {
   margin-right: auto;
   width: 960px; }
 
-/* line 1, ../../../app/stylesheets/partials/_colors.sass */
+/* line 2, ../../../app/stylesheets/partials/_colors.sass */
 body {
-  background-color: #e5e5e5; }
+  background-color: #5a5a5a; }
 
 /* line 1, ../../../app/stylesheets/partials/_button.sass */
 .button {
@@ -167,12 +175,38 @@ pre {
 
 /* line 1, ../../../app/stylesheets/partials/_header.sass */
 #header {
-  padding-top: 1em;
+  position: relative;
+  height: 100px;
   color: #fff;
-  background-color: #3185c5; }
+  background-color: #0079a5; }
   /* line 6, ../../../app/stylesheets/partials/_header.sass */
   #header a {
     color: #fff; }
+  /* line 8, ../../../app/stylesheets/partials/_header.sass */
+  #header h1 {
+    padding-top: 0.625em;
+    font-size: 2.25em;
+    color: #000; }
+
+/* line 14, ../../../app/stylesheets/partials/_header.sass */
+#navigation {
+  position: absolute;
+  bottom: 0; }
+  /* line 18, ../../../app/stylesheets/partials/_header.sass */
+  #navigation li {
+    display: inline-block;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-size: 0.875em; }
+    /* line 26, ../../../app/stylesheets/partials/_header.sass */
+    #navigation li.current {
+      color: #ddd;
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#494949), to(#5a5a5a)); }
+    /* line 30, ../../../app/stylesheets/partials/_header.sass */
+    #navigation li a {
+      text-decoration: underline; }
 
 /* line 1, ../../../app/stylesheets/partials/_projects.sass */
 #projects {
@@ -189,17 +223,55 @@ pre {
     margin-bottom: 1em;
     margin-right: 0.5em; }
 
-/* line 3, ../../../app/stylesheets/partials/_content.sass */
-#content {
-  display: block;
-  margin-top: 2em;
-  margin-bottom: 2em; }
-  /* line 8, ../../../app/stylesheets/partials/_content.sass */
-  #content a {
-    color: #596966;
-    text-decoration: none; }
+/* line 3, ../../../app/stylesheets/partials/_page.sass */
+#page-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  margin-top: 15px;
+  margin-bottom: 15px; }
 
-/* line 2, ../../../app/stylesheets/partials/_footer.sass */
-#copyright a {
-  color: #ccc;
-  text-decoration: none; }
+/* line 8, ../../../app/stylesheets/partials/_page.sass */
+#content {
+  padding: 30px 30px 45px;
+  width: 600px;
+  border: #fff 15px solid;
+  color: #333;
+  background-color: #e6e6e6; }
+  /* line 14, ../../../app/stylesheets/partials/_page.sass */
+  #content a {
+    color: #009fcd; }
+  /* line 16, ../../../app/stylesheets/partials/_page.sass */
+  #content p {
+    margin-bottom: 1em; }
+    /* line 18, ../../../app/stylesheets/partials/_page.sass */
+    #content p:last-child {
+      margin-bottom: 0; }
+
+
+/* line 21, ../../../app/stylesheets/partials/_page.sass */
+#content, #aside {
+  float: left; }
+
+/* line 23, ../../../app/stylesheets/partials/_page.sass */
+#task_navigation {
+  background-color: #e6e6e6; }
+
+/* line 25, ../../../app/stylesheets/partials/_page.sass */
+.brand {
+  color: #00ab2b;
+  font-size: 2em;
+  line-height: 1; }
+
+/* line 29, ../../../app/stylesheets/partials/_page.sass */
+label {
+  font-weight: bold; }
+
+/* line 1, ../../../app/stylesheets/partials/_footer.sass */
+#copyright {
+  font-size: 0.875em;
+  color: #999; }
+  /* line 4, ../../../app/stylesheets/partials/_footer.sass */
+  #copyright a {
+    color: #ccc;
+    text-decoration: none; }

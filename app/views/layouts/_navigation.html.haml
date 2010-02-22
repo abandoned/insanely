@@ -1,0 +1,6 @@
+%ul#navigation
+  - %w{notes tasks reminders assets}.each do |name|
+    - if controller.controller_name == name
+      %li.current= name.capitalize
+    - else
+      %li= link_to(name.capitalize, '#')

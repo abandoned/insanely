@@ -8,7 +8,7 @@ gem 'compass', '>= 0.8.17'
 gem 'haml', '>= 2.2.20'
 gem 'erubis', '>= 2.6.5'
 
-gem 'inherited_resources', '1.0.3'
+gem 'inherited_resources', '1.0.4'
 gem 'responders', '0.4.3'
 gem 'has_scope', '0.4.2'
 

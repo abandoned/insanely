@@ -1,6 +1,7 @@
 - title @project.title, true, active_project_tasks_path(@project)
 
-#aside
+-content_for :aside do
+  = render 'task_navigation'
   = render :partial => 'tasks/search_form'
   = render :partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags}
 - unless @tasks.blank?

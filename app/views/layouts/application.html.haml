@@ -5,19 +5,18 @@
     = render :partial => 'layouts/head'
   %body.regular
     #header
-      .wrapper
-        test
-    
-    
-    #container
-      #brand
-        
-        %hr
-      %section#content
+      - if in_project
+        .wrapper
+          -project_title
+          = render 'layouts/navigation'
+    #page-wrapper.clearfix
+      #content
         - flash_message
         = yield
-      %aside#sidebar
-        - if @content_for_aside
+      - if @content_for_aside
+        #aside
           = yield(:aside)
-      %footer#copyright
-        - footer    
+    #copyright
+      .wrapper
+        = link_to('A Paper Cavalier byproduct', 'http://papercavalier.com')
+        

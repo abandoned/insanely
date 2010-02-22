@@ -21,9 +21,13 @@ module LayoutHelper
     end
   end
   
+  def in_project
+    @project && @project.title.present?
+  end
+  
   def project_title
     haml_tag :h1 do
-      haml_tag(:span, link_to_unless_current(@project.nil? ? 'Insanely' : @project.name, @link_title_to))
+      haml_tag(:span, link_to_unless_current(@project.title, @link_title_to))
     end
   end
   
