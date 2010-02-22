@@ -20,6 +20,10 @@ gem 'paperclip', '>= 2.3.1.1'
 gem 'RedCloth', '>= 4.2.2'
 gem 'will_paginate', '>= 2.3.12'
 
+group :production do
+  gem 'pg'
+end
+
 group :development do
   gem 'hirb', '>= 0.2.10'
   gem 'ruby-debug'
