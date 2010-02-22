@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20091217105620) do
   end
 
   add_index "readerships", ["readable_id"], :name => "index_readerships_on_task_id"
+  add_index "readerships", ["readable_type"], :name => "index_readerships_on_readable_type"
   add_index "readerships", ["user_id"], :name => "index_readerships_on_user_id"
 
   create_table "tasks", :force => true do |t|

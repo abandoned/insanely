@@ -21,6 +21,12 @@ module LayoutHelper
     end
   end
   
+  def project_title
+    haml_tag :h1 do
+      haml_concat(content_tag(:span, link_to_unless_current(@show_title ? @content_for_title : 'Insanely.', @link_title_to)))
+    end
+  end
+  
   def header_with_title
     haml_tag :h1 do
       haml_concat(content_tag(:span, link_to_unless_current(@show_title ? @content_for_title : 'Insanely.', @link_title_to)))

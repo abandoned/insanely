@@ -3,10 +3,14 @@
   %head
     %title= yield(:title)
     = render :partial => 'layouts/head'
-  %body.insanely
+  %body.regular
+    #header
+      .wrapper
+        - project_title
+    
     #container
-      %header#brand
-        - header_with_title
+      #brand
+        
         %hr
       %section#content
         - flash_message
@@ -16,6 +20,6 @@
           = yield(:aside)
       %footer#copyright
         - footer
-    %nav#navigation
+    #navigations
       - navigation
     

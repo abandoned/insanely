@@ -55,6 +55,12 @@ q, blockquote {
 img a {
   border: none; }
 
+/* line 9, ../../../app/stylesheets/partials/_base.sass */
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px; }
+
 /* line 3, ../../../app/stylesheets/partials/_links.sass */
 a {
   text-decoration: none;
@@ -163,16 +169,21 @@ pre {
   -webkit-border-radius: 0.3em;
   white-space: pre-wrap; }
 
-/* line 2, ../../../app/stylesheets/partials/_header.sass */
+/* line 1, ../../../app/stylesheets/partials/_header.sass */
+#header {
+  color: #eee;
+  background-color: #3185c5; }
+
+/* line 5, ../../../app/stylesheets/partials/_header.sass */
 #brand h1 {
   margin-bottom: 0.2em; }
-  /* line 4, ../../../app/stylesheets/partials/_header.sass */
+  /* line 7, ../../../app/stylesheets/partials/_header.sass */
   #brand h1 a:hover {
     text-decoration: none; }
-/* line 6, ../../../app/stylesheets/partials/_header.sass */
+/* line 9, ../../../app/stylesheets/partials/_header.sass */
 #brand h1, #brand h1 a {
   color: #c63c1e; }
-/* line 8, ../../../app/stylesheets/partials/_header.sass */
+/* line 11, ../../../app/stylesheets/partials/_header.sass */
 #brand hr {
   border: none;
   height: 2px;
@@ -226,7 +237,7 @@ pre {
   margin-top: 4em; }
 
 /* line 19, ../../../app/stylesheets/screen.sass */
-body.insanely #container {
+body.regular #container {
   margin-left: auto;
   margin-right: auto;
   width: 800px; }
