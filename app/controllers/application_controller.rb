@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
   end
   
   def go_back
-    redirect_to(request.referer || projects_path)
+    redirect_to(request.referer || active_projects_path)
   end
   
   def touch_readership(readable)

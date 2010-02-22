@@ -43,7 +43,7 @@ class ParticipationsController < ApplicationController
     if can_remove?(participant) && participation.destroy
       flash[:success] = 'Person removed from project!'
       if i_am?(participant)
-        return(redirect_to projects_path)
+        return(redirect_to active_projects_path)
       end
     else
       flash[:failure] = 'Person not removed from project!'

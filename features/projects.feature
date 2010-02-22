@@ -33,3 +33,13 @@ Feature: Projects
     When I am on the path "/projects"
     Then I should see "Foo" within "#actions"
     But I should not see "Bar" within "#actions"
+  
+  Scenario: Archive a project
+    Given a project: "Foo" exists with title: "Foo", creator: user "self"
+    And I am on the path "/projects/1/edit"
+    When I follow "Archive project"
+    Then I should see "Project archived!"
+    And I should not see "Foo"
+    And the project: "Foo" should exist with status: "archived"
+    When I go to the path "/projects/archived"
+    Then I should see "Foo"

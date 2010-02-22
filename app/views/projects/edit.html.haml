@@ -27,4 +27,5 @@
         - if can_remove?(participation.participant)
           = button_to('Remove »', project_participation_path(@project, participation), :method => :delete, :class => 'button').html_safe!
 %hr
-%p= link_to "Delete project", @project, :confirm => 'Are you sure?', :method => :delete, :class => 'button'
+%p= link_to 'Archive project', archive_project_path(@project), :method => :put, :class => 'button'
+%p= link_to 'Delete project', @project, :confirm => 'Are you sure?', :method => :delete, :class => 'button'

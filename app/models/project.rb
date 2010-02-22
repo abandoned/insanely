@@ -34,7 +34,7 @@ class Project < ActiveRecord::Base
     transitions :to => :archived, :from => [:active]
   end
   
-  aasm_event :activate do
+  aasm_event :unarchive do
     transitions :to => :active, :from => [:archived]
   end
   

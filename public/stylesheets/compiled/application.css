@@ -1,408 +1,117 @@
-/* line 28, ../../../app/stylesheets/application.sass */
-* {
-  margin: 0;
-  padding: 0; }
+/*
+Sass::SyntaxError: Undefined mixin 'large-font'.
+on line 83 of /Users/snl/Dropbox/Theorydot/NotebookProjects/insanely/app/stylesheets/application.sass
 
-/* line 32, ../../../app/stylesheets/application.sass */
-body, html {
-  height: 100%; }
+79:         color = !bubble_link_color
+80:       
+81:       strong
+82:         color: #fff
+83:         +large-font
+84:         font-weight: normal
+85:         text-decoration: underline
+86:         
+87:       em
+88:         text-decoration: underline
+89:       
 
-/* line 35, ../../../app/stylesheets/application.sass */
-body {
-  font-family: helvetica, arial;
-  font-size: 20px;
-  background-color: #c4e9e2; }
 
-/* line 41, ../../../app/stylesheets/application.sass */
-a {
-  color: #596966; }
-  /* line 44, ../../../app/stylesheets/application.sass */
-  a img {
-    border: none; }
-
-/* line 47, ../../../app/stylesheets/application.sass */
-hr {
-  margin-bottom: 1em;
-  border: 0;
-  height: 1px;
-  width: 96%;
-  background-color: #000; }
-
-/* line 54, ../../../app/stylesheets/application.sass */
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; }
-
-/* line 61, ../../../app/stylesheets/application.sass */
-.button {
-  display: inline-block;
-  padding: 4px 6px;
-  margin: 10px 0;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border: rgb(153, 153, 153) solid 1px;
-  position: relative;
-  cursor: pointer;
-  font-size: 14px;
-  text-decoration: none;
-  color: #333;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(221, 221, 221))); }
-
-/* line 75, ../../../app/stylesheets/application.sass */
-.button:active {
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(204, 204, 204)), to(rgb(221, 221, 221))); }
-
-/* line 78, ../../../app/stylesheets/application.sass */
-.button:after {
-  content: ' »'; }
-
-/* line 81, ../../../app/stylesheets/application.sass */
-#header {
-  padding: 3em 0 1em;
-  margin-bottom: 1.5em; }
-  /* line 85, ../../../app/stylesheets/application.sass */
-  #header h1 {
-    width: 75%;
-    margin: 0 auto;
-    min-width: 300px;
-    padding-bottom: 0.2em;
-    color: #8b6353;
-    font-size: 2.2em;
-    line-height: 0.8em;
-    border-bottom: 4px solid; }
-    /* line 93, ../../../app/stylesheets/application.sass */
-    #header h1 a {
-      color: #8b6353;
-      text-decoration: none; }
-    /* line 97, ../../../app/stylesheets/application.sass */
-    #header h1 select {
-      margin-left: 0.5em; }
-
-/* line 100, ../../../app/stylesheets/application.sass */
-#container {
-  width: 75%;
-  margin: 0 auto;
-  min-width: 300px; }
-  /* line 103, ../../../app/stylesheets/application.sass */
-  #container p {
-    margin: 0 0 1em 0;
-    clear: both; }
-  /* line 107, ../../../app/stylesheets/application.sass */
-  #container p.header {
-    margin-bottom: 2em; }
-  /* line 110, ../../../app/stylesheets/application.sass */
-  #container ol, #container ul {
-    margin-bottom: 1em; }
-    /* line 113, ../../../app/stylesheets/application.sass */
-    #container ol li, #container ul li {
-      margin-left: 2em;
-      margin-bottom: 0.5em; }
-  /* line 118, ../../../app/stylesheets/application.sass */
-  #container pre {
-    margin: 0 0.6em 1em 0;
-    padding: 0.5em;
-    color: #ffffbb;
-    background-color: #333333;
-    -moz-border-radius: 0.3em;
-    -webkit-border-radius: 0.3em;
-    font-size: 0.8em;
-    white-space: pre-wrap; }
-  /* line 128, ../../../app/stylesheets/application.sass */
-  #container #projects {
-    list-style-type: none; }
-    /* line 131, ../../../app/stylesheets/application.sass */
-    #container #projects li {
-      margin-bottom: 2em;
-      margin-left: 0; }
-    /* line 136, ../../../app/stylesheets/application.sass */
-    #container #projects .project-statuses {
-      margin-top: 0.4em;
-      font-size: 0.8em; }
-      /* line 140, ../../../app/stylesheets/application.sass */
-      #container #projects .project-statuses a {
-        margin-right: 0.4em; }
-      /* line 143, ../../../app/stylesheets/application.sass */
-      #container #projects .project-statuses a:last-child {
-        margin-right: 0; }
-    /* line 146, ../../../app/stylesheets/application.sass */
-    #container #projects .gchart {
-      display: block;
-      margin-top: 0.4em;
-      margin-left: -0.4em; }
-  /* line 151, ../../../app/stylesheets/application.sass */
-  #container form {
-    padding-bottom: 1em; }
-    /* line 155, ../../../app/stylesheets/application.sass */
-    #container form ul {
-      margin: 0;
-      padding: 0; }
-    /* line 158, ../../../app/stylesheets/application.sass */
-    #container form li {
-      margin-left: 0;
-      list-style-type: none;
-      clear: both; }
-    /* line 163, ../../../app/stylesheets/application.sass */
-    #container form label {
-      display: block;
-      float: left;
-      width: 33%;
-      padding-top: 0.25em; }
-    /* line 169, ../../../app/stylesheets/application.sass */
-    #container form label.no-float {
-      display: inline;
-      float: inherit;
-      width: inherit;
-      padding: 0 0.2em 0 0; }
-    /* line 175, ../../../app/stylesheets/application.sass */
-    #container form input[type="text"], #container form input[type="password"] {
-      width: 60%; }
-    /* line 178, ../../../app/stylesheets/application.sass */
-    #container form textarea {
-      width: 90%; }
-    /* line 181, ../../../app/stylesheets/application.sass */
-    #container form input[type="text"], #container form input[type="password"], #container form textarea {
-      padding: 0.1em;
-      font-family: helvetica, arial;
-      font-size: 1em;
-      border: 1px solid #999; }
-      /* line 188, ../../../app/stylesheets/application.sass */
-      #container form input[type="text"]:focus, #container form input[type="password"]:focus, #container form textarea:focus {
-        outline: none; }
-    /* line 191, ../../../app/stylesheets/application.sass */
-    #container form input[type="submit"] {
-      margin-left: 33%; }
-    /* line 194, ../../../app/stylesheets/application.sass */
-    #container form input[type="submit"].no-margin {
-      margin-left: 0; }
-    /* line 197, ../../../app/stylesheets/application.sass */
-    #container form .counter {
-      margin-bottom: 0.2em;
-      margin-left: 0.5em;
-      color: #8ea9a5; }
-  /* line 203, ../../../app/stylesheets/application.sass */
-  #container form#search {
-    padding-top: 0.4em;
-    padding-bottom: 0.5em; }
-    /* line 208, ../../../app/stylesheets/application.sass */
-    #container form#search input[type="text"] {
-      width: 90%;
-      font-weight: normal;
-      padding: 0.2em; }
-      /* line 213, ../../../app/stylesheets/application.sass */
-      #container form#search input[type="text"].labeled {
-        color: #e4e4e4; }
-  /* line 216, ../../../app/stylesheets/application.sass */
-  #container #aside {
-    float: left;
-    width: 24%;
-    padding-right: 1.5em; }
-    /* line 221, ../../../app/stylesheets/application.sass */
-    #container #aside .tag-cloud {
-      line-height: 1.4; }
-  /* line 224, ../../../app/stylesheets/application.sass */
-  #container #aside + ol, #container #aside + p {
-    float: right;
-    width: 69%; }
-  /* line 228, ../../../app/stylesheets/application.sass */
-  #container #aside + p {
-    clear: none; }
-  /* line 233, ../../../app/stylesheets/application.sass */
-  #container table.tasks td {
-    vertical-align: top;
-    padding-bottom: 1em; }
-  /* line 237, ../../../app/stylesheets/application.sass */
-  #container table.tasks p {
-    margin-bottom: 0.5em; }
-  /* line 240, ../../../app/stylesheets/application.sass */
-  #container table.tasks .avatar {
-    margin-top: 0.3em;
-    margin-right: 0.8em; }
-  /* line 245, ../../../app/stylesheets/application.sass */
-  #container table.tasks .bubble {
-    position: relative;
-    padding: 1em 0.8em 0.7em;
-    color: #c4e9e2;
-    background-color: #184761;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em; }
-    /* line 253, ../../../app/stylesheets/application.sass */
-    #container table.tasks .bubble a {
-      color: #ffffbb; }
-    /* line 256, ../../../app/stylesheets/application.sass */
-    #container table.tasks .bubble strong {
-      color: #fff;
-      font-size: 1.25em;
-      font-weight: normal;
-      text-decoration: underline; }
-    /* line 262, ../../../app/stylesheets/application.sass */
-    #container table.tasks .bubble em {
-      text-decoration: underline; }
-    /* line 267, ../../../app/stylesheets/application.sass */
-    #container table.tasks .bubble .asset img.attached_thumb {
-      margin-bottom: 0.7em; }
-    /* line 272, ../../../app/stylesheets/application.sass */
-    #container table.tasks .bubble .asset:last-child img.attached_thumb {
-      margin-bottom: 0; }
-  /* line 275, ../../../app/stylesheets/application.sass */
-  #container table.tasks .avatar, #container table.tasks .bubble {
-    float: left; }
-  /* line 278, ../../../app/stylesheets/application.sass */
-  #container table.tasks .meta-info {
-    clear: left;
-    color: #aaa; }
-    /* line 282, ../../../app/stylesheets/application.sass */
-    #container table.tasks .meta-info a {
-      color: #aaa; }
-  /* line 286, ../../../app/stylesheets/application.sass */
-  #container table.tasks tr.task .meta-info {
-    padding-top: 0.5em;
-    padding-left: 1em;
-    font-size: 0.8em; }
-  /* line 294, ../../../app/stylesheets/application.sass */
-  #container table.tasks .comment td:last-child {
-    font-size: 0.8em;
-    padding: 0.4em 0.8em 1em; }
-  /* line 300, ../../../app/stylesheets/application.sass */
-  #container table.tasks .comment .asset img {
-    margin-bottom: 0.7em; }
-  /* line 305, ../../../app/stylesheets/application.sass */
-  #container .image-assets .asset {
-    display: inline; }
-    /* line 308, ../../../app/stylesheets/application.sass */
-    #container .image-assets .asset img {
-      margin: 0.5em; }
-  /* line 311, ../../../app/stylesheets/application.sass */
-  #container .image-assets + .file-assets {
-    margin-top: 1em; }
-  /* line 316, ../../../app/stylesheets/application.sass */
-  #container .file-assets .asset {
-    margin-bottom: 0.5em; }
-  /* line 319, ../../../app/stylesheets/application.sass */
-  #container table.workmates, #container table.participations {
-    border-collapse: collapse;
-    margin-bottom: 1em; }
-    /* line 323, ../../../app/stylesheets/application.sass */
-    #container table.workmates td, #container table.participations td {
-      padding: 0.5em; }
-      /* line 326, ../../../app/stylesheets/application.sass */
-      #container table.workmates td:first-child, #container table.participations td:first-child {
-        padding-left: 0; }
-    /* line 330, ../../../app/stylesheets/application.sass */
-    #container table.workmates tfoot td, #container table.participations tfoot td {
-      padding-top: 0; }
-    /* line 333, ../../../app/stylesheets/application.sass */
-    #container table.workmates .button-to, #container table.participations .button-to {
-      padding-bottom: 0; }
-
-/* line 336, ../../../app/stylesheets/application.sass */
-#nav {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 1.5em;
-  line-height: 1.5;
-  background-color: #396961; }
-  /* line 344, ../../../app/stylesheets/application.sass */
-  #nav a {
-    font-size: 0.8em;
-    margin-right: 0.4em;
-    text-decoration: none;
-    color: #c4e9e1; }
-  /* line 350, ../../../app/stylesheets/application.sass */
-  #nav a:last-child {
-    margin-right: 0; }
-  /* line 353, ../../../app/stylesheets/application.sass */
-  #nav a#assignment-count {
-    padding: 0.1em 0.5em;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    color: #396962;
-    background-color: #99b6b2; }
-  /* line 360, ../../../app/stylesheets/application.sass */
-  #nav .right {
-    position: absolute;
-    right: 0.7em; }
-
-/* line 364, ../../../app/stylesheets/application.sass */
-#footer {
-  width: 75%;
-  margin: 0 auto;
-  min-width: 300px;
-  margin-top: 3em;
-  margin-bottom: 1em;
-  padding-top: 0.1em;
-  padding-bottom: 0.3em;
-  background-color: #d4d4d4; }
-  /* line 374, ../../../app/stylesheets/application.sass */
-  #footer a {
-    text-decoration: none; }
-
-/* line 377, ../../../app/stylesheets/application.sass */
-#flash_success, #flash_failure {
-  padding: 0.4em;
-  margin-bottom: 1.5em; }
-
-/* line 381, ../../../app/stylesheets/application.sass */
-#flash_success {
-  background-color: #cfc;
-  border: solid 1px #6c6; }
-
-/* line 385, ../../../app/stylesheets/application.sass */
-#flash_failure {
-  background-color: #fcc;
-  border: solid 1px #c66; }
-
-/* line 389, ../../../app/stylesheets/application.sass */
-.fieldWithErrors {
-  display: inline; }
-
-/* line 393, ../../../app/stylesheets/application.sass */
-#errorExplanation {
-  width: 400px;
-  border: 1px solid #cf0000;
-  padding: 0px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0; }
-  /* line 401, ../../../app/stylesheets/application.sass */
-  #errorExplanation h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: 0;
-    background-color: #c00;
-    color: #fff; }
-  /* line 410, ../../../app/stylesheets/application.sass */
-  #errorExplanation p {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 0;
-    padding: 0.3em; }
-  /* line 416, ../../../app/stylesheets/application.sass */
-  #errorExplanation ul {
-    margin: 0.1em 1.2em; }
-    /* line 419, ../../../app/stylesheets/application.sass */
-    #errorExplanation ul li {
-      margin-left: 2em;
-      font-size: 12px;
-      list-style: disc; }
-
-/* line 424, ../../../app/stylesheets/application.sass */
-.large {
-  font-size: 1.25em; }
-
-/* line 427, ../../../app/stylesheets/application.sass */
-.small {
-  font-size: 0.8em; }
-
-/* line 430, ../../../app/stylesheets/application.sass */
-.smaller {
-  font-size: 0.6em; }
-
-/* line 433, ../../../app/stylesheets/application.sass */
-.highlighted {
-  background-color: #ffa; }
+Backtrace:
+/Users/snl/Dropbox/Theorydot/NotebookProjects/insanely/app/stylesheets/application.sass:83
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/mixin_node.rb:27:in `_perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:158:in `perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `map'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:193:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/rule_node.rb:159:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:181:in `_perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:158:in `perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `map'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:193:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/rule_node.rb:159:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:181:in `_perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:158:in `perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `map'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:193:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/rule_node.rb:159:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:181:in `_perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:158:in `perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `map'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:193:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/rule_node.rb:159:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:181:in `_perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:158:in `perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `map'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:202:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:193:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:181:in `_perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:158:in `perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/tree/node.rb:103:in `render'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/plugin.rb:96:in `update_stylesheet'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/plugin.rb:77:in `each'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/plugin.rb:77:in `update_stylesheets'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/plugin.rb:75:in `each'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/plugin.rb:75:in `update_stylesheets'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/plugin.rb:62:in `check_for_updates'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.15/lib/sass/plugin/rails.rb:18:in `process_without_compass'
+/Library/Ruby/Gems/1.8/gems/compass-0.8.17/lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Sass::SyntaxError: Undefined mixin 'large-font'.\A on line 83 of /Users/snl/Dropbox/Theorydot/NotebookProjects/insanely/app/stylesheets/application.sass\A \A 79:         color = !bubble_link_color\A 80:       \A 81:       strong\A 82:         color: #fff\A 83:         +large-font\A 84:         font-weight: normal\A 85:         text-decoration: underline\A 86:         \A 87:       em\A 88:         text-decoration: underline\A 89:       \A "; }

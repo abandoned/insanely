@@ -14,7 +14,7 @@ Rails::Initializer.run do |config|
   config.gem 'delayed_job', :version => '>= 1.8.4'
   config.gem 'googlecharts', :lib => 'gchart', :version => '>= 1.4.0'
   config.gem 'gravtastic', :version => '>= 2.1.3'
-  config.gem 'haml', :version => '>= 2.2.16'
+  config.gem 'haml', :version => '>= 2.2.15'
   config.gem 'has_scope', :version => '>= 0.4'
   config.gem 'inherited_resources', :version => '>= 1.0.0'
   config.gem 'paperclip', :version => '>= 2.3.1.1'
