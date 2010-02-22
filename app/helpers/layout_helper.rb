@@ -26,8 +26,12 @@ module LayoutHelper
   end
   
   def project_title
-    haml_tag :h1 do
-      haml_tag(:span, link_to_unless_current(@project.title, @link_title_to))
+    haml_tag :h1, :id => 'brand' do
+      if in_project
+        haml_tag(:span, link_to_unless_current(@project.title, project_tasks_path(@project)))
+      else
+        haml_tag(:span, 'Insanely.')
+      end
     end
   end
   

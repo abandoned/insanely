@@ -1,16 +1,26 @@
 #header
   :position relative
-  :height 100px
   :color #fff
   :background-color #0079a5
   a
     :color #fff
-  h1
-    :padding
-      :top 0.625em
-    :font
-      :size 2.25em
+#brand
+  :padding
+    :left 45px
+  :font
+    :size 2em
+  :color #000
+  a
     :color #000
+  span
+    :display inline-block
+    :background-color #009ecd
+    :padding 10px 15px
+    :margin
+      :top 20px
+      :bottom 20px
+    +border_radius_top_left(10px)
+    +border_radius_bottom_right(10px)
 #navigation
   :position absolute
   :bottom 0

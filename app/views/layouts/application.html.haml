@@ -5,9 +5,9 @@
     = render :partial => 'layouts/head'
   %body.regular
     #header
-      - if in_project
-        .wrapper
-          -project_title
+      .wrapper
+        -project_title
+        - if in_project
           = render 'layouts/navigation'
     #page-wrapper.clearfix
       #content
@@ -18,5 +18,8 @@
           = yield(:aside)
     #copyright
       .wrapper
-        = link_to('A Paper Cavalier byproduct', 'http://papercavalier.com')
+        %p
+          You've stumbled upon a
+          = link_to('Paper Cavalier', 'http://papercavalier.com')
+          byproduct.
         
