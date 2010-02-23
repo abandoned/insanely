@@ -271,8 +271,7 @@ pre {
 /* line 24, ../../../app/stylesheets/partials/_projects.sass */
 #projects .avatar {
   margin-bottom: -6px;
-  margin-right: 10px;
-  border: 1px solid #ccc; }
+  margin-right: 10px; }
 
 /* line 1, ../../../app/stylesheets/partials/_tasks.sass */
 #tasks {

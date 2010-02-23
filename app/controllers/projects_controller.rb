@@ -3,6 +3,7 @@ class ProjectsController < InheritedResources::Base
   
   before_filter :require_user
   before_filter :creator?, :only => [:destroy]
+  before_filter :resource, :only => [:archive, :unarchive]
   
   respond_to :html
   actions :all, :except => [:show]
