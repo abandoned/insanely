@@ -20,6 +20,7 @@ gem 'will_paginate', '>= 2.3.12'
 
 group :production do
   gem 'pg'
+  gem 'heroku', '>= 0.8.0'
 end
 
 group :development do
