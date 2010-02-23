@@ -18,10 +18,9 @@ gem 'paperclip', '>= 2.3.1.1'
 gem 'RedCloth', '>= 4.2.2'
 gem 'will_paginate', '>= 2.3.12'
 
-gem 'heroku', '>= 1.8.0'
-
 group :production do
   gem 'pg'
+  gem 'heroku', '>= 1.8.0'
 end
 
 group :development do

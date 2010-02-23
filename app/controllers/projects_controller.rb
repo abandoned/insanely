@@ -2,7 +2,7 @@ class ProjectsController < InheritedResources::Base
   include ProjectRights
   
   before_filter :require_user
-  before_filter :creator?, :only => [:update, :destroy, :archive, :unarchive]
+  before_filter :creator?, :only => [:destroy]
   
   respond_to :html
   actions :all, :except => [:show]

@@ -199,14 +199,18 @@ pre {
     color: #fff; }
 
 /* line 8, ../../../app/stylesheets/partials/_header.sass */
+#header .wrapper {
+  position: relative; }
+
+/* line 10, ../../../app/stylesheets/partials/_header.sass */
 #brand {
   padding-left: 35px;
   font-size: 2.25em;
   color: #000; }
-  /* line 14, ../../../app/stylesheets/partials/_header.sass */
+  /* line 16, ../../../app/stylesheets/partials/_header.sass */
   #brand a {
     color: #000; }
-  /* line 16, ../../../app/stylesheets/partials/_header.sass */
+  /* line 18, ../../../app/stylesheets/partials/_header.sass */
   #brand span {
     display: inline-block;
     background-color: #009ecd;
@@ -220,13 +224,24 @@ pre {
     -moz-border-radius-bottomright: 10px;
     -webkit-border-bottom-right-radius: 10px; }
 
-/* line 25, ../../../app/stylesheets/partials/_header.sass */
+/* line 27, ../../../app/stylesheets/partials/_header.sass */
 #project-description {
   width: 620px;
   margin-left: 25px;
   margin-bottom: 25px;
   padding: 10px;
   font-size: 1.125em; }
+
+/* line 35, ../../../app/stylesheets/partials/_header.sass */
+#user-nav {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  font-size: 0.875em; }
+  /* line 40, ../../../app/stylesheets/partials/_header.sass */
+  #user-nav a {
+    margin-right: 10px;
+    text-decoration: underline; }
 
 /* line 2, ../../../app/stylesheets/partials/_projects.sass */
 #projects li {

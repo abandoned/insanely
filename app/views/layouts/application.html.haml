@@ -11,6 +11,10 @@
           - if @project.description.present?
             #project-description= sanitize(auto_link(textilize(@project.description)))
           = render 'layouts/navigation'
+        - if current_user
+          #user-nav
+            = link_to('Account', account_path)
+            = link_to('Log out', logout_path)
     #page.clearfix
       #content
         - flash_message
