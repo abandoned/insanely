@@ -350,27 +350,28 @@ pre {
 #content {
   padding: 30px;
   width: 600px;
+  min-height: 240px;
   border: #fff 5px solid;
   color: #333;
   background-color: #e6e6e6; }
-  /* line 16, ../../../app/stylesheets/partials/_page.sass */
+  /* line 17, ../../../app/stylesheets/partials/_page.sass */
   #content a {
     color: #009fcd; }
-  /* line 18, ../../../app/stylesheets/partials/_page.sass */
+  /* line 19, ../../../app/stylesheets/partials/_page.sass */
   #content p {
     margin-bottom: 20px; }
-    /* line 21, ../../../app/stylesheets/partials/_page.sass */
+    /* line 22, ../../../app/stylesheets/partials/_page.sass */
     #content p:last-child {
       margin-bottom: 0; }
-  /* line 24, ../../../app/stylesheets/partials/_page.sass */
+  /* line 25, ../../../app/stylesheets/partials/_page.sass */
   #content p.actions {
     margin-bottom: 30px; }
 
-/* line 27, ../../../app/stylesheets/partials/_page.sass */
+/* line 28, ../../../app/stylesheets/partials/_page.sass */
 #content, #aside {
   float: left; }
 
-/* line 29, ../../../app/stylesheets/partials/_page.sass */
+/* line 30, ../../../app/stylesheets/partials/_page.sass */
 #welcome {
   color: #00ab2b;
   font-size: 1.5em;
