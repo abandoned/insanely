@@ -1,16 +1,11 @@
-- title 'Insanely'
+- title 'Your Insanely Projects'
 
+-content_for :aside do
+  = render :partial => 'shared/resource_states', :locals => { :links => project_links}
+%p.actions
+  = link_to('Create a new project', new_project_path)
 - unless @projects.blank?
   %ol#projects
-    - for project in @projects
-      %li.project
-        = link_to(project.title, active_project_tasks_path(project), :class => 'large')
-        - if current_user.id == project.creator_id
-          = link_to('(Settings)', edit_project_path(project), :class => 'small')
-        - if project.tasks.active.count > 0 && (project.tasks.completed.count > 0 || project.tasks.iceboxed.count > 0)
-          /= image_tag(chart(project), :class => 'gchart')
-        .project-statuses
-          = synopsis_of(project)
-
+    = render :partial => 'project', :collection => @projects
 %p
-  = link_to('Create new project', new_project_path, :class => 'button')
+  

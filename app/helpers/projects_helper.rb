@@ -1,41 +1,22 @@
 module ProjectsHelper
-  def synopsis_of(project)
-    #links = [link_to("#{project.tasks.active.count} active tasks", active_project_tasks_path(project), readership_html(project, 'active'))]
-    #if project.tasks.completed.count > 0
-    #  links << link_to("#{project.tasks.completed.count} completed tasks", completed_project_tasks_path(project), readership_html(project, 'completed'))
-    #end
-    #if project.tasks.iceboxed.count > 0
-    #  links << link_to("#{project.tasks.iceboxed.count} frozen tasks", iceboxed_project_tasks_path(project), readership_html(project, 'iceboxed'))
-    #end
-    links = []
-    if project.tasks.assigned_to(current_user).count > 0
-      links << link_to(pluralize(project.tasks.assigned_to(current_user).count, 'assignment'), assigned_project_participant_tasks_path(project, current_user))
-    end
-    links.join(' ').html_safe!
+  def assignment_count(project)
+    @assignment_counts ||= []
+    @assignment_counts[project.id] ||= project.tasks.assigned_to(current_user).size
   end
   
-  def chart(project)
-    data = []
-    bar_colors = []
-    if project.tasks.active.count
-      data << [project.tasks.active.count]
-      bar_colors << '333333'
+  def project_links
+    links = [
+      {
+        :name => 'Dashboard',
+        :path => projects_path
+      }
+    ]
+    if current_user.projects.archived.size > 0
+      links << {
+        :name => 'Archived projects',
+        :path => archived_projects_path
+      }
     end
-    if project.tasks.completed.count
-      data << [project.tasks.completed.count]
-      bar_colors << '999999'
-    end
-    if project.tasks.iceboxed.count
-      data << [project.tasks.iceboxed.count]
-      bar_colors << 'cccccc'
-    end
-    Gchart.bar(:data => data,
-               :bar_colors => bar_colors,
-               :stacked => false,
-               :size => '90x60',
-               :axis_colors => 'ffffff',
-               :background => 'c4e9e2',
-               # this is a bit of a hack to remove axes
-               :custom => 'chxt=x,y&chxs=0,c4e9e2,1,0,t,c4e9e2|1,c4e9e2,1,0,t,c4e9e2')
+    links
   end
 end

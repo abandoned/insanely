@@ -24,28 +24,25 @@
     float: left;
     width: 24%;
     padding-right: 1.5em; }
-    /* line 46, ../../../app/stylesheets/application.sass */
-    .clearfix:after #aside .tag-cloud {
-      line-height: 1.4; }
-  /* line 49, ../../../app/stylesheets/application.sass */
+  /* line 48, ../../../app/stylesheets/application.sass */
   .clearfix:after #aside + ol, .clearfix:after #aside + p {
     float: right;
     width: 69%; }
-  /* line 53, ../../../app/stylesheets/application.sass */
+  /* line 52, ../../../app/stylesheets/application.sass */
   .clearfix:after #aside + p {
     clear: none; }
-  /* line 58, ../../../app/stylesheets/application.sass */
+  /* line 57, ../../../app/stylesheets/application.sass */
   .clearfix:after table.tasks td {
     vertical-align: top;
     padding-bottom: 1em; }
-  /* line 62, ../../../app/stylesheets/application.sass */
+  /* line 61, ../../../app/stylesheets/application.sass */
   .clearfix:after table.tasks p {
     margin-bottom: 0.5em; }
-  /* line 65, ../../../app/stylesheets/application.sass */
+  /* line 64, ../../../app/stylesheets/application.sass */
   .clearfix:after table.tasks .avatar {
     margin-top: 0.3em;
     margin-right: 0.8em; }
-  /* line 70, ../../../app/stylesheets/application.sass */
+  /* line 69, ../../../app/stylesheets/application.sass */
   .clearfix:after table.tasks .bubble {
     position: relative;
     padding: 1em 0.8em 0.7em;
@@ -53,73 +50,73 @@
     background-color: #184761;
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em; }
-    /* line 78, ../../../app/stylesheets/application.sass */
+    /* line 77, ../../../app/stylesheets/application.sass */
     .clearfix:after table.tasks .bubble a {
       color: #ffffbb; }
-    /* line 81, ../../../app/stylesheets/application.sass */
+    /* line 80, ../../../app/stylesheets/application.sass */
     .clearfix:after table.tasks .bubble strong {
       color: #fff;
       font-weight: normal;
       text-decoration: underline; }
-    /* line 86, ../../../app/stylesheets/application.sass */
+    /* line 85, ../../../app/stylesheets/application.sass */
     .clearfix:after table.tasks .bubble em {
       text-decoration: underline; }
-    /* line 91, ../../../app/stylesheets/application.sass */
+    /* line 90, ../../../app/stylesheets/application.sass */
     .clearfix:after table.tasks .bubble .asset img.attached_thumb {
       margin-bottom: 0.7em; }
-    /* line 96, ../../../app/stylesheets/application.sass */
+    /* line 95, ../../../app/stylesheets/application.sass */
     .clearfix:after table.tasks .bubble .asset:last-child img.attached_thumb {
       margin-bottom: 0; }
-  /* line 99, ../../../app/stylesheets/application.sass */
+  /* line 98, ../../../app/stylesheets/application.sass */
   .clearfix:after table.tasks .avatar, .clearfix:after table.tasks .bubble {
     float: left; }
-  /* line 102, ../../../app/stylesheets/application.sass */
+  /* line 101, ../../../app/stylesheets/application.sass */
   .clearfix:after table.tasks .meta-info {
     clear: left;
     color: #aaa; }
-    /* line 106, ../../../app/stylesheets/application.sass */
+    /* line 105, ../../../app/stylesheets/application.sass */
     .clearfix:after table.tasks .meta-info a {
       color: #aaa; }
-  /* line 110, ../../../app/stylesheets/application.sass */
+  /* line 109, ../../../app/stylesheets/application.sass */
   .clearfix:after table.tasks tr.task .meta-info {
     padding-top: 0.5em;
     padding-left: 1em; }
-  /* line 117, ../../../app/stylesheets/application.sass */
+  /* line 116, ../../../app/stylesheets/application.sass */
   .clearfix:after table.tasks .comment td:last-child {
     padding: 0.4em 0.8em 1em; }
-  /* line 122, ../../../app/stylesheets/application.sass */
+  /* line 121, ../../../app/stylesheets/application.sass */
   .clearfix:after table.tasks .comment .asset img {
     margin-bottom: 0.7em; }
-  /* line 127, ../../../app/stylesheets/application.sass */
+  /* line 126, ../../../app/stylesheets/application.sass */
   .clearfix:after .image-assets .asset {
     display: inline; }
-    /* line 130, ../../../app/stylesheets/application.sass */
+    /* line 129, ../../../app/stylesheets/application.sass */
     .clearfix:after .image-assets .asset img {
       margin: 0.5em; }
-  /* line 133, ../../../app/stylesheets/application.sass */
+  /* line 132, ../../../app/stylesheets/application.sass */
   .clearfix:after .image-assets + .file-assets {
     margin-top: 1em; }
-  /* line 138, ../../../app/stylesheets/application.sass */
+  /* line 137, ../../../app/stylesheets/application.sass */
   .clearfix:after .file-assets .asset {
     margin-bottom: 0.5em; }
-  /* line 141, ../../../app/stylesheets/application.sass */
+  /* line 140, ../../../app/stylesheets/application.sass */
   .clearfix:after table.workmates, .clearfix:after table.participations {
     border-collapse: collapse;
     margin-bottom: 1em; }
-    /* line 145, ../../../app/stylesheets/application.sass */
+    /* line 144, ../../../app/stylesheets/application.sass */
     .clearfix:after table.workmates td, .clearfix:after table.participations td {
       padding: 0.5em; }
-      /* line 148, ../../../app/stylesheets/application.sass */
+      /* line 147, ../../../app/stylesheets/application.sass */
       .clearfix:after table.workmates td:first-child, .clearfix:after table.participations td:first-child {
         padding-left: 0; }
-    /* line 152, ../../../app/stylesheets/application.sass */
+    /* line 151, ../../../app/stylesheets/application.sass */
     .clearfix:after table.workmates tfoot td, .clearfix:after table.participations tfoot td {
       padding-top: 0; }
-    /* line 155, ../../../app/stylesheets/application.sass */
+    /* line 154, ../../../app/stylesheets/application.sass */
     .clearfix:after table.workmates .button-to, .clearfix:after table.participations .button-to {
       padding-bottom: 0; }
 
-/* line 158, ../../../app/stylesheets/application.sass */
+/* line 157, ../../../app/stylesheets/application.sass */
 #nav {
   position: absolute;
   top: 0;
@@ -127,57 +124,57 @@
   height: 1.5em;
   line-height: 1.5;
   background-color: #396961; }
-  /* line 166, ../../../app/stylesheets/application.sass */
+  /* line 165, ../../../app/stylesheets/application.sass */
   #nav a {
     margin-right: 0.4em;
     text-decoration: none;
     color: #c4e9e1; }
-  /* line 171, ../../../app/stylesheets/application.sass */
+  /* line 170, ../../../app/stylesheets/application.sass */
   #nav a:last-child {
     margin-right: 0; }
-  /* line 174, ../../../app/stylesheets/application.sass */
+  /* line 173, ../../../app/stylesheets/application.sass */
   #nav a#assignment-count {
     padding: 0.1em 0.5em;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     color: #396962;
     background-color: #99b6b2; }
-  /* line 181, ../../../app/stylesheets/application.sass */
+  /* line 180, ../../../app/stylesheets/application.sass */
   #nav .right {
     position: absolute;
     right: 0.7em; }
 
-/* line 185, ../../../app/stylesheets/application.sass */
+/* line 184, ../../../app/stylesheets/application.sass */
 #footer {
   margin-top: 3em;
   margin-bottom: 1em;
   padding-top: 0.1em;
   padding-bottom: 0.3em;
   background-color: #d4d4d4; }
-  /* line 194, ../../../app/stylesheets/application.sass */
+  /* line 193, ../../../app/stylesheets/application.sass */
   #footer a {
     text-decoration: none; }
 
-/* line 197, ../../../app/stylesheets/application.sass */
+/* line 196, ../../../app/stylesheets/application.sass */
 #flash_success, #flash_failure {
   padding: 0.4em;
   margin-bottom: 1.5em; }
 
-/* line 201, ../../../app/stylesheets/application.sass */
+/* line 200, ../../../app/stylesheets/application.sass */
 #flash_success {
   background-color: #cfc;
   border: solid 1px #6c6; }
 
-/* line 205, ../../../app/stylesheets/application.sass */
+/* line 204, ../../../app/stylesheets/application.sass */
 #flash_failure {
   background-color: #fcc;
   border: solid 1px #c66; }
 
-/* line 209, ../../../app/stylesheets/application.sass */
+/* line 208, ../../../app/stylesheets/application.sass */
 .fieldWithErrors {
   display: inline; }
 
-/* line 213, ../../../app/stylesheets/application.sass */
+/* line 212, ../../../app/stylesheets/application.sass */
 #errorExplanation {
   width: 400px;
   border: 1px solid #cf0000;
@@ -185,7 +182,7 @@
   padding-bottom: 12px;
   margin-bottom: 20px;
   background-color: #f0f0f0; }
-  /* line 221, ../../../app/stylesheets/application.sass */
+  /* line 220, ../../../app/stylesheets/application.sass */
   #errorExplanation h2 {
     text-align: left;
     font-weight: bold;
@@ -194,21 +191,21 @@
     margin: 0;
     background-color: #c00;
     color: #fff; }
-  /* line 230, ../../../app/stylesheets/application.sass */
+  /* line 229, ../../../app/stylesheets/application.sass */
   #errorExplanation p {
     font-size: 1em;
     color: #333;
     margin-bottom: 0;
     padding: 0.3em; }
-  /* line 236, ../../../app/stylesheets/application.sass */
+  /* line 235, ../../../app/stylesheets/application.sass */
   #errorExplanation ul {
     margin: 0.1em 1.2em; }
-    /* line 239, ../../../app/stylesheets/application.sass */
+    /* line 238, ../../../app/stylesheets/application.sass */
     #errorExplanation ul li {
       margin-left: 2em;
       font-size: 12px;
       list-style: disc; }
 
-/* line 245, ../../../app/stylesheets/application.sass */
+/* line 244, ../../../app/stylesheets/application.sass */
 .highlighted {
   background-color: #ffa; }

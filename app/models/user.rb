@@ -1,27 +1,3 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id                  :integer         not null, primary key
-#  login               :string(255)
-#  email               :string(255)
-#  crypted_password    :string(255)
-#  password_salt       :string(255)
-#  persistence_token   :string(255)
-#  single_access_token :string(255)
-#  perishable_token    :string(255)
-#  login_count         :integer
-#  failed_login_count  :integer
-#  last_request_at     :datetime
-#  current_login_at    :datetime
-#  last_login_at       :datetime
-#  current_login_ip    :string(255)
-#  last_login_ip       :string(255)
-#  created_at          :datetime
-#  updated_at          :datetime
-#  active              :boolean         not null
-#
-
 class User < ActiveRecord::Base
   acts_as_authentic
   is_gravtastic!
@@ -48,3 +24,28 @@ class User < ActiveRecord::Base
     Notifier.send_later(:deliver_password_reset_instructions, self)
   end
 end
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                  :integer         not null, primary key
+#  login               :string(255)
+#  email               :string(255)
+#  crypted_password    :string(255)
+#  password_salt       :string(255)
+#  persistence_token   :string(255)
+#  single_access_token :string(255)
+#  perishable_token    :string(255)
+#  login_count         :integer
+#  failed_login_count  :integer
+#  last_request_at     :datetime
+#  current_login_at    :datetime
+#  last_login_at       :datetime
+#  current_login_ip    :string(255)
+#  last_login_ip       :string(255)
+#  created_at          :datetime
+#  updated_at          :datetime
+#  active              :boolean         default(FALSE), not null
+#
+

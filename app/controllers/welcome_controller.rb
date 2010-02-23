@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    return(redirect_to(active_projects_path)) if current_user
+    return(redirect_to(projects_path)) if current_user
     if internet_explorer?
       flash.now[:failure] = 'I look ugly in Internet Explorer. Please consider switching to another browser.'
     end

@@ -15,12 +15,7 @@ $(document).ready(function() {
     });
     return this
   }
-  
-  // Update Fluid dock badge
-  if(window.fluid && typeof(assignment_count) == 'number') {
-    window.fluid.dockBadge = assignment_count
-  }
-  
+    
   // Add counter to textarea
   if ($('textarea').length > 0) {
     

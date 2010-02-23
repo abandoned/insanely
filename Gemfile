@@ -25,6 +25,7 @@ end
 group :development do
   gem 'hirb', '>= 0.2.10'
   gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'annotate'
 end
 
 group :test, :cucumber do

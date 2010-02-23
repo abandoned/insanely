@@ -1,0 +1,8 @@
+%ul#resource-states
+  - links.each do |link|
+    - if request.path == link[:path]
+      %li.current
+        %span= link[:name]
+    - else
+      %li
+        %span= link_to(link[:name], link[:path])

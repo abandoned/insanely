@@ -42,3 +42,5 @@ Rails::Initializer.run do |config|
 end
 
 Haml::Template.options[:format] = :html5
+
+InheritedResources.flash_keys = [ :success, :failure ]

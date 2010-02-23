@@ -15,7 +15,7 @@ module LayoutHelper
   
   def flash_message
     flash.each do |name, msg|
-      haml_tag(:section, :class => 'flash_wrapper') do
+      haml_tag(:div, :class => 'flash_wrapper') do
         haml_concat(content_tag(:div, msg, :id => "flash_#{name}"))
       end
     end
@@ -30,7 +30,7 @@ module LayoutHelper
       if in_project
         haml_tag(:span, link_to_unless_current(@project.title, project_tasks_path(@project)))
       else
-        haml_tag(:span, 'Insane.ly')
+        haml_tag(:span, 'Insanely')
       end
     end
   end
@@ -76,20 +76,12 @@ module LayoutHelper
   def navigation
     if current_user
       if @project && !@project.new_record?
-        haml_concat(link_to project_assignment_count, assigned_project_participant_tasks_path(@project, current_user), :id => 'assignment-count')
+        haml_concat(link_to assignment_count(@project), assigned_project_participant_tasks_path(@project, current_user), :id => 'assignment-count')
         haml_concat(link_to_unless_current('Add task', new_project_task_path(@project)) {})
       end
       haml_concat(link_to('Log out', logout_path))
     else
       haml_concat(link_to_unless_current('Log in', new_user_session_path) { '&nbsp;'.html_safe! })
     end
-  end
-  
-  def assignment_count
-    @assignment_count ||= current_user.assignments.size
-  end
-  
-  def project_assignment_count
-    @project_assignment_count ||= @project.tasks.assigned_to(current_user).size
   end
 end

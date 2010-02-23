@@ -1,0 +1,5 @@
+%li.project
+  .title
+    = link_to(project.title, active_project_tasks_path(project))
+    - if project.tasks.assigned_to(current_user).count > 0
+      = link_to(assignment_count(project), assigned_project_participant_tasks_path(project, current_user), :class => 'counter')

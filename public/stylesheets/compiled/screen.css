@@ -79,6 +79,10 @@ body, html {
   clear: both;
   visibility: hidden; }
 
+/* line 26, ../../../app/stylesheets/partials/_base.sass */
+.large {
+  font-size: 1.25em; }
+
 /* line 3, ../../../app/stylesheets/partials/_links.sass */
 a {
   text-decoration: none; }
@@ -126,41 +130,40 @@ a.button:last-child {
   width: 60%; }
 
 /* line 6, ../../../app/stylesheets/partials/_flash.sass */
-#flash_success, #flash_failure {
+#flash_success, #flash_notice, #flash_failure, #flash_error {
   padding: 0.4em;
   border-width: 1px;
   border-style: solid; }
 
 /* line 11, ../../../app/stylesheets/partials/_flash.sass */
-#flash_success {
+#flash_success, #flash_notice {
   background-color: #cfc;
   border-color: #6c6; }
 
 /* line 14, ../../../app/stylesheets/partials/_flash.sass */
-#flash_failure {
+#flash_failure, #flash_error {
   background-color: #fcc;
   border-color: #c66; }
 
-/* line 1, ../../../app/stylesheets/partials/_form.sass */
-form.dressed-up {
-  margin-bottom: 2em; }
-  /* line 3, ../../../app/stylesheets/partials/_form.sass */
-  form.dressed-up dd {
-    margin-left: 0; }
-  /* line 5, ../../../app/stylesheets/partials/_form.sass */
-  form.dressed-up dt {
-    padding-left: 0.3em; }
-  /* line 7, ../../../app/stylesheets/partials/_form.sass */
-  form.dressed-up dl {
-    margin-bottom: 1em; }
-  /* line 9, ../../../app/stylesheets/partials/_form.sass */
-  form.dressed-up input[type=text], form.dressed-up input[type=password] {
-    font-size: 1em;
-    padding: 0.4em;
-    border: 1px solid #ccc; }
-  /* line 13, ../../../app/stylesheets/partials/_form.sass */
-  form.dressed-up label {
-    font-weight: bold; }
+/* line 2, ../../../app/stylesheets/partials/_form.sass */
+form.dressed-up dd {
+  margin-bottom: 15px; }
+/* line 5, ../../../app/stylesheets/partials/_form.sass */
+form.dressed-up dt {
+  margin-left: 3px;
+  margin-bottom: 3px; }
+/* line 9, ../../../app/stylesheets/partials/_form.sass */
+form.dressed-up input[type=text], form.dressed-up input[type=password], form.dressed-up textarea {
+  width: 325px;
+  padding: 0.4em;
+  font-size: 1em;
+  border: 1px solid #ccc; }
+/* line 14, ../../../app/stylesheets/partials/_form.sass */
+form.dressed-up textarea {
+  height: 90px; }
+/* line 16, ../../../app/stylesheets/partials/_form.sass */
+form.dressed-up label {
+  font-weight: bold; }
 
 /* line 1, ../../../app/stylesheets/partials/_preformatted.sass */
 pre {
@@ -217,27 +220,61 @@ pre {
     -moz-border-radius-bottomright: 10px;
     -webkit-border-bottom-right-radius: 10px; }
 
-/* line 1, ../../../app/stylesheets/partials/_projects.sass */
-#projects {
-  list-style-type: none; }
-  /* line 3, ../../../app/stylesheets/partials/_projects.sass */
-  #projects li {
-    vertical-align: top;
-    display: inline-block;
-    border: 1px solid #eee;
-    -moz-border-radius: 0.5em;
-    -webkit-border-radius: 0.5em;
-    width: 9.5em;
-    padding: 1em;
-    margin-bottom: 1em;
-    margin-right: 0.5em; }
+/* line 25, ../../../app/stylesheets/partials/_header.sass */
+#project-description {
+  width: 620px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
+  font-size: 1.125em; }
+
+/* line 2, ../../../app/stylesheets/partials/_projects.sass */
+#projects li {
+  margin-bottom: 20px; }
+/* line 5, ../../../app/stylesheets/partials/_projects.sass */
+#projects .title {
+  background-color: #fff;
+  padding: 15px;
+  font-size: 1.25em;
+  font-weight: bold; }
+/* line 11, ../../../app/stylesheets/partials/_projects.sass */
+#projects .counter {
+  color: #fff;
+  background-color: #a0d3eb;
+  padding: 0 5px;
+  margin-left: 10px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  font-weight: normal; }
+  /* line 20, ../../../app/stylesheets/partials/_projects.sass */
+  #projects .counter:hover {
+    text-decoration: none; }
+/* line 22, ../../../app/stylesheets/partials/_projects.sass */
+#projects p {
+  padding: 15px; }
+
+/* line 1, ../../../app/stylesheets/partials/_tasks.sass */
+#tasks {
+  margin-bottom: 20px; }
+
+/* line 4, ../../../app/stylesheets/partials/_tasks.sass */
+#tag-cloud {
+  line-height: 1.4;
+  padding-bottom: 15px; }
+
+/* line 8, ../../../app/stylesheets/partials/_tasks.sass */
+#project-settings {
+  margin-top: 60px;
+  padding-top: 15px;
+  border-top: 2px solid #ccc; }
 
 /* line 1, ../../../app/stylesheets/partials/_aside.sass */
 #aside {
   width: 290px;
   margin-top: 15px;
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   color: #fff;
   background-color: #1c5379;
   border-top-right-radius: 10px;
@@ -248,10 +285,10 @@ pre {
   -webkit-border-bottom-right-radius: 10px; }
 
 /* line 12, ../../../app/stylesheets/partials/_aside.sass */
-#task_navigation {
+#resource-states {
   margin-bottom: 15px; }
   /* line 15, ../../../app/stylesheets/partials/_aside.sass */
-  #task_navigation li {
+  #resource-states li {
     margin-top: 15px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -259,10 +296,15 @@ pre {
     background-color: #ddd;
     text-align: center; }
     /* line 24, ../../../app/stylesheets/partials/_aside.sass */
-    #task_navigation li a {
-      color: #777; }
+    #resource-states li a {
+      color: #555; }
+  /* line 26, ../../../app/stylesheets/partials/_aside.sass */
+  #resource-states .current {
+    color: #333;
+    background-color: #fff;
+    font-weight: bold; }
 
-/* line 4, ../../../app/stylesheets/partials/_page.sass */
+/* line 5, ../../../app/stylesheets/partials/_page.sass */
 #page {
   margin-left: auto;
   margin-right: auto;
@@ -270,28 +312,31 @@ pre {
   margin-top: 20px;
   margin-bottom: 10px; }
 
-/* line 9, ../../../app/stylesheets/partials/_page.sass */
+/* line 10, ../../../app/stylesheets/partials/_page.sass */
 #content {
   padding: 30px;
   width: 600px;
   border: #fff 5px solid;
   color: #333;
   background-color: #e6e6e6; }
-  /* line 15, ../../../app/stylesheets/partials/_page.sass */
+  /* line 16, ../../../app/stylesheets/partials/_page.sass */
   #content a {
     color: #009fcd; }
-  /* line 17, ../../../app/stylesheets/partials/_page.sass */
+  /* line 18, ../../../app/stylesheets/partials/_page.sass */
   #content p {
-    margin-bottom: 1em; }
-    /* line 19, ../../../app/stylesheets/partials/_page.sass */
+    margin-bottom: 20px; }
+    /* line 21, ../../../app/stylesheets/partials/_page.sass */
     #content p:last-child {
       margin-bottom: 0; }
+  /* line 24, ../../../app/stylesheets/partials/_page.sass */
+  #content p.actions {
+    margin-bottom: 30px; }
 
-/* line 21, ../../../app/stylesheets/partials/_page.sass */
+/* line 27, ../../../app/stylesheets/partials/_page.sass */
 #content, #aside {
   float: left; }
 
-/* line 23, ../../../app/stylesheets/partials/_page.sass */
+/* line 29, ../../../app/stylesheets/partials/_page.sass */
 #welcome {
   color: #00ab2b;
   font-size: 1.5em;

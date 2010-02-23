@@ -1,7 +1,6 @@
 module ProjectRights
   def can_remove?(participant)
-    (created?(@project) && !i_am?(participant) && !project_created_by?(participant)) ||
-      (!created?(@project) && i_am?(participant))
+    (created?(@project) && !i_am?(participant) && !project_created_by?(participant)) || (!created?(@project) && i_am?(participant))
   end
   
   def i_am?(participant)

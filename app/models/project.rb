@@ -2,11 +2,13 @@
 #
 # Table name: projects
 #
-#  id         :integer         not null, primary key
-#  title      :string(255)
-#  creator_id :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id          :integer         not null, primary key
+#  title       :string(255)
+#  creator_id  :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  status      :string(255)     default("active")
+#  description :string(255)
 #
 
 class Project < ActiveRecord::Base
@@ -23,7 +25,7 @@ class Project < ActiveRecord::Base
   
   after_create :creator_participates_in_project
   
-  attr_accessible :title
+  attr_accessible :title, :description
   
   aasm_column         :status
   aasm_initial_state  :active
@@ -46,3 +48,4 @@ class Project < ActiveRecord::Base
     end
   end
 end
+

@@ -1,11 +1,3 @@
-- title "New Project", false
+- title 'New Project'
 
-- form_for @project do |f|
-  = f.error_messages
-  %ul
-    %li
-      = f.label :title
-      = f.text_field :title
-    %li
-      = f.submit('Create project »', :class => 'button')
-
+= render 'form'

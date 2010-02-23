@@ -1,4 +1,22 @@
 module TasksHelper
+  def task_links
+    links = [
+      {
+        :name => 'Dashboard',
+        :path => projects_path
+      }
+    ]
+    %w{active iceboxed completed}.each do |name|     
+      if @project.tasks.send(name.to_sym).size > 0
+        links << {
+          :name => "#{name.capitalize} tasks",
+          :path => self.send("#{name}_project_tasks_path", @project)
+        }
+      end
+    end
+    links
+  end
+  
   def highlight_tags(msg, hashtags)
     msg.dup.scan(/(?:^|[>\s])#(\w+)/i) do |m|
       hashtag = hashtags.find_by_title(m.to_s.downcase)

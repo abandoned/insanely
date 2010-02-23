@@ -9,7 +9,4 @@ en:
         success: "{{resource_name}} deleted!"
     participations:
       destroy:
-        success: "Person removed from project!"
-    projects:
-      update:
-        success: "Project renamed!"
+        success: 'Person removed from project!'

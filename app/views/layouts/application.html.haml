@@ -8,6 +8,8 @@
       .wrapper
         -project_title
         - if in_project
+          - if @project.description.present?
+            #project-description= sanitize(auto_link(textilize(@project.description)))
           = render 'layouts/navigation'
     #page.clearfix
       #content
@@ -19,7 +21,8 @@
     #footer
       .wrapper
         %p
-          A copyrighted
+          A
+          = link_to('copylefted', 'http://github.com/snl/insanely')
+          byproduct of
           = link_to('Paper Cavalier', 'http://papercavalier.com')
-          byproduct
         

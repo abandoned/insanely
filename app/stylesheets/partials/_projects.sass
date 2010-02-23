@@ -1,13 +1,23 @@
 #projects
-  :list-style-type none
   li
-    :vertical-align top
-    :display inline-block
-    :border 1px solid #eee
-    :-moz-border-radius 0.5em
-    :-webkit-border-radius 0.5em
-    :width 9.5em
-    :padding 1em
     :margin
-      :bottom 1em
-      :right 0.5em
+      :bottom 20px
+  .title
+    :background-color #fff
+    :padding 15px
+    :font
+      :size 1.25em
+      :weight bold
+  .counter
+    :color #fff
+    :background-color #a0d3eb
+    :padding 0 5px
+    :margin
+      :left 10px
+    +border_radius(6px)
+    :font
+      :weight normal
+    &:hover
+      :text-decoration none
+  p
+    :padding 15px    
