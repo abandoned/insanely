@@ -9,12 +9,10 @@
         -project_title
         - if in_project
           - if @project.description.present?
-            #project-description= sanitize(auto_link(textilize(@project.description)))
+            = render 'projects/blurb'
           = render 'layouts/navigation'
         - if current_user
-          #user-nav
-            = link_to('Account', account_path)
-            = link_to('Log out', logout_path)
+          = render 'layouts/user_nav'
     #page.clearfix
       #content
         - flash_message

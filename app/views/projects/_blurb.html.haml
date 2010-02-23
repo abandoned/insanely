@@ -1,0 +1,4 @@
+#project-description.clearfix
+  = image_tag(@project.creator.gravatar_url(:size => 48), :class => 'avatar', :title => @project.creator.login, :onerror => 'missing_avatar(this)')
+  .blurb
+    = sanitize(auto_link(textilize(@project.description)))
