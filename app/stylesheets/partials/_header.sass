@@ -1,12 +1,13 @@
+@import partials/navigation.sass
+
 #header
-  :position relative
   :color #fff
   :background-color #0079a5
   a
     :color #fff
 #brand
   :padding
-    :left 45px
+    :left 35px
   :font
     :size 2em
   :color #000
@@ -15,27 +16,9 @@
   span
     :display inline-block
     :background-color #009ecd
-    :padding 10px 15px
+    :padding 10px
     :margin
       :top 20px
       :bottom 20px
     +border_radius_top_left(10px)
     +border_radius_bottom_right(10px)
-#navigation
-  :position absolute
-  :bottom 0
-
-  li
-    :display inline-block
-    :padding
-      :top 0.5em
-      :bottom 0.5em
-      :left 0.5em
-      :right 0.5em
-    :font-size 0.875em
-    &.current
-      :color #ddd
-      //:background-color= !background_color
-      :background-image= -webkit-gradient(linear, 0% 0%, 0% 100%, from(!background_color - #111), to(!background_color))
-    a
-      :text-decoration underline

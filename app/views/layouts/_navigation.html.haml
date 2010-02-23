@@ -1,5 +1,5 @@
 %ul#navigation
-  - %w{notes tasks reminders assets}.each do |name|
+  - %w{notes tasks files}.each do |name|
     - if controller.controller_name == name
       %li.current= name.capitalize
     - else

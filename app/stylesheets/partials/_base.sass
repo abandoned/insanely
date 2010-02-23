@@ -1,14 +1,22 @@
 @import compass/reset.sass
 
-body, html
-  :height 100%
-  
+!background_color = #3e3e3e
+
 = centered_block(!width = 960px)
   :margin
     :left auto
     :right auto
   :width= !width
 
+body
+  :background-color= !background_color
+  :font
+    :size 16px
+    :family Helvetica, Arial, sans-serif
+body, html
+  :height 100%
+.wrapper
+  +centered_block
 .clearfix:after
   content: "."
   display: block

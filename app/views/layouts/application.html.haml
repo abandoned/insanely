@@ -9,7 +9,7 @@
         -project_title
         - if in_project
           = render 'layouts/navigation'
-    #page-wrapper.clearfix
+    #page.clearfix
       #content
         - flash_message
         = yield
@@ -19,7 +19,7 @@
     #copyright
       .wrapper
         %p
-          You've stumbled upon a
+          You've stumbled upon a copyrighted
           = link_to('Paper Cavalier', 'http://papercavalier.com')
           byproduct.
         

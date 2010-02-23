@@ -1,9 +1,6 @@
 source :gemcutter
 
 gem 'rails', '~> 2.3.5', :require => nil
-gem 'rack', '1.0.1'
-gem 'mongrel'
-
 gem 'compass', '>= 0.8.17'
 gem 'haml', '>= 2.2.20'
 gem 'erubis', '>= 2.6.5'
@@ -27,7 +24,6 @@ end
 
 group :development do
   gem 'hirb', '>= 0.2.10'
-  gem 'ruby-debug'
   gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
@@ -38,6 +34,7 @@ group :test, :cucumber do
 end
 
 group :cucumber do
+  gem 'cucumber', '>=0.6.2', :require => false
   gem 'cucumber-rails', '>=0.2.1', :require => false
   gem 'database_cleaner', '>=0.4.3', :require => false
   gem 'webrat', '>=0.7.0', :require => false

@@ -30,7 +30,7 @@ module LayoutHelper
       if in_project
         haml_tag(:span, link_to_unless_current(@project.title, project_tasks_path(@project)))
       else
-        haml_tag(:span, 'Insanely.')
+        haml_tag(:span, 'Insane.ly')
       end
     end
   end
@@ -73,10 +73,6 @@ module LayoutHelper
     end
   end
   
-  def footer
-    #haml_concat(link_to("&copy;#{Time.now.year} Paper Cavalier", 'https://papercavalier.com'))
-  end
-    
   def navigation
     if current_user
       if @project && !@project.new_record?
