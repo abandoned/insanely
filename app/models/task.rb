@@ -19,37 +19,33 @@ class Task < ActiveRecord::Base
   validates_length_of :message, :minimum => 1,
     :unless => Proc.new{|s| s.assets.size > 0 }
   
-  belongs_to :project,  :touch => true
-  belongs_to :author,   :class_name => "User"
+  belongs_to :project, :touch => true
+  belongs_to :author, :class_name => "User"
   
   has_many :comments
   has_many :hashtagships
-  has_many :hashtags,     :through => :hashtagships
+  has_many :hashtags, :through => :hashtagships
   has_many :assignments
-  has_many :assignees,    :through => :assignments, :class_name => 'User'
+  has_many :assignees, :through => :assignments, :class_name => 'User'
   has_many :assets, :as => :attachable, :dependent => :delete_all
   has_many :readerships, :as => :readable, :dependent => :destroy
   
-  after_save    :reload_associations
-  after_destroy :reload_associations
+  after_save    :init_reparse
+  after_destroy :init_reparse
   
   attr_accessible :message, :assets_attributes
   
-  accepts_nested_attributes_for :assets, :allow_destroy => true, :reject_if => proc { |attributes| attributes['file'].blank? }
+  accepts_nested_attributes_for :assets, :allow_destroy => true,
+    :reject_if => proc { |attributes| attributes['file'].blank? }
   
-  named_scope :assigned_to, proc { |user|
-    {
-      :joins => :assignments,
-      :conditions => ['assignments.assignee_id = ?', user.id]
-    }
-  }
-  named_scope :query, proc { |query|
-    {
-      :include => [:comments],
-      :conditions => ['UPPER(tasks.message) LIKE ? OR UPPER(comments.message) LIKE ?', "%#{query.upcase}%", "%#{query.upcase}%"]
-    } 
-  }
-  
+  named_scope :assigned_to, proc { |user| {
+    :joins => :assignments,
+    :conditions => ['assignments.assignee_id = ?', user.id]
+  } }
+  named_scope :query, proc { |query| {
+    :include => [:comments],
+    :conditions => ['UPPER(tasks.message) LIKE ? OR UPPER(comments.message) LIKE ?', "%#{query.upcase}%", "%#{query.upcase}%"]
+  } }
   named_scope :most_recent, :order => 'updated_at DESC', :limit => 1
   
   aasm_column         :status
@@ -80,67 +76,57 @@ class Task < ActiveRecord::Base
   
   private
   
-  def reload_associations
-    all_msg(true)
-    reload_tags
-    reload_assignments
+  def init_reparse
+    reparse
   end
   
-  # These reload methods get called multiple times when the task has attachments,
-  # which end up "touching" back whenever the task is edited etc. Must be a cleaner
-  # way of doing this. For now, I deal with the situation with the nil? checks.
-  def reload_tags
+  # TODO 
+  # The reparser gets called multiple times when the task has attachments,
+  # which end up "touching" back whenever the task is edited etc. Must be a 
+  # cleaner way of doing this. For now, I deal with the situation with the 
+  # nil? checks.
+  def reparse
+    @parsable = nil
+    
     if self.not_active?
       self.hashtagships.destroy_all
+      self.assignments.destroy_all
     else
       old_hashtags = self.hashtags.collect { |h| h.title } || []
-      new_hashtags = parse_messages(/#([a-z0-9_]+)/i)
-      new_hashtags = ['untitled'] if new_hashtags.blank?
+      old_assignees = self.assignees.collect { |a| a.login } || []
       
-      # Destroy obsolete hashtagships
+      new_hashtags = parse_content(/#([a-z0-9_]+)/i)
+      new_assignees = parse_content(/\B@([a-z0-9._]+)/i) -
+      
+      # Destroy obsolete
       (old_hashtags - new_hashtags).each do |t|
         hashtag = self.hashtags.find_by_title(t)
         self.hashtagships.find_by_hashtag_id(hashtag.id).destroy unless hashtag.nil?
       end
       
-      # Create new hashtagships
-      new_hashtags.each do |t|
-        hashtag = self.project.hashtags.find_or_create_by_title(t)
-        self.hashtags << hashtag unless self.hashtags.include?(hashtag)
-      end
-    end
-  end
-  
-  def reload_assignments
-    if self.completed? || self.iceboxed? || self.frozen?
-      self.assignments.destroy_all
-    else
-      old_assignees = self.assignees.collect { |a| a.login } || []
-      new_assignees = parse_messages(/\B@([a-z0-9._]+)/i) -
-                      parse_messages(/\B-@([a-z0-9._]+)/i)
-      
-      # Destroy obsolete assignments
       (old_assignees - new_assignees).each do |a|
         assignee = self.assignees.find_by_login(a)
         self.assignments.find_by_assignee_id(assignee.id).destroy unless assignee.nil?
       end
       
-      # Create new assignments
+      # Create new
+      new_hashtags.each do |t|
+        hashtag = self.project.hashtags.find_or_create_by_title(t)
+        self.hashtags << hashtag unless self.hashtags.include?(hashtag)
+      end
+      
       (new_assignees - old_assignees).each do |a|
         assignee = self.project.participants.find_by_login(a)
-        unless assignee.nil?
-          self.assignees << assignee
-        end
+        self.assignees << assignee unless assignee.nil? || self.assignees.include?(assignee)
       end
     end
   end
   
-  def parse_messages(regex)
-    all_msg.scan(regex).collect{ |m| m.to_s.downcase }.uniq
+  def parse_content(regex)
+    parsable.scan(regex).collect{ |m| m.to_s.downcase }.uniq
   end
   
-  def all_msg(reload=false)
-    @all_msg = nil if reload
-    @all_msg ||= self.comments.inject([self.message]){ |m, c| m << c.message }.join(' ')
+  def parsable
+    @parsable ||= self.comments.inject([self.message]){ |m, c| m << c.message }.join(' ')
   end
 end

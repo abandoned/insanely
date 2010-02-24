@@ -15,7 +15,7 @@ module TasksHelper
       end
     end
     links << {
-      :name => 'Assets',
+      :name => 'Files',
       :path => project_assets_path
     }
     links

@@ -1,11 +1,11 @@
-- title 'Your Insanely Projects'
+- title 'Your Projects'
 
 -content_for :aside do
   = render :partial => 'shared/resource_states', :locals => { :links => project_links}
-%p.actions
-  = link_to('Create a new project', new_project_path)
-- unless @projects.blank?
-  %ol#projects
-    = render :partial => 'project', :collection => @projects
-%p
-  
+
+- if controller.action_name == 'index'
+  .actions= link_to('Create a new project', new_project_path)
+- if @projects.size > 0
+  %ul#projects= render :partial => 'project', :collection => @projects
+- else
+  It's all tabula rasa here.

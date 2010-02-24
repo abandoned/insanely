@@ -222,14 +222,12 @@ pre {
 
 /* line 2, ../../../app/stylesheets/partials/_projects.sass */
 #projects li {
-  margin-bottom: 20px; }
-/* line 5, ../../../app/stylesheets/partials/_projects.sass */
-#projects .title {
+  margin-bottom: 20px;
   background-color: #fff;
   padding: 15px;
   font-size: 1.25em;
   font-weight: bold; }
-/* line 11, ../../../app/stylesheets/partials/_projects.sass */
+/* line 10, ../../../app/stylesheets/partials/_projects.sass */
 #projects .counter {
   color: #fff;
   background-color: #a0d3eb;
@@ -239,13 +237,10 @@ pre {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   font-weight: normal; }
-  /* line 20, ../../../app/stylesheets/partials/_projects.sass */
+  /* line 19, ../../../app/stylesheets/partials/_projects.sass */
   #projects .counter:hover {
     text-decoration: none; }
-/* line 22, ../../../app/stylesheets/partials/_projects.sass */
-#projects p {
-  padding: 15px; }
-/* line 24, ../../../app/stylesheets/partials/_projects.sass */
+/* line 21, ../../../app/stylesheets/partials/_projects.sass */
 #projects .avatar {
   margin-bottom: -6px;
   margin-right: 10px; }
@@ -261,13 +256,38 @@ pre {
 
 /* line 8, ../../../app/stylesheets/partials/_tasks.sass */
 #project-settings {
-  margin-top: 60px;
-  padding-top: 15px;
-  border-top: 2px solid #ccc; }
+  margin-top: 0px;
+  padding-top: 20px;
+  border-top: 5px solid #ccc; }
+
+/* line 14, ../../../app/stylesheets/partials/_tasks.sass */
+#search-tasks {
+  float: right; }
+
+/* line 2, ../../../app/stylesheets/partials/_workmates.sass */
+ul.workmates tr {
+  background-color: #fff;
+  margin-bottom: 30px; }
+/* line 5, ../../../app/stylesheets/partials/_workmates.sass */
+ul.workmates td {
+  border-bottom: 20px solid #e6e6e6;
+  vertical-align: middle;
+  padding: 15px;
+  font-size: 1.25em;
+  font-weight: bold; }
+  /* line 12, ../../../app/stylesheets/partials/_workmates.sass */
+  ul.workmates td:first-child {
+    width: 50px; }
+/* line 15, ../../../app/stylesheets/partials/_workmates.sass */
+ul.workmates tfoot td {
+  padding-top: 0; }
+/* line 17, ../../../app/stylesheets/partials/_workmates.sass */
+ul.workmates img {
+  margin-left: 10px; }
 
 /* line 1, ../../../app/stylesheets/partials/_aside.sass */
-#aside {
-  width: 290px;
+#resource-states {
+  width: 290px222222222222;
   margin-top: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -280,30 +300,39 @@ pre {
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-right-radius: 10px; }
 
-/* line 12, ../../../app/stylesheets/partials/_aside.sass */
-#resource-states {
+/* line 13, ../../../app/stylesheets/partials/_aside.sass */
+#resource-states ul {
   margin-bottom: 15px; }
-  /* line 15, ../../../app/stylesheets/partials/_aside.sass */
-  #resource-states li {
+  /* line 16, ../../../app/stylesheets/partials/_aside.sass */
+  #resource-states ul li {
     margin-top: 15px;
     padding-top: 8px;
     padding-bottom: 8px;
-    width: 165px;
+    width: 200px;
     background-color: #ddd;
     text-align: center; }
-    /* line 24, ../../../app/stylesheets/partials/_aside.sass */
-    #resource-states li a {
+    /* line 25, ../../../app/stylesheets/partials/_aside.sass */
+    #resource-states ul li a {
       color: #555; }
-    /* line 26, ../../../app/stylesheets/partials/_aside.sass */
-    #resource-states li:first-child {
+    /* line 27, ../../../app/stylesheets/partials/_aside.sass */
+    #resource-states ul li:first-child {
       margin-bottom: 35px; }
-  /* line 29, ../../../app/stylesheets/partials/_aside.sass */
-  #resource-states .current {
+  /* line 30, ../../../app/stylesheets/partials/_aside.sass */
+  #resource-states ul .current {
     color: #333;
     background-color: #fff;
     font-weight: bold; }
 
-/* line 5, ../../../app/stylesheets/partials/_main.sass */
+/* line 36, ../../../app/stylesheets/partials/_aside.sass */
+#tag-cloud {
+  width: 250px;
+  margin-top: 15px;
+  margin-left: 15px; }
+  /* line 41, ../../../app/stylesheets/partials/_aside.sass */
+  #tag-cloud a {
+    color: #fff; }
+
+/* line 6, ../../../app/stylesheets/partials/_main.sass */
 #main {
   margin-left: auto;
   margin-right: auto;
@@ -311,10 +340,11 @@ pre {
   margin-top: 20px;
   margin-bottom: 10px; }
 
-/* line 11, ../../../app/stylesheets/partials/_main.sass */
+/* line 12, ../../../app/stylesheets/partials/_main.sass */
 #content {
-  padding: 30px;
+  min-height: 200px;
   width: 600px;
+  padding: 30px;
   border: #fff 5px solid;
   color: #333;
   background-color: #e6e6e6;
@@ -324,28 +354,32 @@ pre {
   border-bottom-right-radius: 10px;
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-right-radius: 10px; }
-  /* line 19, ../../../app/stylesheets/partials/_main.sass */
+  /* line 21, ../../../app/stylesheets/partials/_main.sass */
   #content a {
     color: #009fcd; }
-  /* line 21, ../../../app/stylesheets/partials/_main.sass */
+  /* line 23, ../../../app/stylesheets/partials/_main.sass */
+  #content a.button {
+    color: #333; }
+  /* line 25, ../../../app/stylesheets/partials/_main.sass */
   #content p {
     margin-bottom: 20px; }
-    /* line 24, ../../../app/stylesheets/partials/_main.sass */
+    /* line 28, ../../../app/stylesheets/partials/_main.sass */
     #content p:last-child {
       margin-bottom: 0; }
-  /* line 27, ../../../app/stylesheets/partials/_main.sass */
-  #content p.actions {
-    margin-bottom: 30px; }
 
-/* line 30, ../../../app/stylesheets/partials/_main.sass */
+/* line 31, ../../../app/stylesheets/partials/_main.sass */
 #content, #aside {
   float: left; }
 
 /* line 33, ../../../app/stylesheets/partials/_main.sass */
+.actions {
+  margin-bottom: 30px; }
+
+/* line 37, ../../../app/stylesheets/partials/_main.sass */
 #welcome {
   color: #00ab2b;
   font-size: 1.5em;
-  line-height: 1; }
+  line-height: 1.1; }
 
 /* line 1, ../../../app/stylesheets/partials/_footer.sass */
 #footer {

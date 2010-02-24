@@ -1,0 +1,6 @@
+- form_tag(project_tasks_path(@project), :method => :get, :id => 'search-tasks') do
+  %dl
+    %dd
+      = text_field_tag 'query', params[:query]
+    %dd
+      = submit_tag 'Search', :name => nil

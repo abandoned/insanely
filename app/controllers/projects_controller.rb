@@ -17,7 +17,7 @@ class ProjectsController < InheritedResources::Base
   
   def create
     @project = current_user.created_projects.new(params[:project])
-    create!{ edit_resource_path }
+    create!{ active_project_tasks_path(@project) }
   end
   
   def update

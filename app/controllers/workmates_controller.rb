@@ -33,7 +33,3 @@ class WorkmatesController < InheritedResources::Base
     @workmate ||= current_user.workmates.find(params[:id])
   end
 end
-
-def new
-  @friendship = Friendship.new
-end

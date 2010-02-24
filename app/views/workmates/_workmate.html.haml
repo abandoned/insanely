@@ -1,0 +1,5 @@
+%li
+  = image_tag workmate.gravatar_url(:size => 30)
+  = workmate.login
+  = '(' + current_user.collaborations.find_by_workmate_id(workmate.id).status + ')'
+  = link_to 'Remove »', workmate_path(workmate), :method => :delete, :class => 'button'
