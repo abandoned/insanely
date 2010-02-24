@@ -7,12 +7,15 @@
   :margin
     :top 20px
     :bottom 10px
+
 #content
   :padding 30px
   :width 600px
   :border #fff 5px solid
   :color #333
   :background-color #e6e6e6
+  +border_radius_top_left(10px)
+  +border_radius_bottom_right(10px)
   a
     :color #009fcd
   p
@@ -26,6 +29,7 @@
       :bottom 30px
 #content, #aside
   :float left
+
 #welcome
   :color #00ab2b
   :font-size 1.5em
