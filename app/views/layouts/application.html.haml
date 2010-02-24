@@ -10,7 +10,6 @@
         - if in_project
           - if @project.description.present?
             = render 'projects/blurb'
-          = render 'layouts/navigation'
         - if current_user
           = render 'layouts/user_nav'
     #main.clearfix

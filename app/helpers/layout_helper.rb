@@ -21,12 +21,6 @@ module LayoutHelper
     end
   end
   
-  def navigation_links
-    links = [{ :name => 'tasks', :controller => 'tasks', :path => active_project_tasks_path(@project) }]
-    links << { :name => 'files', :controller => 'assets', :path => project_assets_path }
-    links
-  end
-  
   def in_project
     @project && !@project.new_record?
   end

@@ -1,8 +1,0 @@
-%ul#navigation
-  - navigation_links.each do |link|
-    - if controller.controller_name == link[:controller]
-      %li.current
-        = link_to_unless_current(link[:name].capitalize, link[:path])
-    - else
-      %li
-        = link_to(link[:name].capitalize, link[:path])

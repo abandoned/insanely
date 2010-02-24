@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
       participant.resources :tasks, :only => [], :collection => { :assigned => :get }
     end
     project.resources :participations, :only => [:new, :create, :destroy]
-    project.resources :assets, :as => 'files', :only => [:index]
+    project.resources :assets, :only => [:index]
   end
   map.resources :workmates
   map.resources :assets, :only => [:show]
