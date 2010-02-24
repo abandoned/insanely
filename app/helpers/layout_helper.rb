@@ -34,7 +34,7 @@ module LayoutHelper
   def project_title
     haml_tag :h1, :id => 'brand' do
       if in_project
-        haml_tag(:span, link_to_unless_current(@project.title, project_tasks_path(@project)))
+        haml_tag(:span, link_to_unless_current(@project.title, active_project_tasks_path(@project)))
       else
         current_path = current_user ? projects_path : root_path
         haml_tag(:span, link_to_unless_current('Insanely', current_path))
