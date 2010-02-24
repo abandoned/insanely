@@ -1,5 +1,3 @@
-@import partials/navigation.sass
-
 #header
   :color #fff
   :background-color #0079a5
@@ -7,6 +5,7 @@
     :color #fff
 #header .wrapper
   :position relative
+
 #brand
   :padding
     :left 35px
@@ -24,6 +23,7 @@
       :bottom 30px
     +border_radius_top_left(10px)
     +border_radius_bottom_right(10px)
+
 #project-description
   :width 620px
   :margin
@@ -45,6 +45,19 @@
     :padding 20px 25px
     +border_radius(14px)
     :background-color #06557a
+
+#navigation
+  :margin-left 30px
+  li
+    :display inline-block
+    :padding
+      :top 4px
+      :bottom 4px
+      :left 8px
+      :right 8px
+    &.current
+      :background-color= !background_color
+
 #user-nav
   :position absolute
   :right 0
