@@ -201,7 +201,7 @@ pre {
     background-color: #009ecd;
     padding: 10px;
     margin-top: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     border-top-left-radius: 10px;
     -moz-border-radius-topleft: 10px;
     -webkit-border-top-left-radius: 10px;
@@ -210,36 +210,12 @@ pre {
     -webkit-border-bottom-right-radius: 10px; }
 
 /* line 27, ../../../app/stylesheets/partials/_header.sass */
-#project-description {
-  width: 620px;
-  margin-left: 25px;
-  margin-bottom: 25px;
-  padding: 10px;
-  font-size: 1.125em;
-  background: url('/images/blurb_nipple.png') no-repeat 72px 18px; }
-  /* line 36, ../../../app/stylesheets/partials/_header.sass */
-  #project-description .avatar {
-    float: left;
-    margin-top: 3px;
-    width: 48px;
-    margin-right: 26px; }
-  /* line 42, ../../../app/stylesheets/partials/_header.sass */
-  #project-description .blurb {
-    float: left;
-    width: 450px;
-    padding: 20px 25px;
-    border-radius: 14px;
-    -moz-border-radius: 14px;
-    -webkit-border-radius: 14px;
-    background-color: #06557a; }
-
-/* line 49, ../../../app/stylesheets/partials/_header.sass */
 #user-nav {
   position: absolute;
   right: 0;
   bottom: 5px;
   font-size: 0.875em; }
-  /* line 54, ../../../app/stylesheets/partials/_header.sass */
+  /* line 32, ../../../app/stylesheets/partials/_header.sass */
   #user-nav a {
     margin-right: 10px;
     text-decoration: underline; }
