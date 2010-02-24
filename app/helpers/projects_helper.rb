@@ -5,17 +5,19 @@ module ProjectsHelper
   end
   
   def project_links
-    links = [
-      {
-        :name => 'Dashboard',
-        :path => projects_path
-      }
-    ]
+    links = [{
+      :name => 'Dashboard',
+      :path => projects_path
+    }]
     if current_user.projects.archived.size > 0
       links << {
         :name => 'Archived projects',
         :path => archived_projects_path
       }
+    links << {
+      :name => 'Workmates',
+      :path => workmates_path
+    }
     end
     links
   end
