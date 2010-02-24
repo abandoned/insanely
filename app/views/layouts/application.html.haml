@@ -7,9 +7,6 @@
     #header
       .wrapper
         -project_title
-        - if in_project
-          - if @project.description.present?
-            = render 'projects/blurb'
         - if current_user
           = render 'layouts/user_nav'
     #main.clearfix
