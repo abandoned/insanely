@@ -17,7 +17,7 @@ class WorkmatesController < InheritedResources::Base
        end
        redirect_to workmates_path
      else
-       flash.now[:failure] = 'Could not add workmate!'
+       flash.now[:failure] = 'Cannnot invite someone not on the system for now!'
        @workmate = current_user.workmates.build(params[:workmate])
        render :action => 'new'
      end

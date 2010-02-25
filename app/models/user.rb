@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
   has_many :created_projects, :class_name => 'Project', :foreign_key => 'creator_id'
   has_many :participations, :foreign_key => 'participant_id', :dependent => :destroy
   has_many :projects, :through => :participations, :order => 'projects.updated_at DESC'
+  has_many :authored_tasks, :class_name => 'Task', :foreign_key => 'author_id'
   has_many :collaborations, :dependent => :destroy
   has_many :workmates, :through => :collaborations
   has_many :pending_workmates, :through => :collaborations, :source => :user, :conditions => 'collaborations.status = "pending"'
-  has_many :posts, :dependent => :destroy
   has_many :assignments, :foreign_key => 'assignee_id'
   has_many :assigned_tasks, :through => :assignments, :source => :task
   has_many :readerships, :dependent => :destroy

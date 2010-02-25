@@ -7,7 +7,7 @@
   = link_to('Invite a person', new_workmate_path)
 
 -if @workmates.count > 0
-  %ul.workmates= render :partial => 'workmate', :collection => @workmates
+  %ul#workmates= render :partial => 'workmate', :collection => @workmates
 - else
   It's all tabula rasa here.
       

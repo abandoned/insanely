@@ -1,11 +1,15 @@
-- title "Invite workmate", false
+- title 'Invite a person'
 
-- form_for :workmate, @workmate, :url => workmates_path do |f|
+-content_for :aside do
+  = render :partial => 'shared/resource_states', :locals => { :links => project_links}
+
+- form_for(:workmate, @workmate, :url => workmates_path, :html => { :class => 'dressed-up'} ) do |f|
   = f.error_messages
-  %ul
-    %li
+  %dl
+    %dt
       = f.label :email
+    %dd
       = f.text_field :email
-    %li
-      = f.submit 'Invite »', :class => 'button'
+    %dd
+      = f.submit 'Invite person »', :class => 'button'
 

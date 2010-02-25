@@ -1,5 +1,5 @@
 %li.project
-  = image_tag(project.creator.gravatar_url(:size => 30), :class => 'avatar', :title => project.creator.login, :onerror => 'mi  ssing_avatar(this)')
+  = image_tag(project.creator.gravatar_url(:size => 30), :class => 'avatar', :title => project.creator.login, :onerror => 'missing_avatar(this)')
   = link_to(project.title, active_project_tasks_path(project))
   - if project.tasks.assigned_to(current_user).count > 0
     = link_to(assignment_count(project), assigned_project_participant_tasks_path(project, current_user), :class => 'counter')

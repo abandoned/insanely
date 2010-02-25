@@ -150,7 +150,7 @@ form.dressed-up dd {
   margin-bottom: 15px; }
 /* line 5, ../../../app/stylesheets/partials/_form.sass */
 form.dressed-up dt {
-  margin-left: 3px;
+  margin-left: 1px;
   margin-bottom: 3px; }
 /* line 9, ../../../app/stylesheets/partials/_form.sass */
 form.dressed-up input[type=text], form.dressed-up input[type=password], form.dressed-up textarea {
@@ -263,32 +263,38 @@ pre {
 /* line 14, ../../../app/stylesheets/partials/_tasks.sass */
 #search-tasks {
   float: right; }
+  /* line 16, ../../../app/stylesheets/partials/_tasks.sass */
+  #search-tasks input[type=text] {
+    width: 200px;
+    font-size: 1em;
+    border: 1px solid #999; }
 
 /* line 2, ../../../app/stylesheets/partials/_workmates.sass */
-ul.workmates tr {
+#workmates li {
+  position: relative;
+  margin-bottom: 20px;
   background-color: #fff;
-  margin-bottom: 30px; }
-/* line 5, ../../../app/stylesheets/partials/_workmates.sass */
-ul.workmates td {
-  border-bottom: 20px solid #e6e6e6;
-  vertical-align: middle;
-  padding: 15px;
+  padding: 15px; }
+/* line 8, ../../../app/stylesheets/partials/_workmates.sass */
+#workmates .avatar {
+  margin-bottom: -6px;
+  margin-right: 10px; }
+/* line 12, ../../../app/stylesheets/partials/_workmates.sass */
+#workmates a {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -0.4em; }
+
+/* line 18, ../../../app/stylesheets/partials/_workmates.sass */
+.workmate-info {
   font-size: 1.25em;
   font-weight: bold; }
-  /* line 12, ../../../app/stylesheets/partials/_workmates.sass */
-  ul.workmates td:first-child {
-    width: 50px; }
-/* line 15, ../../../app/stylesheets/partials/_workmates.sass */
-ul.workmates tfoot td {
-  padding-top: 0; }
-/* line 17, ../../../app/stylesheets/partials/_workmates.sass */
-ul.workmates img {
-  margin-left: 10px; }
 
 /* line 1, ../../../app/stylesheets/partials/_aside.sass */
 #resource-states {
   width: 290px;
-  margin-top: 15px;
+  margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #fff;
@@ -330,7 +336,8 @@ ul.workmates img {
   margin-left: 15px; }
   /* line 41, ../../../app/stylesheets/partials/_aside.sass */
   #tag-cloud a {
-    color: #fff; }
+    color: #fff;
+    padding-right: 5px; }
 
 /* line 6, ../../../app/stylesheets/partials/_main.sass */
 #main {

@@ -1,19 +1,21 @@
-ul.workmates
-  tr
-    :background-color #fff
-    :margin-bottom 30px
-  td
-    :border-bottom 20px solid #e6e6e6
-    :vertical-align middle
-    :padding 15px
-    :font
-      :size 1.25em
-      :weight bold
-    &:first-child
-      :width 50px
-  tfoot
-    td
-      padding-top: 0
-  img
+#workmates
+  li
+    :position relative
     :margin
-      :left 10px
+      :bottom 20px
+    :background-color #fff
+    :padding 15px
+  .avatar
+    :margin
+      :bottom -6px
+      :right 10px
+  a
+    :position absolute
+    :top 50%
+    :right 15px
+    :margin
+      :top -0.4em
+.workmate-info
+  :font
+    :size 1.25em
+    :weight bold
