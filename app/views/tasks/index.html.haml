@@ -5,17 +5,14 @@
   = render :partial => 'shared/resource_states', :locals => { :links => task_links}
 
 = render :partial => 'tasks/search'
-.actions
+#actions
   = link_to('Add a task', new_resource_path)
+- if @project.description.present?
+  #project-description
+    = sanitize(auto_link(textilize(@project.description)))
 - unless @tasks.blank?
   %table#tasks
-    %tfoot
-      %tr
-        %td{:colspan => 2}
-          = will_paginate @tasks
     = render :partial => 'task', :collection => @tasks, :locals => { :show_comments => true }
-- if @project.description.present?
-  = sanitize(auto_link(textilize(@project.description)))
 %p#project-settings
   This project is private and has
   = pluralize(@project.participants.size, 'participant') + '.'

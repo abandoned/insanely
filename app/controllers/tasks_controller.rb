@@ -5,7 +5,7 @@ class TasksController < InheritedResources::Base
   after_filter :notify,     :only => [:complete, :uncomplete, :icebox, :defrost]
   
   belongs_to :project
-  respond_to :html, :xml
+  respond_to :html
   has_scope :query, :only => [:index]
   inherits_states
   
@@ -92,7 +92,7 @@ class TasksController < InheritedResources::Base
   private
   
   def collection
-    @tasks ||= end_of_association_chain.paginate(:page => params[:page], :include => [:assets])
+    @tasks ||= end_of_association_chain.all(:include => [:assets])
   end
   
   def begin_of_association_chain

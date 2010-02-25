@@ -1,10 +1,104 @@
 #tasks
   :margin
     :bottom 20px
+  td
+    vertical-align: top
+    padding-bottom: 1em
+
+  p
+    margin-bottom: 0.5em
+
+  .avatar
+    margin:
+      top: 5px
+      right: 30px
+
+  .bubble
+    position: relative
+    padding: 1em 0.8em 0.7em
+    :background-color #fff
+    +border_radius_top_right(15px)
+    +border_radius_bottom_left(15px)
+
+    strong
+      color: #fff
+      font-weight: normal
+      text-decoration: underline
+
+    em
+      text-decoration: underline
+
+    .asset
+
+      img.attached_thumb
+        margin-bottom: 0.7em
+
+      &:last-child
+
+        img.attached_thumb
+          margin-bottom: 0
+
+  .avatar, .bubble
+    float: left
+
+  .meta-info
+    clear: left
+    color: #bbb
+
+    a
+      color: #bbb
+
+  tr.task
+    .meta-info
+      padding:
+        top: 0.5em
+        left: 1em
+
+  .comment
+
+    td:last-child
+      padding: 0.4em 0.8em 1em
+
+    .asset
+
+      img
+        margin-bottom: 0.7em
+
+.image-assets
+
+  .asset
+    display: inline
+
+    img
+      margin: 0.5em
+
+.image-assets + .file-assets
+  margin-top: 1em
+
+.file-assets
+
+  .asset
+    margin-bottom: 0.5em
+    
+    
 #tag-cloud
   line-height: 1.4
   :padding
     :bottom 15px
+#project-description
+  :color #333
+  :background-color #fff
+  :border 3px solid #ccc
+
+  :padding 20px
+  :margin
+    :bottom 30px
+  :font
+    :size 1.25em
+  +border_radius_top_right(15px)
+  +border_radius_top_left(15px)
+  +border_radius_bottom_right(15px)
+  :line-height 1.2
 #project-settings
   :margin
     :top 0px
@@ -13,7 +107,6 @@
   :border-top 5px solid #ccc
 #search-tasks
   :float right
-  input[type=text]
-    :width 200px
-    :font-size 1em
-    :border 1px solid #999
+  :margin
+    :top -5px
+    :right -5px

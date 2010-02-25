@@ -126,21 +126,21 @@ a.button:last-child {
 /* line 1, ../../../app/stylesheets/partials/_flash.sass */
 .flash_wrapper {
   display: block;
-  margin-bottom: 1.5em;
-  width: 60%; }
+  margin-bottom: 20px;
+  width: 75%; }
 
-/* line 6, ../../../app/stylesheets/partials/_flash.sass */
+/* line 5, ../../../app/stylesheets/partials/_flash.sass */
 #flash_success, #flash_notice, #flash_failure, #flash_error {
-  padding: 0.4em;
+  padding: 7px 10px;
   border-width: 1px;
   border-style: solid; }
 
-/* line 11, ../../../app/stylesheets/partials/_flash.sass */
+/* line 10, ../../../app/stylesheets/partials/_flash.sass */
 #flash_success, #flash_notice {
   background-color: #cfc;
   border-color: #6c6; }
 
-/* line 14, ../../../app/stylesheets/partials/_flash.sass */
+/* line 13, ../../../app/stylesheets/partials/_flash.sass */
 #flash_failure, #flash_error {
   background-color: #fcc;
   border-color: #c66; }
@@ -248,26 +248,113 @@ pre {
 /* line 1, ../../../app/stylesheets/partials/_tasks.sass */
 #tasks {
   margin-bottom: 20px; }
+  /* line 4, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks td {
+    vertical-align: top;
+    padding-bottom: 1em; }
+  /* line 8, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks p {
+    margin-bottom: 0.5em; }
+  /* line 11, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .avatar {
+    margin-top: 5px;
+    margin-right: 30px; }
+  /* line 16, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .bubble {
+    position: relative;
+    padding: 1em 0.8em 0.7em;
+    background-color: #fff;
+    border-top-right-radius: 15px;
+    -moz-border-radius-topright: 15px;
+    -webkit-border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-bottom-left-radius: 15px; }
+    /* line 23, ../../../app/stylesheets/partials/_tasks.sass */
+    #tasks .bubble strong {
+      color: #fff;
+      font-weight: normal;
+      text-decoration: underline; }
+    /* line 28, ../../../app/stylesheets/partials/_tasks.sass */
+    #tasks .bubble em {
+      text-decoration: underline; }
+    /* line 33, ../../../app/stylesheets/partials/_tasks.sass */
+    #tasks .bubble .asset img.attached_thumb {
+      margin-bottom: 0.7em; }
+    /* line 38, ../../../app/stylesheets/partials/_tasks.sass */
+    #tasks .bubble .asset:last-child img.attached_thumb {
+      margin-bottom: 0; }
+  /* line 41, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .avatar, #tasks .bubble {
+    float: left; }
+  /* line 44, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .meta-info {
+    clear: left;
+    color: #bbb; }
+    /* line 48, ../../../app/stylesheets/partials/_tasks.sass */
+    #tasks .meta-info a {
+      color: #bbb; }
+  /* line 52, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks tr.task .meta-info {
+    padding-top: 0.5em;
+    padding-left: 1em; }
+  /* line 59, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .comment td:last-child {
+    padding: 0.4em 0.8em 1em; }
+  /* line 64, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .comment .asset img {
+    margin-bottom: 0.7em; }
 
-/* line 4, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 69, ../../../app/stylesheets/partials/_tasks.sass */
+.image-assets .asset {
+  display: inline; }
+  /* line 72, ../../../app/stylesheets/partials/_tasks.sass */
+  .image-assets .asset img {
+    margin: 0.5em; }
+
+/* line 75, ../../../app/stylesheets/partials/_tasks.sass */
+.image-assets + .file-assets {
+  margin-top: 1em; }
+
+/* line 80, ../../../app/stylesheets/partials/_tasks.sass */
+.file-assets .asset {
+  margin-bottom: 0.5em; }
+
+/* line 84, ../../../app/stylesheets/partials/_tasks.sass */
 #tag-cloud {
   line-height: 1.4;
   padding-bottom: 15px; }
 
-/* line 8, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 88, ../../../app/stylesheets/partials/_tasks.sass */
+#project-description {
+  color: #333;
+  background-color: #fff;
+  border: 3px solid #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+  font-size: 1.25em;
+  border-top-right-radius: 15px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  -webkit-border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  line-height: 1.2; }
+
+/* line 102, ../../../app/stylesheets/partials/_tasks.sass */
 #project-settings {
   margin-top: 0px;
   padding-top: 20px;
   border-top: 5px solid #ccc; }
 
-/* line 14, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 108, ../../../app/stylesheets/partials/_tasks.sass */
 #search-tasks {
-  float: right; }
-  /* line 16, ../../../app/stylesheets/partials/_tasks.sass */
-  #search-tasks input[type=text] {
-    width: 200px;
-    font-size: 1em;
-    border: 1px solid #999; }
+  float: right;
+  margin-top: -5px;
+  margin-right: -5px; }
 
 /* line 2, ../../../app/stylesheets/partials/_workmates.sass */
 #workmates li {
@@ -349,7 +436,6 @@ pre {
 
 /* line 12, ../../../app/stylesheets/partials/_main.sass */
 #content {
-  min-height: 200px;
   width: 600px;
   padding: 30px;
   border: #fff 5px solid;
@@ -361,28 +447,28 @@ pre {
   border-bottom-right-radius: 10px;
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-right-radius: 10px; }
-  /* line 21, ../../../app/stylesheets/partials/_main.sass */
+  /* line 20, ../../../app/stylesheets/partials/_main.sass */
   #content a {
     color: #009fcd; }
-  /* line 23, ../../../app/stylesheets/partials/_main.sass */
+  /* line 22, ../../../app/stylesheets/partials/_main.sass */
   #content a.button {
     color: #333; }
-  /* line 25, ../../../app/stylesheets/partials/_main.sass */
+  /* line 24, ../../../app/stylesheets/partials/_main.sass */
   #content p {
     margin-bottom: 20px; }
-    /* line 28, ../../../app/stylesheets/partials/_main.sass */
+    /* line 27, ../../../app/stylesheets/partials/_main.sass */
     #content p:last-child {
       margin-bottom: 0; }
 
-/* line 31, ../../../app/stylesheets/partials/_main.sass */
+/* line 30, ../../../app/stylesheets/partials/_main.sass */
 #content, #aside {
   float: left; }
 
-/* line 33, ../../../app/stylesheets/partials/_main.sass */
-.actions {
+/* line 32, ../../../app/stylesheets/partials/_main.sass */
+#actions {
   margin-bottom: 30px; }
 
-/* line 37, ../../../app/stylesheets/partials/_main.sass */
+/* line 36, ../../../app/stylesheets/partials/_main.sass */
 #welcome {
   color: #00ab2b;
   font-size: 1.5em;

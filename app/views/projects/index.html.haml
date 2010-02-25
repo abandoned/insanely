@@ -4,7 +4,7 @@
   = render :partial => 'shared/resource_states', :locals => { :links => project_links}
 
 - if controller.action_name == 'index'
-  .actions= link_to('Create a new project', new_project_path)
+  #actions= link_to('Create a new project', new_project_path)
 - if @projects.size > 0
   %ul#projects= render :partial => 'project', :collection => @projects
 - else

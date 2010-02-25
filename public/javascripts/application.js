@@ -1,35 +1,58 @@
-function missing_avatar(el) {
-  el.src = '/images/missing_thumb.png'
+function missing_avatar(e) {
+  e.src = '/images/missing_thumb.png';
 }
 
-$(document).ready(function() {
+jQuery(function() {
   
-  $.fn.appendAttachment = function() {
-    var parent = $(this).parent()
+  // Search button
+  var $oldSearch = jQuery('#query');
+  var $newSearch = jQuery('<input type="search">');
+  $newSearch.attr({
+     name     : 'query',
+     id       : 'query',
+     value    : $oldSearch.val(),
+     results  : '5'
+  });
+  $oldSearch.replaceWith($newSearch);
+  jQuery('#search-tasks input[type=submit]').hide();
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  jQuery.fn.appendAttachment = function() {
+    var parent = jQuery(this).parent()
     var ts = new Date().getTime()
     var input = parent.html().replace(/attributes]\[\d+]/, 'attributes][' + ts + ']').replace(/attributes_\d+_/, 'attributes_' + ts + '_')
-    var wrapper = $('<li/>').html(input)
+    var wrapper = jQuery('<li/>').html(input)
     parent.after(wrapper)
     wrapper.children().change(function() {
-      $(this).appendAttachment()
+      jQuery(this).appendAttachment()
     });
     return this
   }
     
   // Add counter to textarea
-  if ($('textarea').length > 0) {
+  if (jQuery('textarea').length > 0) {
     
-    if ($('#task_message').length > 0) {
+    if (jQuery('#task_message').length > 0) {
       var max_chars = 255
     } else {
       var max_chars = 1000
     }
     
-    $('textarea').each(function() {  
-      $('textarea').parent().before('<div class="counter"></div>')
+    jQuery('textarea').each(function() {  
+      jQuery('textarea').parent().before('<div class="counter"></div>')
     })
     
-    $('textarea').each(function() {
+    jQuery('textarea').each(function() {
       
       var countChars = function(val) {
         var cur = 0
@@ -37,57 +60,57 @@ $(document).ready(function() {
           cur = val.length
         }
         var left = max_chars - cur
-        $('div.counter').text(left.toString())
+        jQuery('div.counter').text(left.toString())
       }
       
-      var old = $(this).attr('value')
-      countChars($(this).attr('value'))
+      var old = jQuery(this).attr('value')
+      countChars(jQuery(this).attr('value'))
       
       var limitChars = function() {
-        old = $(this).attr('value')
+        old = jQuery(this).attr('value')
         if (old.length > max_chars) { alert(old.length)}
         return (old.length < max_chars)
       }
       
-      $(this)
+      jQuery(this)
         .bind('keypress', limitChars)
         .bind('paste', limitChars)
 
-      $(this).keyup(function() {
-        if ($(this).attr("value").length > max_chars) {
-          $(this).attr("value", old)
+      jQuery(this).keyup(function() {
+        if (jQuery(this).attr("value").length > max_chars) {
+          jQuery(this).attr("value", old)
         }
-        countChars($(this).attr('value'))
+        countChars(jQuery(this).attr('value'))
       })
     })
     
   }
   
   // Attach multiple files
-  $("input[type=file]").change(function() {
-    $(this).appendAttachment()
+  jQuery("input[type=file]").change(function() {
+    jQuery(this).appendAttachment()
   });
   
-  var viewportWidth = $(window).width();
+  var viewportWidth = jQuery(window).width();
   if(viewportWidth < 800) {
-    $('#aside').remove()
-    $('#header').find('select').remove()
+    jQuery('#aside').remove()
+    jQuery('#header').find('select').remove()
   } else {
   
     // Dress up search form
-    $('form#search').find('input[type=submit]').remove();
-    $('form#search').find('#query').map(function() {
-      if($(this).val() == '' || $(this).val() == 'Type your query') {
-        $(this).val('Type your query').addClass('labeled').focus(function() {
-          $(this).val('').removeClass('labeled')
+    jQuery('form#search').find('input[type=submit]').remove();
+    jQuery('form#search').find('#query').map(function() {
+      if(jQuery(this).val() == '' || jQuery(this).val() == 'Type your query') {
+        jQuery(this).val('Type your query').addClass('labeled').focus(function() {
+          jQuery(this).val('').removeClass('labeled')
         });
       }
     });
     
     // Rework nav select
-    $('#header select').change(function() {
-      if($(this).val() != '') {
-        window.location = $(this).val()
+    jQuery('#header select').change(function() {
+      if(jQuery(this).val() != '') {
+        window.location = jQuery(this).val()
       }
     })
   }
