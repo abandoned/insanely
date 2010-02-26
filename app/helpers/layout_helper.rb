@@ -30,7 +30,7 @@ module LayoutHelper
       if in_project
         haml_tag(:span) do
           haml_concat(link_to_unless_current(@project.title, active_project_tasks_path(@project)))
-          if assignment_count(@project).present? assignment_count(@project) > 0
+          if assignment_count(@project).present? && assignment_count(@project) > 0
             haml_concat(link_to(assignment_count(@project), assigned_project_participant_tasks_path(@project, current_user), :id => 'assignment-count'))
           end
         end
