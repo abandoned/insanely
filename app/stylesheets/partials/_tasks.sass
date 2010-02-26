@@ -1,104 +1,60 @@
 #tasks
   :margin
     :bottom 20px
+  :width 100%
   td
-    vertical-align: top
-    padding-bottom: 1em
-
-  p
-    margin-bottom: 0.5em
-
-  .avatar
-    margin:
-      top: 5px
-      right: 30px
-
+    :vertical-align top
+    :padding
+      :bottom 30px
+    &:first-child
+      :width 80px
   .bubble
-    position: relative
-    padding: 1em 0.8em 0.7em
+    :position relative
+    :padding 20px
     :background-color #fff
     +border_radius_top_right(15px)
     +border_radius_bottom_left(15px)
-
+    strong, em
+      :color #00aa2a
     strong
-      color: #fff
-      font-weight: normal
-      text-decoration: underline
-
+      :text-decoration underline
+      :font
+        :weight bold
     em
-      text-decoration: underline
-
+      :font
+        :style italic
     .asset
-
-      img.attached_thumb
-        margin-bottom: 0.7em
-
+      :margin
+        :bottom 10px
       &:last-child
+        :margin
+          :bottom 0
+  .task-content
+    :font-size 1.125em
+  .task-actions
+    :position absolute
+    :top 4px
+    :right 20px
+    :font
+      :size 0.875em
+  .task-actions, .task-actions a
+    :color #ccc
+  .meta
+    :font
+      :size 0.875em
+  .meta, .meta a
+    :color #bbb
+  tr.task, tr#project-description
+    .meta
+      :padding
+        :top 5px
+        :left 15px
 
-        img.attached_thumb
-          margin-bottom: 0
-
-  .avatar, .bubble
-    float: left
-
-  .meta-info
-    clear: left
-    color: #bbb
-
-    a
-      color: #bbb
-
-  tr.task
-    .meta-info
-      padding:
-        top: 0.5em
-        left: 1em
-
-  .comment
-
-    td:last-child
-      padding: 0.4em 0.8em 1em
-
-    .asset
-
-      img
-        margin-bottom: 0.7em
-
-.image-assets
-
-  .asset
-    display: inline
-
-    img
-      margin: 0.5em
-
-.image-assets + .file-assets
-  margin-top: 1em
-
-.file-assets
-
-  .asset
-    margin-bottom: 0.5em
-    
-    
 #tag-cloud
   line-height: 1.4
   :padding
     :bottom 15px
-#project-description
-  :color #333
-  :background-color #fff
-  :border 3px solid #ccc
 
-  :padding 20px
-  :margin
-    :bottom 30px
-  :font
-    :size 1.25em
-  +border_radius_top_right(15px)
-  +border_radius_top_left(15px)
-  +border_radius_bottom_right(15px)
-  :line-height 1.2
 #project-settings
   :margin
     :top 0px
@@ -109,4 +65,3 @@
   :float right
   :margin
     :top -5px
-    :right -5px

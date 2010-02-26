@@ -83,6 +83,10 @@ body, html {
 .large {
   font-size: 1.25em; }
 
+/* line 28, ../../../app/stylesheets/partials/_base.sass */
+.small {
+  font-size: 0.8125em; }
+
 /* line 3, ../../../app/stylesheets/partials/_links.sass */
 a {
   text-decoration: none; }
@@ -163,6 +167,11 @@ form.dressed-up textarea {
   height: 90px; }
 /* line 16, ../../../app/stylesheets/partials/_form.sass */
 form.dressed-up label {
+  font-weight: bold; }
+/* line 18, ../../../app/stylesheets/partials/_form.sass */
+form.dressed-up .counter {
+  margin-bottom: 3px;
+  color: #00ab2b;
   font-weight: bold; }
 
 /* line 1, ../../../app/stylesheets/partials/_pre.sass */
@@ -247,22 +256,19 @@ pre {
 
 /* line 1, ../../../app/stylesheets/partials/_tasks.sass */
 #tasks {
-  margin-bottom: 20px; }
-  /* line 4, ../../../app/stylesheets/partials/_tasks.sass */
+  margin-bottom: 20px;
+  width: 100%; }
+  /* line 5, ../../../app/stylesheets/partials/_tasks.sass */
   #tasks td {
     vertical-align: top;
-    padding-bottom: 1em; }
-  /* line 8, ../../../app/stylesheets/partials/_tasks.sass */
-  #tasks p {
-    margin-bottom: 0.5em; }
+    padding-bottom: 30px; }
+    /* line 9, ../../../app/stylesheets/partials/_tasks.sass */
+    #tasks td:first-child {
+      width: 80px; }
   /* line 11, ../../../app/stylesheets/partials/_tasks.sass */
-  #tasks .avatar {
-    margin-top: 5px;
-    margin-right: 30px; }
-  /* line 16, ../../../app/stylesheets/partials/_tasks.sass */
   #tasks .bubble {
     position: relative;
-    padding: 1em 0.8em 0.7em;
+    padding: 20px;
     background-color: #fff;
     border-top-right-radius: 15px;
     -moz-border-radius-topright: 15px;
@@ -270,91 +276,75 @@ pre {
     border-bottom-left-radius: 15px;
     -moz-border-radius-bottomleft: 15px;
     -webkit-border-bottom-left-radius: 15px; }
-    /* line 23, ../../../app/stylesheets/partials/_tasks.sass */
+    /* line 17, ../../../app/stylesheets/partials/_tasks.sass */
+    #tasks .bubble strong, #tasks .bubble em {
+      color: #00aa2a; }
+    /* line 19, ../../../app/stylesheets/partials/_tasks.sass */
     #tasks .bubble strong {
-      color: #fff;
-      font-weight: normal;
-      text-decoration: underline; }
-    /* line 28, ../../../app/stylesheets/partials/_tasks.sass */
+      text-decoration: underline;
+      font-weight: bold; }
+    /* line 23, ../../../app/stylesheets/partials/_tasks.sass */
     #tasks .bubble em {
-      text-decoration: underline; }
-    /* line 33, ../../../app/stylesheets/partials/_tasks.sass */
-    #tasks .bubble .asset img.attached_thumb {
-      margin-bottom: 0.7em; }
-    /* line 38, ../../../app/stylesheets/partials/_tasks.sass */
-    #tasks .bubble .asset:last-child img.attached_thumb {
-      margin-bottom: 0; }
-  /* line 41, ../../../app/stylesheets/partials/_tasks.sass */
-  #tasks .avatar, #tasks .bubble {
-    float: left; }
-  /* line 44, ../../../app/stylesheets/partials/_tasks.sass */
-  #tasks .meta-info {
-    clear: left;
+      font-style: italic; }
+    /* line 26, ../../../app/stylesheets/partials/_tasks.sass */
+    #tasks .bubble .asset {
+      margin-bottom: 10px; }
+      /* line 29, ../../../app/stylesheets/partials/_tasks.sass */
+      #tasks .bubble .asset:last-child {
+        margin-bottom: 0; }
+  /* line 32, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .task-content {
+    font-size: 1.125em; }
+  /* line 34, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .task-actions {
+    position: absolute;
+    top: 4px;
+    right: 20px;
+    font-size: 0.875em; }
+  /* line 40, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .task-actions, #tasks .task-actions a {
+    color: #ccc; }
+  /* line 42, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .meta {
+    font-size: 0.875em; }
+  /* line 45, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .meta, #tasks .meta a {
     color: #bbb; }
-    /* line 48, ../../../app/stylesheets/partials/_tasks.sass */
-    #tasks .meta-info a {
-      color: #bbb; }
-  /* line 52, ../../../app/stylesheets/partials/_tasks.sass */
-  #tasks tr.task .meta-info {
-    padding-top: 0.5em;
-    padding-left: 1em; }
-  /* line 59, ../../../app/stylesheets/partials/_tasks.sass */
-  #tasks .comment td:last-child {
-    padding: 0.4em 0.8em 1em; }
-  /* line 64, ../../../app/stylesheets/partials/_tasks.sass */
-  #tasks .comment .asset img {
-    margin-bottom: 0.7em; }
+  /* line 48, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks tr.task .meta, #tasks tr#project-description .meta {
+    padding-top: 5px;
+    padding-left: 15px; }
 
-/* line 69, ../../../app/stylesheets/partials/_tasks.sass */
-.image-assets .asset {
-  display: inline; }
-  /* line 72, ../../../app/stylesheets/partials/_tasks.sass */
-  .image-assets .asset img {
-    margin: 0.5em; }
-
-/* line 75, ../../../app/stylesheets/partials/_tasks.sass */
-.image-assets + .file-assets {
-  margin-top: 1em; }
-
-/* line 80, ../../../app/stylesheets/partials/_tasks.sass */
-.file-assets .asset {
-  margin-bottom: 0.5em; }
-
-/* line 84, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 53, ../../../app/stylesheets/partials/_tasks.sass */
 #tag-cloud {
   line-height: 1.4;
   padding-bottom: 15px; }
 
-/* line 88, ../../../app/stylesheets/partials/_tasks.sass */
-#project-description {
-  color: #333;
-  background-color: #fff;
-  border: 3px solid #ccc;
-  padding: 20px;
-  margin-bottom: 30px;
-  font-size: 1.25em;
-  border-top-right-radius: 15px;
-  -moz-border-radius-topright: 15px;
-  -webkit-border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  -moz-border-radius-topleft: 15px;
-  -webkit-border-top-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  -moz-border-radius-bottomright: 15px;
-  -webkit-border-bottom-right-radius: 15px;
-  line-height: 1.2; }
-
-/* line 102, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 58, ../../../app/stylesheets/partials/_tasks.sass */
 #project-settings {
   margin-top: 0px;
   padding-top: 20px;
   border-top: 5px solid #ccc; }
 
-/* line 108, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 64, ../../../app/stylesheets/partials/_tasks.sass */
 #search-tasks {
   float: right;
-  margin-top: -5px;
-  margin-right: -5px; }
+  margin-top: -5px; }
+
+/* line 2, ../../../app/stylesheets/partials/_assets.sass */
+.image-assets .asset {
+  display: inline; }
+  /* line 4, ../../../app/stylesheets/partials/_assets.sass */
+  .image-assets .asset img {
+    margin: 0.5em; }
+
+/* line 6, ../../../app/stylesheets/partials/_assets.sass */
+.image-assets + .file-assets {
+  margin-top: 1em; }
+
+/* line 9, ../../../app/stylesheets/partials/_assets.sass */
+.file-assets .asset {
+  margin-bottom: 0.5em; }
 
 /* line 2, ../../../app/stylesheets/partials/_workmates.sass */
 #workmates li {
@@ -426,7 +416,7 @@ pre {
     color: #fff;
     padding-right: 5px; }
 
-/* line 6, ../../../app/stylesheets/partials/_main.sass */
+/* line 7, ../../../app/stylesheets/partials/_main.sass */
 #main {
   margin-left: auto;
   margin-right: auto;
@@ -434,7 +424,7 @@ pre {
   margin-top: 20px;
   margin-bottom: 10px; }
 
-/* line 12, ../../../app/stylesheets/partials/_main.sass */
+/* line 13, ../../../app/stylesheets/partials/_main.sass */
 #content {
   width: 600px;
   padding: 30px;
@@ -447,28 +437,28 @@ pre {
   border-bottom-right-radius: 10px;
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-right-radius: 10px; }
-  /* line 20, ../../../app/stylesheets/partials/_main.sass */
+  /* line 21, ../../../app/stylesheets/partials/_main.sass */
   #content a {
     color: #009fcd; }
-  /* line 22, ../../../app/stylesheets/partials/_main.sass */
+  /* line 23, ../../../app/stylesheets/partials/_main.sass */
   #content a.button {
     color: #333; }
-  /* line 24, ../../../app/stylesheets/partials/_main.sass */
+  /* line 25, ../../../app/stylesheets/partials/_main.sass */
   #content p {
     margin-bottom: 20px; }
-    /* line 27, ../../../app/stylesheets/partials/_main.sass */
+    /* line 28, ../../../app/stylesheets/partials/_main.sass */
     #content p:last-child {
       margin-bottom: 0; }
 
-/* line 30, ../../../app/stylesheets/partials/_main.sass */
+/* line 31, ../../../app/stylesheets/partials/_main.sass */
 #content, #aside {
   float: left; }
 
-/* line 32, ../../../app/stylesheets/partials/_main.sass */
+/* line 33, ../../../app/stylesheets/partials/_main.sass */
 #actions {
   margin-bottom: 30px; }
 
-/* line 36, ../../../app/stylesheets/partials/_main.sass */
+/* line 37, ../../../app/stylesheets/partials/_main.sass */
 #welcome {
   color: #00ab2b;
   font-size: 1.5em;

@@ -1,5 +1,5 @@
-function missing_avatar(e) {
-  e.src = '/images/missing_thumb.png';
+function missing_avatar(element) {
+  element.src = '/images/missing_thumb.png';
 }
 
 jQuery(function() {
@@ -16,6 +16,57 @@ jQuery(function() {
   $oldSearch.replaceWith($newSearch);
   jQuery('#search-tasks input[type=submit]').hide();
   
+  // Task actions
+  jQuery('.task-actions').hide();
+  jQuery('.task .bubble').hover(
+    function() {
+      jQuery(this).find('.task-actions').show();
+    },
+    function() {
+      jQuery(this).find('.task-actions').hide();
+    }
+  );
+  
+  // Add comment
+  var $addComment = jQuery('<div id="add-comment"><a href="#">Add a comment</a></div>');
+  var $newCommentForm = jQuery('#new_comment');
+  $newCommentForm.before($addComment).hide();
+  $addComment.click(function() {
+    $newCommentForm.show();
+    jQuery(this).hide();
+    return false;
+  });
+  
+  // Textarea counter
+  if (jQuery('textarea').length > 0) {
+    var maxChars = (jQuery('#task_message').length > 0) ? 255 : 1000;
+    var oldMsg = jQuery(this).attr('value');
+    var countChars = function(val) {
+      var cur = 0;
+      if(val) {
+        cur = val.length;
+      }
+      var charsLeft = maxChars - cur;
+      jQuery('div.counter').text(charsLeft.toString())
+    }
+    var limitChars = function() {
+      oldMsg = jQuery(this).attr('value');
+      return (oldMsg.length < maxChars);
+    }
+    
+    jQuery('textarea').before('<div class="counter"></div>').each(function() {
+      countChars(jQuery(this).attr('value'));
+      jQuery(this)
+        .bind('keypress', limitChars)
+        .bind('paste', limitChars)
+        .bind('keyup', function() {
+          if (jQuery(this).attr('value').length > maxChars) {
+            jQuery(this).attr('value', oldMsg);
+          }
+          countChars(jQuery(this).attr('value'));
+        });
+    });
+  }
   
   
   
@@ -24,6 +75,11 @@ jQuery(function() {
   
   
   
+  
+  
+  
+  
+  // Refactor following
   
   
   
@@ -37,53 +93,6 @@ jQuery(function() {
       jQuery(this).appendAttachment()
     });
     return this
-  }
-    
-  // Add counter to textarea
-  if (jQuery('textarea').length > 0) {
-    
-    if (jQuery('#task_message').length > 0) {
-      var max_chars = 255
-    } else {
-      var max_chars = 1000
-    }
-    
-    jQuery('textarea').each(function() {  
-      jQuery('textarea').parent().before('<div class="counter"></div>')
-    })
-    
-    jQuery('textarea').each(function() {
-      
-      var countChars = function(val) {
-        var cur = 0
-        if(val) {
-          cur = val.length
-        }
-        var left = max_chars - cur
-        jQuery('div.counter').text(left.toString())
-      }
-      
-      var old = jQuery(this).attr('value')
-      countChars(jQuery(this).attr('value'))
-      
-      var limitChars = function() {
-        old = jQuery(this).attr('value')
-        if (old.length > max_chars) { alert(old.length)}
-        return (old.length < max_chars)
-      }
-      
-      jQuery(this)
-        .bind('keypress', limitChars)
-        .bind('paste', limitChars)
-
-      jQuery(this).keyup(function() {
-        if (jQuery(this).attr("value").length > max_chars) {
-          jQuery(this).attr("value", old)
-        }
-        countChars(jQuery(this).attr('value'))
-      })
-    })
-    
   }
   
   // Attach multiple files

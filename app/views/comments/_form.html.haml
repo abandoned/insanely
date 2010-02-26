@@ -1,12 +1,12 @@
-- form_for([@project, @task, setup_assets(@comment)], :html => { :multipart => true }) do |f|
+- form_for([@project, @task, setup_assets(@comment)], :html => { :class => 'dressed-up', :multipart => true }) do |f|
   = f.error_messages
-  %ul
-    %li
+  %dl
+    %dd
       = f.text_area :message, :rows => 5
     = render :partial => 'assets/form', :locals => { :form => f }
     - if @project.participants.count > 1
-      %li
+      %dd
         = check_box_tag :notify
         %span.small Notify others by email
-    %li
+    %dd
       = f.submit('Leave comment »', :class => 'no-margin button')

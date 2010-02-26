@@ -37,26 +37,11 @@
   #footer a {
     text-decoration: none; }
 
-/* line 56, ../../../app/stylesheets/application.sass */
-#flash_success, #flash_failure {
-  padding: 0.4em;
-  margin-bottom: 1.5em; }
-
-/* line 60, ../../../app/stylesheets/application.sass */
-#flash_success {
-  background-color: #cfc;
-  border: solid 1px #6c6; }
-
-/* line 64, ../../../app/stylesheets/application.sass */
-#flash_failure {
-  background-color: #fcc;
-  border: solid 1px #c66; }
-
-/* line 68, ../../../app/stylesheets/application.sass */
+/* line 58, ../../../app/stylesheets/application.sass */
 .fieldWithErrors {
   display: inline; }
 
-/* line 72, ../../../app/stylesheets/application.sass */
+/* line 62, ../../../app/stylesheets/application.sass */
 #errorExplanation {
   width: 400px;
   border: 1px solid #cf0000;
@@ -64,7 +49,7 @@
   padding-bottom: 12px;
   margin-bottom: 20px;
   background-color: #f0f0f0; }
-  /* line 80, ../../../app/stylesheets/application.sass */
+  /* line 70, ../../../app/stylesheets/application.sass */
   #errorExplanation h2 {
     text-align: left;
     font-weight: bold;
@@ -73,21 +58,21 @@
     margin: 0;
     background-color: #c00;
     color: #fff; }
-  /* line 89, ../../../app/stylesheets/application.sass */
+  /* line 79, ../../../app/stylesheets/application.sass */
   #errorExplanation p {
     font-size: 1em;
     color: #333;
     margin-bottom: 0;
     padding: 0.3em; }
-  /* line 95, ../../../app/stylesheets/application.sass */
+  /* line 85, ../../../app/stylesheets/application.sass */
   #errorExplanation ul {
     margin: 0.1em 1.2em; }
-    /* line 98, ../../../app/stylesheets/application.sass */
+    /* line 88, ../../../app/stylesheets/application.sass */
     #errorExplanation ul li {
       margin-left: 2em;
       font-size: 12px;
       list-style: disc; }
 
-/* line 104, ../../../app/stylesheets/application.sass */
+/* line 94, ../../../app/stylesheets/application.sass */
 .highlighted {
   background-color: #ffa; }

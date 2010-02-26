@@ -7,11 +7,18 @@
 = render :partial => 'tasks/search'
 #actions
   = link_to('Add a task', new_resource_path)
-- if @project.description.present?
-  #project-description
-    = sanitize(auto_link(textilize(@project.description)))
-- unless @tasks.blank?
+- unless @tasks.blank? && @project.description.blank?
   %table#tasks
+    - if @project.description.present?
+      %tr#project-description
+        %td
+          = image_tag(@project.creator.gravatar_url(:size => 48), :class => 'avatar', :title => @project.creator.login, :onerror => 'missing_avatar(this)')
+        %td
+          .bubble
+            .task-content
+              = sanitize(auto_link(textilize(@project.description)))
+          .meta
+            = "Posted #{time_ago_in_words(@project.created_at)} ago"
     = render :partial => 'task', :collection => @tasks, :locals => { :show_comments => true }
 %p#project-settings
   This project is private and has

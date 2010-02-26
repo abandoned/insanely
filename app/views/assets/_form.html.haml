@@ -1,9 +1,9 @@
 - form.fields_for :assets do |asset_form|
   - if asset_form.object.new_record?
-    %li
+    %dd
       = asset_form.file_field :file
   - else
-    %li
+    %dd
       = asset_form.check_box '_delete'
       = asset_form.label 'Delete', nil, :class => 'no-float'
       = render :partial => 'assets/asset', :locals => { :asset => asset_form.object }

@@ -1,8 +1,11 @@
-- title @project.title, true, project_tasks_path(@project)
+- title @project.title
+
+-content_for :aside do
+  = render :partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags }
+  = render :partial => 'shared/resource_states', :locals => { :links => task_links}
 
 .image-assets
   = render :partial => 'asset', :collection => @images
-
 .file-assets
   = render :partial => 'asset', :collection => @files
     

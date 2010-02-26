@@ -1,12 +1,12 @@
-- form_for([@project, setup_assets(@task)], :html => { :multipart => true }) do |f|
+- form_for([@project, setup_assets(@task)], :html => { :class => 'dressed-up', :multipart => true }) do |f|
   = f.error_messages
-  %ul
-    %li
+  %dl
+    %dd
       = f.text_area :message, :rows => 5
     = render :partial => 'assets/form', :locals => { :form => f }
     -if f.object.new_record? && @project.participants.count > 1
-      %li
+      %dd
         = check_box_tag :notify
         %span.small Notify others by email
-    %li
-      = f.submit((f.object.new_record? ? 'Create' : 'Update') +  ' task »', :class => 'no-margin button')
+    %dd
+      = f.submit((f.object.new_record? ? 'Add' : 'Update') +  ' task »', :class => 'button')
