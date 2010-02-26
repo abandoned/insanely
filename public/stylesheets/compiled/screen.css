@@ -231,12 +231,13 @@ pre {
 
 /* line 2, ../../../app/stylesheets/partials/_projects.sass */
 #projects li {
+  position: relative;
   margin-bottom: 20px;
   background-color: #fff;
   padding: 15px;
   font-size: 1.25em;
   font-weight: bold; }
-/* line 10, ../../../app/stylesheets/partials/_projects.sass */
+/* line 11, ../../../app/stylesheets/partials/_projects.sass */
 #projects .counter {
   color: #fff;
   background-color: #a0d3eb;
@@ -246,13 +247,24 @@ pre {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   font-weight: normal; }
-  /* line 19, ../../../app/stylesheets/partials/_projects.sass */
+  /* line 20, ../../../app/stylesheets/partials/_projects.sass */
   #projects .counter:hover {
     text-decoration: none; }
-/* line 21, ../../../app/stylesheets/partials/_projects.sass */
+/* line 22, ../../../app/stylesheets/partials/_projects.sass */
 #projects .avatar {
   margin-bottom: -6px;
   margin-right: 10px; }
+/* line 26, ../../../app/stylesheets/partials/_projects.sass */
+#projects .circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  -moz-border-radius: 9px;
+  -webkit-border-radius: 9px;
+  position: absolute;
+  top: 23px;
+  right: 18px;
+  background-color: #00aa2a; }
 
 /* line 1, ../../../app/stylesheets/partials/_tasks.sass */
 #tasks {
