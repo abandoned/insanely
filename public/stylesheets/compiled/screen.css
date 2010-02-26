@@ -184,28 +184,29 @@ pre {
   -webkit-border-radius: 0.3em;
   white-space: pre-wrap; }
 
-/* line 1, ../../../app/stylesheets/partials/_header.sass */
+/* line 2, ../../../app/stylesheets/partials/_header.sass */
 #header {
   color: #fff;
   background-color: #0079a5; }
-  /* line 4, ../../../app/stylesheets/partials/_header.sass */
+  /* line 5, ../../../app/stylesheets/partials/_header.sass */
   #header a {
     color: #fff; }
 
-/* line 6, ../../../app/stylesheets/partials/_header.sass */
+/* line 7, ../../../app/stylesheets/partials/_header.sass */
 #header .wrapper {
   position: relative; }
 
-/* line 9, ../../../app/stylesheets/partials/_header.sass */
+/* line 10, ../../../app/stylesheets/partials/_header.sass */
 #brand {
   padding-left: 35px;
   font-size: 2.25em;
   color: #000; }
-  /* line 15, ../../../app/stylesheets/partials/_header.sass */
+  /* line 16, ../../../app/stylesheets/partials/_header.sass */
   #brand a {
     color: #000; }
-  /* line 17, ../../../app/stylesheets/partials/_header.sass */
+  /* line 18, ../../../app/stylesheets/partials/_header.sass */
   #brand span {
+    position: relative;
     display: inline-block;
     background-color: #009ecd;
     padding: 10px;
@@ -218,13 +219,39 @@ pre {
     -moz-border-radius-bottomright: 10px;
     -webkit-border-bottom-right-radius: 10px; }
 
-/* line 27, ../../../app/stylesheets/partials/_header.sass */
+/* line 29, ../../../app/stylesheets/partials/_header.sass */
+a#assignment-count {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  position: absolute;
+  display: inline-block;
+  top: -10px;
+  right: -17px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  padding-top: -3px;
+  width: 24px;
+  line-height: 24px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #c00;
+  color: #fff;
+  -webkit-box-shadow: 0 0 3px #555;
+  -moz-box-shadow: 0 0 3px #555; }
+  /* line 48, ../../../app/stylesheets/partials/_header.sass */
+  a#assignment-count:hover {
+    text-decoration: none; }
+
+/* line 51, ../../../app/stylesheets/partials/_header.sass */
 #user-nav {
   position: absolute;
   right: 0;
   bottom: 5px;
   font-size: 0.875em; }
-  /* line 32, ../../../app/stylesheets/partials/_header.sass */
+  /* line 56, ../../../app/stylesheets/partials/_header.sass */
   #user-nav a {
     margin-right: 10px;
     text-decoration: underline; }
@@ -336,7 +363,7 @@ pre {
 #project-settings {
   margin-top: 0px;
   padding-top: 20px;
-  border-top: 5px solid #ccc; }
+  border-top: 1px solid #999; }
 
 /* line 64, ../../../app/stylesheets/partials/_tasks.sass */
 #search-tasks {

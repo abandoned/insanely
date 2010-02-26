@@ -8,6 +8,7 @@ end
 
 Factory.define :project do |f|
   f.sequence(:title) { |n| "foo#{n}" }
+  f.description ''
 end
 
 Factory.define :task do |f|

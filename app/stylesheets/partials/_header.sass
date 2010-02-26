@@ -1,3 +1,4 @@
+!assignment_counter_font_size = 20px
 #header
   :color #fff
   :background-color #0079a5
@@ -15,6 +16,7 @@
   a
     :color #000
   span
+    :position relative
     :display inline-block
     :background-color #009ecd
     :padding 10px
@@ -23,6 +25,28 @@
       :bottom 25px
     +border_radius_top_left(10px)
     +border_radius_bottom_right(10px)
+
+a#assignment-count
+  +circle(!assignment_counter_font_size + 4px)
+  :position absolute
+  :display inline-block
+  :top -10px
+  :right -17px
+  :margin
+    :left 0px
+    :bottom 0px
+  :padding-top -3px
+  :width= !assignment_counter_font_size + 4px
+  :line-height= !assignment_counter_font_size + 4px
+  :font
+    :size= !assignment_counter_font_size
+  :text-align center
+  :background-color #c00
+  :color #fff
+  :-webkit-box-shadow 0 0 3px #555
+  :-moz-box-shadow 0 0 3px #555
+  &:hover
+    :text-decoration none
 
 #user-nav
   :position absolute
