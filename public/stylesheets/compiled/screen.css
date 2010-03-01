@@ -449,9 +449,9 @@ a#assignment-count {
 
 /* line 36, ../../../app/stylesheets/partials/_aside.sass */
 #tag-cloud {
-  width: 250px;
+  width: 265px;
   margin-top: 15px;
-  margin-left: 15px; }
+  margin-left: 10px; }
   /* line 41, ../../../app/stylesheets/partials/_aside.sass */
   #tag-cloud a {
     color: #fff;
