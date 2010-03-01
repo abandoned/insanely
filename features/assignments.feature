@@ -21,3 +21,5 @@ Feature: Assignemnts
     When I fill in "comment_message" with "@user"
     And I press "Leave comment"
     Then I should see "1" within "#assignment-count"
+  
+  Scenario: 

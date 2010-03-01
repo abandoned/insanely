@@ -33,12 +33,18 @@
     :font-size 1.125em
   .task-actions
     :position absolute
-    :top 4px
-    :right 20px
+    :top -18px
+    :right 30px
     :font
       :size 0.875em
-  .task-actions, .task-actions a
-    :color #ccc
+    :background-color #fff
+    :padding 1px 6px
+    +border_radius_top_left(4px)
+    +border_radius_top_right(4px)
+  .task-actions a
+    :color #999
+    :margin
+      :right 3px
   .meta
     :font
       :size 0.875em
@@ -63,5 +69,5 @@
   :border-top 1px solid #999
 #search-tasks
   :float right
-  :margin
-    :top -5px
+  input
+    :margin-top 0

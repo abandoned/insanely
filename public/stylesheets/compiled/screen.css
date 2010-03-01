@@ -266,22 +266,13 @@ a#assignment-count {
   font-weight: bold; }
 /* line 11, ../../../app/stylesheets/partials/_projects.sass */
 #projects .counter {
-  color: #fff;
-  background-color: #a0d3eb;
-  padding: 0 5px;
-  margin-left: 10px;
-  border-radius: 6px;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  font-weight: normal; }
-  /* line 20, ../../../app/stylesheets/partials/_projects.sass */
-  #projects .counter:hover {
-    text-decoration: none; }
-/* line 22, ../../../app/stylesheets/partials/_projects.sass */
+  color: #ccc;
+  margin-left: 5px; }
+/* line 15, ../../../app/stylesheets/partials/_projects.sass */
 #projects .avatar {
   margin-bottom: -6px;
   margin-right: 10px; }
-/* line 26, ../../../app/stylesheets/partials/_projects.sass */
+/* line 19, ../../../app/stylesheets/partials/_projects.sass */
 #projects .circle {
   width: 18px;
   height: 18px;
@@ -337,38 +328,49 @@ a#assignment-count {
   /* line 34, ../../../app/stylesheets/partials/_tasks.sass */
   #tasks .task-actions {
     position: absolute;
-    top: 4px;
-    right: 20px;
-    font-size: 0.875em; }
-  /* line 40, ../../../app/stylesheets/partials/_tasks.sass */
-  #tasks .task-actions, #tasks .task-actions a {
-    color: #ccc; }
-  /* line 42, ../../../app/stylesheets/partials/_tasks.sass */
+    top: -18px;
+    right: 30px;
+    font-size: 0.875em;
+    background-color: #fff;
+    padding: 1px 6px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px; }
+  /* line 44, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .task-actions a {
+    color: #999;
+    margin-right: 3px; }
+  /* line 48, ../../../app/stylesheets/partials/_tasks.sass */
   #tasks .meta {
     font-size: 0.875em; }
-  /* line 45, ../../../app/stylesheets/partials/_tasks.sass */
+  /* line 51, ../../../app/stylesheets/partials/_tasks.sass */
   #tasks .meta, #tasks .meta a {
     color: #bbb; }
-  /* line 48, ../../../app/stylesheets/partials/_tasks.sass */
+  /* line 54, ../../../app/stylesheets/partials/_tasks.sass */
   #tasks tr.task .meta, #tasks tr#project-description .meta {
     padding-top: 5px;
     padding-left: 15px; }
 
-/* line 53, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 59, ../../../app/stylesheets/partials/_tasks.sass */
 #tag-cloud {
   line-height: 1.4;
   padding-bottom: 15px; }
 
-/* line 58, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 64, ../../../app/stylesheets/partials/_tasks.sass */
 #project-settings {
   margin-top: 0px;
   padding-top: 20px;
   border-top: 1px solid #999; }
 
-/* line 64, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 70, ../../../app/stylesheets/partials/_tasks.sass */
 #search-tasks {
-  float: right;
-  margin-top: -5px; }
+  float: right; }
+  /* line 72, ../../../app/stylesheets/partials/_tasks.sass */
+  #search-tasks input {
+    margin-top: 0; }
 
 /* line 2, ../../../app/stylesheets/partials/_assets.sass */
 .image-assets .asset {
@@ -495,7 +497,7 @@ a#assignment-count {
 
 /* line 33, ../../../app/stylesheets/partials/_main.sass */
 #actions {
-  margin-bottom: 30px; }
+  margin-bottom: 45px; }
 
 /* line 37, ../../../app/stylesheets/partials/_main.sass */
 #welcome {
