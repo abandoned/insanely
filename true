@@ -1,4 +1,0 @@
-** Erubis 2.6.5
-      exists  db/migrate
-      create  db/migrate/20100302013026_add_private_to_projects.rb
-wrong number of arguments (1 for 2)
