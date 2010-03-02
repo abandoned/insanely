@@ -265,7 +265,7 @@ a#assignment-count {
   font-size: 1.25em;
   font-weight: bold; }
 /* line 11, ../../../app/stylesheets/partials/_projects.sass */
-#projects .counter {
+#projects .assignments-count {
   color: #ccc;
   margin-left: 5px; }
 /* line 15, ../../../app/stylesheets/partials/_projects.sass */
@@ -360,15 +360,9 @@ a#assignment-count {
   padding-bottom: 15px; }
 
 /* line 64, ../../../app/stylesheets/partials/_tasks.sass */
-#project-settings {
-  margin-top: 0px;
-  padding-top: 20px;
-  border-top: 1px solid #999; }
-
-/* line 70, ../../../app/stylesheets/partials/_tasks.sass */
 #search-tasks {
   float: right; }
-  /* line 72, ../../../app/stylesheets/partials/_tasks.sass */
+  /* line 66, ../../../app/stylesheets/partials/_tasks.sass */
   #search-tasks input {
     margin-top: 0; }
 

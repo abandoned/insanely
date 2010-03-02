@@ -6,5 +6,6 @@
     = render :partial => 'assets/asset', :collection => comment.assets
     .meta-info
       = "Posted #{time_ago_in_words(comment.created_at)} ago"
-      |
-      = link_to('Delete', project_task_comment_path(@project, @task, comment), :confirm => 'Are you sure?', :method => :delete)
+      - if comment.author == current_user
+        |
+        = link_to('Delete', project_task_comment_path(@project, @task, comment), :confirm => 'Are you sure?', :method => :delete)

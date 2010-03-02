@@ -19,3 +19,23 @@ Then /^(?:|I )press "([^\"]*)" within "([^\"]*)"$/ do |button, selector|
     click_button(button)
   end
 end
+
+Then /^the (?:html|HTML) should contain "([^\"]*)"$/ do |text|
+  response.should contain(text)
+end
+
+Then /^the (?:html|HTML) should not contain "([^\"]*)"$/ do |text|
+  response.should_not contain(text)
+end
+
+Then /^the (?:html|HTML) should contain "([^\"]*)" within "([^\"]*)"$/ do |text, selector|
+  within(selector) do |content|
+    content.should have_selector(text)
+  end
+end
+
+Then /^the (?:html|HTML) should not contain "([^\"]*)" within "([^\"]*)"$/ do |text, selector|
+  within(selector) do |content|
+    content.should_not have_selector(text)
+  end
+end

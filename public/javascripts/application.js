@@ -39,7 +39,7 @@ jQuery(function() {
   
   // Textarea counter
   if (jQuery('textarea').length > 0) {
-    var maxChars = (jQuery('#task_message').length > 0) ? 255 : 1000;
+    var maxChars = (jQuery('#comment_message').length > 0) ? 1000 : 255;
     var oldMsg = jQuery(this).attr('value');
     var countChars = function(val) {
       var cur = 0;
@@ -54,7 +54,7 @@ jQuery(function() {
       return (oldMsg.length < maxChars);
     }
     
-    jQuery('textarea').before('<div class="counter"></div>').each(function() {
+    jQuery('textarea').after('<div class="counter"></div>').each(function() {
       countChars(jQuery(this).attr('value'));
       jQuery(this)
         .bind('keypress', limitChars)

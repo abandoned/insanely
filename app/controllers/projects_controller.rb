@@ -1,7 +1,8 @@
 class ProjectsController < InheritedResources::Base
   include ProjectRights
   
-  before_filter :require_user
+  before_filter :require_user, :except => [:show]
+  before_filter :require_user, :only => [:show], :if => false
   before_filter :creator?, :only => [:destroy]
   before_filter :resource, :only => [:archive, :unarchive]
   
@@ -12,7 +13,7 @@ class ProjectsController < InheritedResources::Base
   helper_method :creator?, :can_remove?
   
   def index
-    @projects = current_user.projects.active
+    @projects = current_user.projects.active.all(:order => 'updated_at desc')
   end
   
   def create

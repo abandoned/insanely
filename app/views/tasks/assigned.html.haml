@@ -11,7 +11,4 @@
   %table#tasks
     = render :partial => 'tasks/task', :collection => @tasks, :locals => { :show_comments => true }
 %p#project-settings
-  This project is private and has
-  = pluralize(@project.participants.size, 'participant') + '.'
-%p
   = link_to('Edit project', edit_project_path(@project))

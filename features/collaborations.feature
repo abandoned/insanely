@@ -1,15 +1,16 @@
+@wip
 Feature: Collaborations
   In order to use Insane.ly
-  As a user
-  I want to add and remove other users as workmates
+  As a disheveled genius
+  I want to manage workmates
   
   Background:
     Given I am logged in
-    And a project "My Project" exists with creator: user "self"
-    And a user "other" exists with password: "secret", login: "jdoe", email: "other@example.com", active: true
-    And a collaboration exists with user: user "self", workmate: user "other", status: "active"
-    And a collaboration exists with user: user "other", workmate: user "self", status: "active"
-      
+    And a project "foo" exists with creator: user "user"
+    And a user "johndoe" exists with login: "johndoe", active: true
+    And a collaboration exists with user: user "user", workmate: user "johndoe", status: "active"
+    And a collaboration exists with user: user "johndoe", workmate: user "user", status: "active"
+  
   Scenario: Add a user to a project
     Given I am on the path "/projects/1/edit"
     Then I should see "self" within ".participations"

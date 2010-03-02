@@ -5,4 +5,7 @@
     %dd= f.text_field :title
     %dt= f.label :description
     %dd= f.text_area :description
+    %dd
+      = f.check_box :private
+      %span.small Private
     %dd= f.submit((f.object.new_record? ? 'Create' : 'Update') + ' project »', :class => 'button')

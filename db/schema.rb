@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100223114736) do
+ActiveRecord::Schema.define(:version => 20100302013026) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20100223114736) do
     t.datetime "updated_at"
     t.string   "status",      :default => "active"
     t.string   "description"
+    t.boolean  "private",     :default => true
   end
 
   add_index "projects", ["creator_id"], :name => "index_projects_on_creator_id"

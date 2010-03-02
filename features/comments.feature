@@ -1,24 +1,35 @@
 Feature: Comments
   In order to use Insane.ly
-  As a user
-  I want to create, edit, and delete comments
+  As a disheveled genius
+  I want to comment on tasks
   
   Background:
     Given I am logged in
-      And a project "My Project" exists with title: "My Project", creator: user "self"
-      And a task "My Task" exists with message: "lorem #ipsum", project: project "My Project", author: user "self"
+    And a project "foo" exists with title: "foo", creator: user "user"
+    And a task "bar" exists with project: project "foo", author: user "user"
   
   Scenario: Post a comment
     Given I am on the path "/projects/1/tasks/1"
-    When I fill in "comment_message" with "this is a #comment"
-      And I press "Leave comment"
+    When I fill in "comment_message" with "baz"
+    And I press "Leave comment"
     Then I should see "Comment created!"
-      And I should see "ipsum" within ".tag-cloud"
-      And I should see "comment" within ".tag-cloud"
-      And a comment should exist with task: task "My Task"
+    And I should see "baz"
+    And a comment should exist with task: task "bar"
   
-  Scenario: I should be able to destroy a comment with no message and an attachment
-    Given a comment_with_asset "My comment" exists with task: task "My Task", author: user "self", message: ""
-      And I am on the path "/projects/1/tasks/1"
-    When I follow "Delete" within ".comment"
-    Then I should see "Comment deleted!"
+  Scenario: Delete a comment
+    Given a comment exists with task: task "bar", author: user "user"
+    And I am on the path "/projects/1/tasks/1"
+    When I follow "Delete" within "#comment_1"
+    Then 0 comments should exist
+  
+  Scenario: Delete a comment with blank message and attachment
+    Given a comment_with_asset exists with task: task "bar", author: user "user", message: ""
+    And I am on the path "/projects/1/tasks/1"
+    When I follow "Delete" within "#comment_1"
+    Then 0 comments should exist
+  
+  Scenario: Should not have option to delete someone else's comment
+    Given a user "johndoe" exists with login: "johndoe", active: true
+    And a comment exists with task: task "bar", author: user "johndoe"
+    When I am on the path "/projects/1/tasks/1"
+    Then I should not see "Delete" within "#comment_1"

@@ -7,6 +7,7 @@
 = render :partial => 'tasks/search'
 #actions
   = link_to('Add a task', new_resource_path)
+
 - unless @tasks.blank? && @project.description.blank?
   %table#tasks
     - if @project.description.present?
@@ -20,8 +21,6 @@
           .meta
             = "Posted #{time_ago_in_words(@project.created_at)} ago"
     = render :partial => 'task', :collection => @tasks, :locals => { :show_comments => true }
+
 %p#project-settings
-  This project is private and has
-  = pluralize(@project.participants.size, 'participant') + '.'
-%p
   = link_to('Edit project', edit_project_path(@project))

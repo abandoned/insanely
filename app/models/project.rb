@@ -26,7 +26,7 @@ class Project < ActiveRecord::Base
   
   after_create :creator_participates_in_project
   
-  attr_accessible :title, :description
+  attr_accessible :title, :description, :private
   
   aasm_column         :status
   aasm_initial_state  :active
