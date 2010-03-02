@@ -265,9 +265,9 @@ a#assignment-count {
   font-size: 1.25em;
   font-weight: bold; }
 /* line 11, ../../../app/stylesheets/partials/_projects.sass */
-#projects .assignments-count {
-  color: #ccc;
-  margin-left: 5px; }
+#projects .assignment-count {
+  margin-left: 5px;
+  color: #666; }
 /* line 15, ../../../app/stylesheets/partials/_projects.sass */
 #projects .avatar {
   margin-bottom: -6px;
