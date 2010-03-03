@@ -353,16 +353,20 @@ a#assignment-count {
   #tasks tr.task .meta, #tasks tr#project-description .meta {
     padding-top: 5px;
     padding-left: 15px; }
+  /* line 59, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks #project-description .task-content {
+    font-size: 1.5em;
+    line-height: 1; }
 
-/* line 59, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 63, ../../../app/stylesheets/partials/_tasks.sass */
 #tag-cloud {
   line-height: 1.4;
   padding-bottom: 15px; }
 
-/* line 64, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 68, ../../../app/stylesheets/partials/_tasks.sass */
 #search-tasks {
   float: right; }
-  /* line 66, ../../../app/stylesheets/partials/_tasks.sass */
+  /* line 70, ../../../app/stylesheets/partials/_tasks.sass */
   #search-tasks input {
     margin-top: 0; }
 
