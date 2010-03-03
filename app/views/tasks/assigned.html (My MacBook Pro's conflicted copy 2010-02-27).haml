@@ -1,0 +1,11 @@
+- title @project.title, true, project_tasks_path(@project)
+
+#aside
+  = render :partial => 'tasks/search_form'
+  = render :partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags}
+%table.tasks
+  %tfoot
+    %tr
+      %td{:colspan => 2}
+        = will_paginate @tasks
+  = render :partial => 'tasks/task', :collection => @tasks, :locals => { :show_comments => true }

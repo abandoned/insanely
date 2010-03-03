@@ -28,14 +28,14 @@ jQuery(function() {
   );
   
   // Add comment
-  var $addComment = jQuery('<div id="add-comment"><a href="#">Add a comment</a></div>');
-  var $newCommentForm = jQuery('#new_comment');
-  $newCommentForm.before($addComment).hide();
-  $addComment.click(function() {
-    $newCommentForm.show();
-    jQuery(this).hide();
-    return false;
-  });
+  // var $addComment = jQuery('<div id="add-comment"><a href="#">Add a comment</a></div>');
+  //   var $newCommentForm = jQuery('#new_comment');
+  //   $newCommentForm.before($addComment).hide();
+  //   $addComment.click(function() {
+  //     $newCommentForm.show();
+  //     jQuery(this).hide();
+  //     return false;
+  //   });
   
   // Textarea counter
   if (jQuery('textarea').length > 0) {

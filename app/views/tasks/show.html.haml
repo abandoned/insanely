@@ -4,6 +4,9 @@
   = render :partial => 'hashtags/cloud', :locals => { :hashtags => @project.hashtags }
   = render :partial => 'shared/resource_states', :locals => { :links => task_links}
 
+#actions
+  = link_to('Add a comment', new_project_task_comment_path(@project, @task))
+
 %table#tasks
   %tfoot
     %tr
