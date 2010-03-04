@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100302013026) do
+ActiveRecord::Schema.define(:version => 20100304151935) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -109,18 +109,6 @@ ActiveRecord::Schema.define(:version => 20100302013026) do
 
   add_index "projects", ["creator_id"], :name => "index_projects_on_creator_id"
 
-  create_table "readerships", :force => true do |t|
-    t.integer  "readable_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "readable_type"
-  end
-
-  add_index "readerships", ["readable_id"], :name => "index_readerships_on_task_id"
-  add_index "readerships", ["readable_type"], :name => "index_readerships_on_readable_type"
-  add_index "readerships", ["user_id"], :name => "index_readerships_on_user_id"
-
   create_table "tasks", :force => true do |t|
     t.integer  "project_id"
     t.integer  "author_id"
@@ -134,6 +122,21 @@ ActiveRecord::Schema.define(:version => 20100302013026) do
   add_index "tasks", ["author_id"], :name => "index_tasks_on_author_id"
   add_index "tasks", ["message"], :name => "index_tasks_on_message"
   add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"
+
+  create_table "unreads", :force => true do |t|
+    t.integer  "readable_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "readable_type"
+    t.integer  "project_id"
+  end
+
+  add_index "unreads", ["project_id"], :name => "index_unreads_on_project_id"
+  add_index "unreads", ["readable_id"], :name => "index_readerships_on_task_id"
+  add_index "unreads", ["readable_id"], :name => "index_unreads_on_readable_id"
+  add_index "unreads", ["readable_type"], :name => "index_readerships_on_readable_type"
+  add_index "unreads", ["user_id"], :name => "index_readerships_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "login"

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :pending_workmates, :through => :collaborations, :source => :user, :conditions => 'collaborations.status = "pending"'
   has_many :assignments, :foreign_key => 'assignee_id'
   has_many :assigned_tasks, :through => :assignments, :source => :task
-  has_many :readerships, :dependent => :destroy
+  has_many :unreads, :dependent => :destroy
   
   attr_accessible :login, :email, :password, :password_confirmation
   

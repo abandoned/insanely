@@ -1,16 +1,3 @@
-# == Schema Information
-#
-# Table name: projects
-#
-#  id          :integer         not null, primary key
-#  title       :string(255)
-#  creator_id  :integer
-#  created_at  :datetime
-#  updated_at  :datetime
-#  status      :string(255)     default("active")
-#  description :string(255)
-#
-
 class Project < ActiveRecord::Base
   include AASM
   
@@ -19,7 +6,7 @@ class Project < ActiveRecord::Base
   has_many :participants, :through => :participations
   has_many :tasks, :order => '"tasks".updated_at DESC', :dependent => :destroy
   has_many :hashtags, :order => '"hashtags".title', :dependent => :destroy
-  has_many :readerships, :as => :readable, :dependent => :destroy
+  has_many :unreads, :dependent => :destroy
   
   validates_uniqueness_of :title, :scope => :creator_id, :message => 'must be unique'
   validates_length_of :description, :maximum => 255
@@ -49,4 +36,19 @@ class Project < ActiveRecord::Base
     end
   end
 end
+
+
+# == Schema Information
+#
+# Table name: projects
+#
+#  id          :integer         not null, primary key
+#  title       :string(255)
+#  creator_id  :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  status      :string(255)     default("active")
+#  description :string(255)
+#  private     :boolean         default(TRUE)
+#
 

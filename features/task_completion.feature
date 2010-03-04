@@ -5,8 +5,8 @@ Feature: Task Completion
   
   Background:
     Given I am logged in
-    And a project "foo" exists with title: "foo", creator: user "user"
-    And a task "foobar" exists with project: project "foo", author: user "user", message: "foobar"
+    And a project "foo" exists with title: "foo", creator: user "me"
+    And a task "foobar" exists with project: project "foo", author: user "me", message: "foobar"
   
   Scenario: Complete a task
     Given I am on the path "/projects/1/tasks/active"
@@ -27,7 +27,7 @@ Feature: Task Completion
   
   Scenario: Return to list of completed tasks after deleting task there
     Given task "foobar" is completed
-    And a task "foobaz" exists with project: project "foo", author: user "user", message: "foobaz", status: "completed"
+    And a task "foobaz" exists with project: project "foo", author: user "me", message: "foobaz", status: "completed"
     And I am on the path "/projects/1/tasks/completed"
     When I follow "Delete" within "#task_2"
     Then I should be on path "/projects/1/tasks/completed"

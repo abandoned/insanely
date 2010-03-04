@@ -21,9 +21,7 @@ module ProjectsHelper
     links
   end
   
-  def project_unread?(project)
-    readership = current_user.readerships.find_by_readable_id_and_readable_type(project.id, 'Project')
-    return true if readership.nil? || project.updated_at > readership.updated_at
-    false
+  def updated?(project)
+    Unread.find_by_project_id_and_user_id(project.id, current_user.id).present?
   end
 end

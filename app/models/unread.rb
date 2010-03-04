@@ -1,11 +1,12 @@
-class Readership < ActiveRecord::Base
+class Unread < ActiveRecord::Base
   belongs_to :readable, :polymorphic => true
   belongs_to :user
+  belongs_to :project
 end
 
 # == Schema Information
 #
-# Table name: readerships
+# Table name: unreads
 #
 #  id            :integer         not null, primary key
 #  readable_id   :integer
@@ -13,5 +14,6 @@ end
 #  created_at    :datetime
 #  updated_at    :datetime
 #  readable_type :string(255)
+#  project_id    :integer
 #
 

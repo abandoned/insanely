@@ -18,3 +18,16 @@ describe Comment do
       :author => @user1)
   end
 end
+
+# == Schema Information
+#
+# Table name: comments
+#
+#  id         :integer         not null, primary key
+#  task_id    :integer
+#  author_id  :integer
+#  message    :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+

@@ -6,10 +6,10 @@ Feature: Collaborations
   
   Background:
     Given I am logged in
-    And a project "foo" exists with creator: user "user"
+    And a project "foo" exists with creator: user "me"
     And a user "johndoe" exists with login: "johndoe", active: true
-    And a collaboration exists with user: user "user", workmate: user "johndoe", status: "active"
-    And a collaboration exists with user: user "johndoe", workmate: user "user", status: "active"
+    And a collaboration exists with user: user "me", workmate: user "johndoe", status: "active"
+    And a collaboration exists with user: user "johndoe", workmate: user "me", status: "active"
   
   Scenario: Add a user to a project
     Given I am on the path "/projects/1/edit"

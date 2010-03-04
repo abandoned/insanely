@@ -21,8 +21,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :assets, :only => [:show]
   map.resource :account, :controller => 'users'
   map.resources :password_resets, :only => [:new, :create, :edit, :update]
-  map.resource :user_session
   
+  map.resource :user_session, :as => 'session'
   map.logout  '/logout',  :controller => 'user_sessions', :action => 'destroy'
 
   map.root :controller => 'welcome', :action => 'index'

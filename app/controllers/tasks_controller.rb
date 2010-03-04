@@ -4,6 +4,10 @@ class TasksController < InheritedResources::Base
   after_filter :touch_task, :only => [:show, :complete, :uncomplete, :icebox, :defrost]
   after_filter :notify,     :only => [:complete, :uncomplete, :icebox, :defrost]
   
+  after_filter :unread!,    :only => [:create, :update] 
+  after_filter :read!,      :only => [:show]
+  after_filter :all_read!,  :only => [:complete, :archive]
+  
   belongs_to :project
   respond_to :html
   has_scope :query, :only => [:index]
@@ -11,7 +15,7 @@ class TasksController < InheritedResources::Base
   
   def index
     index!
-    touch_readership(@project)
+    touch_unread(@project)
   end
   
   def show
@@ -99,8 +103,27 @@ class TasksController < InheritedResources::Base
     current_user
   end
   
+  def unread!
+    (@project.participants - [current_user]).each do |user|
+      @task.unreads.create!({
+        :project_id   => @project.id,
+        :user_id      => user.id,
+      })
+    end
+  end
+  
+  def read!
+    Unread.destroy_all(:user_id       => current_user.id,
+                       :readable_id   => @task.id,
+                       :readable_type => 'Task')
+  end
+  
+  def all_read
+    @task.unreads.destroy_all
+  end
+  
   def touch_task
-    touch_readership(@task)
+    #touch_unread(@task)
   end
   
   def notify

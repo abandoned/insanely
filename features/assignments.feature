@@ -4,8 +4,10 @@ Feature: Assignments
   I want to assign tasks to users
   
   Background:
-    Given I am logged in
-    And a project "foo" exists with title: "foo", creator: user "user"
+    Given I am "jane"
+    And I am "john"
+    And I am logged in as "john"
+    And a project "foo" exists with title: "foo", creator: user "me"
   
   Scenario Outline: Assign in task
     Given I am on the path "/projects"
@@ -33,19 +35,19 @@ Feature: Assignments
     Then the HTML should not contain "#assignment-count"
     
     Examples:
-      | message |
+      | message  |
       | @userfoo |
       | foo@user |
   
   Scenario: Assign in comment
-    Given a task "bar" exists with project: project "foo", author: user "user"
+    Given a task "bar" exists with project: project "foo", author: user "me"
     And I am on the path "/projects/1/tasks/1"
     When I fill in "comment_message" with "@user"
     And I press "Leave comment"
     Then I should see "1" within "#assignment-count"
   
   Scenario: Display an assignment count on list of projects
-    Given a task "bar" exists with project: project "foo", author: user "user", message: "@user"
-    And a task "baz" exists with project: project "foo", author: user "user", message: "@user"
+    Given a task "bar" exists with project: project "foo", author: user "me", message: "@user"
+    And a task "baz" exists with project: project "foo", author: user "me", message: "@user"
     When I am on the path "/projects"
     Then I should see "2" within ".assignment-count"

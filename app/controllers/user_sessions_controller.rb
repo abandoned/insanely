@@ -10,10 +10,10 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       redirect_back_or_default(projects_path)
     else
-      if @user_session.errors.full_messages == ["Your account is not active"]
-        flash.now[:failure] = "Your account is not active."
+      if @user_session.errors.full_messages == ['Your account is not active']
+        flash.now[:failure] = 'Your account is not active.'
       else
-        flash.now[:failure] = "Please check your login and password."
+        flash.now[:failure] = 'Please check your login and password.'
       end
       render :action => :new
     end

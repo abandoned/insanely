@@ -54,16 +54,16 @@ module TasksHelper
     sanitize(auto_link(textilize(highlight_assigns(highlight_tags(obj.message, hashtags), participants))) { |text| truncate(text, :length => 24) }).html_safe!
   end
   
-  def readership_html(readable,status=nil)
+  def unread_html(readable,status=nil)
     html_options = {}
     class_name = readable.class.to_s
-    readership = current_user.readerships.find_by_readable_id_and_readable_type(readable.id, class_name)
+    unread = current_user.unreads.find_by_readable_id_and_readable_type(readable.id, class_name)
     if class_name == 'Task'
       return html_options if readable.comments_count == 0
-      html_options.merge!({ :class => 'highlighted' }) if readership.nil? || readable.updated_at > readership.updated_at
+      html_options.merge!({ :class => 'highlighted' }) if unread.nil? || readable.updated_at > unread.updated_at
     elsif class_name == 'Project'
       return html_options if readable.tasks.count == 0
-      html_options.merge!({ :class => 'highlighted' }) if readership.nil? || readable.tasks.send(status.to_sym).most_recent.first.updated_at > readership.updated_at
+      html_options.merge!({ :class => 'highlighted' }) if unread.nil? || readable.tasks.send(status.to_sym).most_recent.first.updated_at > unread.updated_at
     end
     html_options
   end
