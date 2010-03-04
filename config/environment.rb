@@ -61,7 +61,7 @@ ActionMailer::Base.smtp_settings = {
   :domain         => 'papercavalier.com',
   :authentication => :plain,
   :user_name      => ENV['GMAIL_SMTP_USER'],
-  :password       => ENV['GMAIL_SMTP_PASSWORD']'
+  :password       => ENV['GMAIL_SMTP_PASSWORD']
 }
 
 Haml::Template.options[:format] = :html5
