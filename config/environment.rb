@@ -54,14 +54,13 @@ Rails::Initializer.run do |config|
 end
 
 ActionMailer::Base.smtp_settings = {
-  #:enable_starttls_auto => true,\
-  :tls            => true,
-  :address        => 'smtp.gmail.com',
-  :port           => 587,
-  :domain         => 'papercavalier.com',
-  :authentication => :plain,
-  :user_name      => ENV['GMAIL_SMTP_USER'],
-  :password       => ENV['GMAIL_SMTP_PASSWORD']
+  :enable_starttls_auto => true,
+  :address              => 'smtp.gmail.com',
+  :port                 => 587,
+  :domain               => 'papercavalier.com',
+  :authentication       => :plain,
+  :user_name            => ENV['GMAIL_SMTP_USER'],
+  :password             => ENV['GMAIL_SMTP_PASSWORD']
 }
 
 Haml::Template.options[:format] = :html5
