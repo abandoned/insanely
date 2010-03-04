@@ -4,9 +4,9 @@ class TasksController < InheritedResources::Base
   after_filter :touch_task, :only => [:show, :complete, :uncomplete, :icebox, :defrost]
   after_filter :notify,     :only => [:complete, :uncomplete, :icebox, :defrost]
   
-  after_filter :unread!,    :only => [:create, :update] 
-  after_filter :read!,      :only => [:show]
-  after_filter :all_read!,  :only => [:complete, :archive]
+  after_filter :task_unread!,     :only => [:create, :update] 
+  after_filter :task_read!,       :only => [:show]
+  after_filter :all_tasks_read!,  :only => [:complete, :archive]
   
   belongs_to :project
   respond_to :html
@@ -103,7 +103,7 @@ class TasksController < InheritedResources::Base
     current_user
   end
   
-  def unread!
+  def task_unread!
     (@project.participants - [current_user]).each do |user|
       @task.unreads.create!({
         :project_id   => @project.id,
@@ -112,13 +112,14 @@ class TasksController < InheritedResources::Base
     end
   end
   
-  def read!
+  # 
+  def task_read!
     Unread.destroy_all(:user_id       => current_user.id,
                        :readable_id   => @task.id,
                        :readable_type => 'Task')
   end
   
-  def all_read
+  def all_tasks_read!
     @task.unreads.destroy_all
   end
   

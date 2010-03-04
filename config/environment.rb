@@ -53,6 +53,17 @@ Rails::Initializer.run do |config|
   config.action_mailer.raise_delivery_errors = true
 end
 
+ActionMailer::Base.smtp_settings = {
+  #:enable_starttls_auto => true,\
+  :tls            => true,
+  :address        => 'smtp.gmail.com',
+  :port           => 587,
+  :domain         => 'papercavalier.com',
+  :authentication => :plain,
+  :user_name      => ENV['GMAIL_SMTP_USER'],
+  :password       => ENV['GMAIL_SMTP_PASSWORD']'
+}
+
 Haml::Template.options[:format] = :html5
 
 InheritedResources.flash_keys = [ :success, :failure ]
