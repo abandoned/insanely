@@ -17,6 +17,7 @@ gem 'gravtastic', '>= 2.2.0'
 gem 'paperclip', '>= 2.3.1.1'
 gem 'RedCloth', '>= 4.2.2'
 gem 'will_paginate', '>= 2.3.12'
+gem 'test-unit', '1.2.3'
 
 group :production do
   gem 'pg'
