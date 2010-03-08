@@ -132,8 +132,11 @@ class TasksController < InheritedResources::Base
     )
   end
   
-  def all_read_unread_tasks
+  def all_read_unread
     @task.unreads.destroy_all
+    @task.comments.all(:include => :unreads).each do |comment|
+      comment.unreads.each { |unread| unread.destroy }
+    end
   end
   
   def touch_task
