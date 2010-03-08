@@ -4,9 +4,10 @@ class TasksController < InheritedResources::Base
   after_filter :touch_task, :only => [:show, :complete, :uncomplete, :icebox, :defrost]
   after_filter :notify,     :only => [:complete, :uncomplete, :icebox, :defrost]
   
-  after_filter :task_unread!,     :only => [:create, :update] 
-  after_filter :task_read!,       :only => [:show]
-  after_filter :all_tasks_read!,  :only => [:complete, :archive]
+  after_filter :create_unread_task,     :only => [:create, :update] 
+  after_filter :read_unread,            :only => [:show]
+  after_filter :read_all_unread_tasks,  :only => [:active]
+  after_filter :all_read_unread,        :only => [:complete, :archive]
   
   belongs_to :project
   respond_to :html
@@ -103,7 +104,7 @@ class TasksController < InheritedResources::Base
     current_user
   end
   
-  def task_unread!
+  def create_unread_task
     (@project.participants - [current_user]).each do |user|
       @task.unreads.create!({
         :project_id   => @project.id,
@@ -113,13 +114,25 @@ class TasksController < InheritedResources::Base
   end
   
   # 
-  def task_read!
-    Unread.destroy_all(:user_id       => current_user.id,
-                       :readable_id   => @task.id,
-                       :readable_type => 'Task')
+  def read_unread
+    Unread.destroy_all(
+      :user_id      => current_user.id,
+      :readable_id   => @task.id,
+      :readable_type => 'Task'
+    )
+    @task.comments.all(:include => :unreads, :conditions => ['unreads.user_id = ?', current_user.id]).each do |comment|
+      comment.unreads.each { |unread| unread.destroy }
+    end
   end
   
-  def all_tasks_read!
+  def read_all_unread_tasks
+    Unread.destroy_all(
+      :user_id      => current_user.id,
+      :readable_type => 'Task'
+    )
+  end
+  
+  def all_read_unread_tasks
     @task.unreads.destroy_all
   end
   

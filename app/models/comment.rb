@@ -23,8 +23,8 @@ class Comment < ActiveRecord::Base
   
   belongs_to :task, :counter_cache => true, :touch => true
   belongs_to :author, :class_name => 'User'
-  
   has_many :assets, :as => :attachable, :dependent => :delete_all
+  has_many :unreads, :as => :readable, :dependent => :destroy
   
   attr_accessible :message, :author, :assets_attributes
   
