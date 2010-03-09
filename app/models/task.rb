@@ -95,8 +95,8 @@ class Task < ActiveRecord::Base
       old_hashtags = self.hashtags.collect { |h| h.title } || []
       old_assignees = self.assignees.collect { |a| a.login } || []
       
-      new_hashtags = parse_content(/#([a-z0-9_]+)/i)
-      new_assignees = parse_content(/\B@([a-z0-9._]+)/i) -
+      new_hashtags = parse_content(/\B#([a-z0-9_]+)/i)
+      new_assignees = parse_content(/\B@([a-z0-9._]+)/i)
       
       # Destroy obsolete
       (old_hashtags - new_hashtags).each do |t|

@@ -4,18 +4,19 @@ Feature: Notifications
   I want to notify others of my actions
   
   Background:
-    Given I am logged in
-    And a user "other" exists with password: "secret", login: "jdoe", email: "other@example.com", active: true
-    And a project "My Project" exists with title: "My Project", creator: user "self"
-    And a participation exists with project: project "My Project", participant: user "other"
-    And a task "My Task" exists with message: "lorem #ipsum", project: project "My Project", author: user "self"
-      
+    Given I am "jane"
+    And I am "john"
+    And I am logged in as "john"
+    And a project "foo" exists with creator: user "john"
+    And a participation exists with project: project "foo", participant: user "jane"
+    And a task "bar" exists with message: "lorem #ipsum", project: project "foo", author: user "john"
+  
   Scenario: Notify others of new task
     Given I am on the path "/projects/1/tasks"
-    When I follow "Add task"
+    When I follow "Add a task"
     And I fill in "task_message" with "foo bar"
     And I check "notify"
-    And I press "Create task"
+    And I press "Add task"
     Then 1 message should be queued for notification
   
   Scenario: Notify others of new comment
@@ -27,9 +28,9 @@ Feature: Notifications
   
   Scenario: Do not notify others of new task
     Given I am on the path "/projects/1/tasks"
-    When I follow "Add task"
+    When I follow "Add a task"
     And I fill in "task_message" with "foo bar"
-    And I press "Create task"
+    And I press "Add task"
     Then 0 messages should be queued for notification
   
   Scenario: Do not notify others of new comment

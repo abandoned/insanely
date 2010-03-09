@@ -44,15 +44,9 @@ describe Task do
   
   it 'should destroy hashtag' do
     @task.update_attribute(:message, '@foo')
-    @task.reload.should have(1).hashtag
-    @task.hashtags.first.title.should == 'untitled'
+    @task.reload.should have(0).hashtags
   end
-  
-  it 'should destroy assignment' do
-    @task.update_attribute(:message, '#foo -@foo')
-    @task.reload.should have(0).assignments
-  end
-  
+    
   it 'should parse assignment at the beginning of line' do
     @task.update_attribute(:message, '@foo')
     @task.reload.should have(1).assignment
@@ -60,7 +54,8 @@ describe Task do
   end
   
   it 'should not parse a word with an at sign after first letter' do
-    @task.update_attribute(:message, 'foo@foo')
+    @task.update_attribute(:message, 'foo@foo#foo')
     @task.reload.should have(0).assignments
+    @task.should have(0).hashtags
   end
 end

@@ -14,7 +14,7 @@ Given /^I (?:am logged|log) in as "(\w+)"$/ do |login|
 end
 
 def current_user_session
-  @current_user_session ||= Session.find
+  @current_user_session ||= UserSession.find
 end
 
 def current_user

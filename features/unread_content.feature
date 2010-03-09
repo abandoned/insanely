@@ -1,7 +1,7 @@
 Feature: Unread content
   In order to use Insane.ly
   As a disheveled genius
-  I want to find out if a project has unread content
+  I want to know if a project or task has unread content
   
   Background:
     Given I am "john"
