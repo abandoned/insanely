@@ -366,7 +366,7 @@ a#assignment-count {
     background-color: #009ecd;
     font-size: 1.25em;
     line-height: 1.2;
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
 
 /* line 72, ../../../app/stylesheets/partials/_tasks.sass */
 #tag-cloud {
