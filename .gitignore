@@ -6,3 +6,5 @@ config/database.yml
 db/*.sqlite3
 public/stylesheets/*.css
 rerun.txt
+.bundle
+Gemfile.lock
