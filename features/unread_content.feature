@@ -56,7 +56,8 @@ Feature: Unread content
     And I follow "Log out"
     And I log in as "jane"
     And I go to the path "/projects/1/tasks/active"
-    And I go to the path "/projects"
+    Then there should be unread content
+    When I go to the path "/projects"
     Then there should be unread content
 
   Scenario: There is a read task, John adds a comment, following which Jane goes to the task page and returns to the projects list. She should no longer have unread content.
@@ -69,4 +70,6 @@ Feature: Unread content
     And I log in as "jane"
     And I go to the path "/projects/1/tasks/1"
     And I go to the path "/projects"
+    Then there should be no unread content
+    When I go to the path "/projects/1/tasks/active"
     Then there should be no unread content

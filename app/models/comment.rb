@@ -13,7 +13,6 @@
 class Comment < ActiveRecord::Base
   validates_associated :assets
   
-  validates_length_of :message, :maximum => 1000
   validates_length_of :message, :minimum => 1,
     :unless => Proc.new{|record| record.assets.size > 0 }
   

@@ -22,6 +22,6 @@ module ProjectsHelper
   end
   
   def updated?(project)
-    Unread.find_by_project_id_and_user_id(project.id, current_user.id).present?
+    project.unreads.find_by_user_id(current_user.id).present?
   end
 end

@@ -8,7 +8,9 @@
       .wrapper
         -project_title
         - if current_user
-          = render 'layouts/user_nav'
+          #user-nav
+            = link_to('Account', account_path)
+            = link_to('Log out', logout_path)
     #main.clearfix
       #content
         - flash_message

@@ -4,4 +4,4 @@
   - if project.tasks.assigned_to(current_user).count > 0
     = link_to(assignment_count(project), assigned_project_participant_tasks_path(project, current_user), :class => 'assignment-count')
   - if updated?(project)
-    .circle
+    .unread.circle

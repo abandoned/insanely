@@ -20,7 +20,7 @@
         = render :partial => 'assets/asset', :collection => task.assets
     .meta
       - if show_comments
-        = link_to(pluralize(task.comments_count, 'comment'), project_task_path(@project, task), unread_html(task))
+        = link_to(pluralize(task.comments_count, 'comment'), project_task_path(@project, task), unread_comments?(task))
         |
       - if task.created_at == task.updated_at
         = "Posted #{time_ago_in_words(task.created_at)} ago"

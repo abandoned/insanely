@@ -1,4 +1,4 @@
-/* line 6, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 6, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,41 +17,41 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-family: inherit;
   vertical-align: baseline; }
 
-/* line 17, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 17, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 *:focus {
   outline: 0; }
 
-/* line 20, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 20, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 body {
   line-height: 1em;
   color: black;
   background: #fff; }
 
-/* line 23, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 23, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 ol, ul {
   list-style: none; }
 
 /* tables still need 'cellspacing="0"' in the markup */
-/* line 27, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 27, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle; }
 
-/* line 30, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 30, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 33, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 33, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 q, blockquote {
   quotes: "" ""; }
-  /* line 101, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+  /* line 101, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
   q:before, q:after, blockquote:before, blockquote:after {
     content: ""; }
 
-/* line 36, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 36, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 img a {
   border: none; }
 
@@ -90,7 +90,7 @@ body, html {
 /* line 3, ../../../app/stylesheets/partials/_links.sass */
 a {
   text-decoration: none; }
-  /* line 4, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/links/_hover_link.sass */
+  /* line 4, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/links/_hover_link.sass */
   a:hover {
     text-decoration: underline; }
   /* line 5, ../../../app/stylesheets/partials/_links.sass */
@@ -182,7 +182,8 @@ pre {
   background-color: #333;
   -moz-border-radius: 0.3em;
   -webkit-border-radius: 0.3em;
-  white-space: pre-wrap; }
+  white-space: pre-wrap;
+  font-size: 18px; }
 
 /* line 2, ../../../app/stylesheets/partials/_header.sass */
 #header {
@@ -348,25 +349,34 @@ a#assignment-count {
     font-size: 0.875em; }
   /* line 51, ../../../app/stylesheets/partials/_tasks.sass */
   #tasks .meta, #tasks .meta a {
-    color: #bbb; }
-  /* line 54, ../../../app/stylesheets/partials/_tasks.sass */
+    color: #aaa; }
+  /* line 53, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks .meta a {
+    font-weight: bold; }
+  /* line 57, ../../../app/stylesheets/partials/_tasks.sass */
   #tasks tr.task .meta, #tasks tr#project-description .meta {
     padding-top: 5px;
     padding-left: 15px; }
-  /* line 59, ../../../app/stylesheets/partials/_tasks.sass */
-  #tasks #project-description .task-content {
-    font-size: 1.5em;
-    line-height: 1; }
+  /* line 61, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks tr.task .unread, #tasks tr#project-description .unread {
+    color: #00aa2a; }
+  /* line 64, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks #project-description .bubble {
+    color: #fff;
+    background-color: #009ecd;
+    font-size: 1.25em;
+    line-height: 1.2;
+    margin-bottom: 20px; }
 
-/* line 63, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 72, ../../../app/stylesheets/partials/_tasks.sass */
 #tag-cloud {
   line-height: 1.4;
   padding-bottom: 15px; }
 
-/* line 68, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 77, ../../../app/stylesheets/partials/_tasks.sass */
 #search-tasks {
   float: right; }
-  /* line 70, ../../../app/stylesheets/partials/_tasks.sass */
+  /* line 79, ../../../app/stylesheets/partials/_tasks.sass */
   #search-tasks input {
     margin-top: 0; }
 
@@ -469,7 +479,7 @@ a#assignment-count {
   padding: 30px;
   border: #fff 5px solid;
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #e4e4e4;
   border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;

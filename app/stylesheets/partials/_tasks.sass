@@ -49,16 +49,25 @@
     :font
       :size 0.875em
   .meta, .meta a
-    :color #bbb
+    :color #aaa
+  .meta a
+    :font
+      :weight bold
   tr.task, tr#project-description
     .meta
       :padding
         :top 5px
         :left 15px
+    .unread
+      :color #00aa2a
   #project-description
-    .task-content
-      :font-size 1.5em
-      :line-height 1
+    .bubble
+      :color #fff
+      :background-color #009ecd
+      :font-size 1.25em
+      :line-height 1.2
+      :margin
+        :bottom 20px
 
 #tag-cloud
   line-height: 1.4

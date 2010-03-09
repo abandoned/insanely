@@ -12,14 +12,11 @@
   %table#tasks
     - if @project.description.present?
       %tr#project-description
-        %td
-          = image_tag(@project.creator.gravatar_url(:size => 48), :class => 'avatar', :title => @project.creator.login, :onerror => 'missing_avatar(this)')
+        %td          
         %td
           .bubble
             .task-content
               = sanitize(auto_link(textilize(@project.description)))
-          .meta
-            = "Posted #{time_ago_in_words(@project.created_at)} ago"
     = render :partial => 'task', :collection => @tasks, :locals => { :show_comments => true }
 
 #project-settings

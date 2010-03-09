@@ -9,7 +9,6 @@ class Project < ActiveRecord::Base
   has_many :unreads, :dependent => :destroy
   
   validates_uniqueness_of :title, :scope => :creator_id, :message => 'must be unique'
-  validates_length_of :description, :maximum => 255
   
   after_create :creator_participates_in_project
   
