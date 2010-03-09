@@ -1,4 +1,4 @@
-/* line 6, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 6, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,41 +17,41 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-family: inherit;
   vertical-align: baseline; }
 
-/* line 17, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 17, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 *:focus {
   outline: 0; }
 
-/* line 20, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 20, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 body {
   line-height: 1em;
   color: black;
   background: #fff; }
 
-/* line 23, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 23, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 ol, ul {
   list-style: none; }
 
 /* tables still need 'cellspacing="0"' in the markup */
-/* line 27, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 27, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle; }
 
-/* line 30, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 30, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 33, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 33, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 q, blockquote {
   quotes: "" ""; }
-  /* line 101, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+  /* line 101, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
   q:before, q:after, blockquote:before, blockquote:after {
     content: ""; }
 
-/* line 36, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+/* line 36, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
 img a {
   border: none; }
 
@@ -90,7 +90,7 @@ body, html {
 /* line 3, ../../../app/stylesheets/partials/_links.sass */
 a {
   text-decoration: none; }
-  /* line 4, ../../../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/links/_hover_link.sass */
+  /* line 4, ../../../../../.rvm/gems/ree-1.8.7-2010.01/gems/compass-0.8.17/frameworks/compass/stylesheets/compass/utilities/links/_hover_link.sass */
   a:hover {
     text-decoration: underline; }
   /* line 5, ../../../app/stylesheets/partials/_links.sass */
@@ -367,16 +367,19 @@ a#assignment-count {
     font-size: 1.25em;
     line-height: 1.2;
     margin-bottom: 10px; }
+  /* line 71, ../../../app/stylesheets/partials/_tasks.sass */
+  #tasks #project-description a {
+    color: #ccc; }
 
-/* line 72, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 74, ../../../app/stylesheets/partials/_tasks.sass */
 #tag-cloud {
   line-height: 1.4;
   padding-bottom: 15px; }
 
-/* line 77, ../../../app/stylesheets/partials/_tasks.sass */
+/* line 79, ../../../app/stylesheets/partials/_tasks.sass */
 #search-tasks {
   float: right; }
-  /* line 79, ../../../app/stylesheets/partials/_tasks.sass */
+  /* line 81, ../../../app/stylesheets/partials/_tasks.sass */
   #search-tasks input {
     margin-top: 0; }
 
