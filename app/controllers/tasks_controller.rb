@@ -1,7 +1,6 @@
 class TasksController < InheritedResources::Base
   before_filter :require_user
   before_filter :resource,  :only => [:complete, :uncomplete, :icebox, :defrost]
-  after_filter :touch_task, :only => [:show, :complete, :uncomplete, :icebox, :defrost]
   after_filter :notify,     :only => [:complete, :uncomplete, :icebox, :defrost]
   
   after_filter :create_unread_task,     :only => [:create, :update] 
@@ -16,7 +15,6 @@ class TasksController < InheritedResources::Base
   
   def index
     index!
-    touch_unread(@project)
   end
   
   def show
@@ -137,10 +135,6 @@ class TasksController < InheritedResources::Base
     @task.comments.all(:include => :unreads).each do |comment|
       comment.unreads.each { |unread| unread.destroy }
     end
-  end
-  
-  def touch_task
-    #touch_unread(@task)
   end
   
   def notify

@@ -46,9 +46,4 @@ class ApplicationController < ActionController::Base
   def go_back
     redirect_to(request.referer || active_projects_path)
   end
-  
-  def touch_unread(readable)
-    unread = current_user.unreads.find_or_initialize_by_readable_id_and_readable_type(readable.id, readable.class.to_s)
-    unread.touch
-  end
 end

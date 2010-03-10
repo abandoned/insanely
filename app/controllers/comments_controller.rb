@@ -13,8 +13,6 @@ class CommentsController < InheritedResources::Base
     @comment.author = current_user
     create! do |success, failure|
       success.html do
-        touch_unread(@task)
-        touch_unread(@project)
         if params[:notify]
           Notifier.send_later(:deliver_new_comment, @comment)
         end

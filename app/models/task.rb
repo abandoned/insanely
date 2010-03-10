@@ -22,16 +22,15 @@ class Task < ActiveRecord::Base
   belongs_to :project, :touch => true
   belongs_to :author, :class_name => "User"
   
-  has_many :comments
-  has_many :hashtagships
+  has_many :comments, :dependent => :destroy
+  has_many :hashtagships, :dependent => :destroy
   has_many :hashtags, :through => :hashtagships
-  has_many :assignments
+  has_many :assignments, :dependent => :destroy
   has_many :assignees, :through => :assignments, :class_name => 'User'
   has_many :assets, :as => :attachable, :dependent => :delete_all
   has_many :unreads, :as => :readable, :dependent => :destroy
   
   after_save    :init_reparse
-  after_destroy :init_reparse
   
   attr_accessible :message, :assets_attributes
   
