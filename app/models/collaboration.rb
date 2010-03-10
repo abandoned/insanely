@@ -13,6 +13,7 @@
 class Collaboration < ActiveRecord::Base
   belongs_to :user
   belongs_to :workmate, :class_name => 'User'
+  belongs_to :invitee, :class_name => 'User', :foreign_key => 'workmate_id'
   
   include AASM
   aasm_column :status
