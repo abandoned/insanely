@@ -17,6 +17,6 @@ Feature: Workmates
     And I should see "jane"
     And I should see "pending"
   
-  Scenario: Jane gets notification of invite
+  Scenario: Jane is invited and gets notification of invite
     Then a collaboration should exist
-    And the user "Jane" should be that collaboration's invitee
+    And that collaboration should be one of user "Jane"'s invites
