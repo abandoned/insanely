@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
   has_many :projects, :through => :participations, :order => 'projects.updated_at DESC'
   has_many :authored_tasks, :class_name => 'Task', :foreign_key => 'author_id'
   has_many :collaborations, :dependent => :destroy
-  has_many :workmates, :through => :collaborations
-  has_many :invites, :class_name => 'Collaboration', :foreign_key => 'workmate_id', :conditions => 'status = "pending"'
+  has_many :workmates, :through => :collaborations, :conditions => "status='active'"
+  has_many :requested_workmates, :through => :collaborations, :source => 'workmate', :conditions => "status = 'requested'"
+  has_many :pending_workmates, :through => :collaborations, :source => 'workmate', :conditions => "status = 'pending'"
   has_many :assignments, :foreign_key => 'assignee_id'
   has_many :assigned_tasks, :through => :assignments, :source => :task
   has_many :unreads, :dependent => :destroy

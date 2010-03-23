@@ -4,7 +4,7 @@
   = render :partial => 'shared/resource_states', :locals => { :links => project_links}
 
 #actions
-  = link_to('Invite a person', new_workmate_path)
+  = link_to('Add a person', new_workmate_path)
 
 -if @workmates.count > 0
   %ul#workmates= render :partial => 'workmate', :collection => @workmates

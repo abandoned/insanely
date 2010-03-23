@@ -8,9 +8,9 @@ Feature: Workmates
     And a user "jane" exists with login: "jane", email: "jane@foo.com", active: true
     And I am logged in as "john"
     And I am on the path "/workmates"
-    And I follow "Invite a person"
+    And I follow "Add a person"
     And I fill in "Email" with "jane@foo.com"
-    And I press "Invite person"
+    And I press "Add person"
   
   Scenario: John has a pending workmate.
     Then I should see "Added workmate!"
