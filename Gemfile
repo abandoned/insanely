@@ -31,6 +31,7 @@ group :development do
 end
 
 group :test, :cucumber do
+  gem 'email_spec', '>= 0.6.2'
   gem 'factory_girl', '>= 1.2.3'
   gem 'rspec', '>=1.3.0', :require => false
   gem 'rspec-rails', '>=1.3.2', :require => false

@@ -37,6 +37,7 @@ class Project < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: projects
@@ -47,7 +48,7 @@ end
 #  created_at  :datetime
 #  updated_at  :datetime
 #  status      :string(255)     default("active")
-#  description :string(255)
+#  description :text(255)
 #  private     :boolean         default(TRUE)
 #
 

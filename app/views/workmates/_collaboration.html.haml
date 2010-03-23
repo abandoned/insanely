@@ -1,0 +1,9 @@
+%li.workmate
+  = image_tag(collaboration.workmate.gravatar_url(:size => 30), :class => 'avatar', :title => collaboration.workmate.login, :onerror => 'missing_avatar(this)')
+  %span.workmate-info
+    = collaboration.workmate.login
+    = '(' + collaboration.status + ')'
+  .actions
+    - if (collaboration.status == 'pending')
+      = link_to 'Activate', workmate_path(collaboration.workmate), :method => :put
+    = link_to 'Remove', workmate_path(collaboration.workmate), :method => :delete

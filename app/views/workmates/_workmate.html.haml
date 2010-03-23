@@ -1,6 +1,0 @@
-%li.workmate
-  = image_tag(workmate.gravatar_url(:size => 30), :class => 'avatar', :title => workmate.login, :onerror => 'missing_avatar(this)')
-  %span.workmate-info
-    = workmate.login
-    = '(' + current_user.collaborations.find_by_workmate_id(workmate.id).status + ')'
-  = link_to 'Remove', workmate_path(workmate), :method => :delete

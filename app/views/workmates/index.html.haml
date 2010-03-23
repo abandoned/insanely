@@ -6,8 +6,9 @@
 #actions
   = link_to('Add a person', new_workmate_path)
 
--if @workmates.count > 0
-  %ul#workmates= render :partial => 'workmate', :collection => @workmates
+-if @collaborations.count > 0
+  %ul#workmates
+    = render :partial => 'collaboration', :collection => @collaborations
 - else
   It's all tabula rasa here.
       

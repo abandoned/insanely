@@ -11,17 +11,20 @@
 #
 
 class Collaboration < ActiveRecord::Base
+  include AASM
+  
   belongs_to :user
   belongs_to :workmate, :class_name => 'User'
   
-  include AASM
+  
   aasm_column :status
+  aasm_initial_state :requested
   aasm_state :requested
   aasm_state :pending
   aasm_state :active
   aasm_event :activate do
-    transitions :to => :active, :from => [:pending]
+    transitions :to => :active, :from => [:pending, :requested]
   end
   
-  attr_accessible :user, :workmate
+  attr_accessible :user, :workmate, :status
 end

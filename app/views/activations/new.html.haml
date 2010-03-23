@@ -1,0 +1,15 @@
+- title 'Activate your account'
+
+- form_for(@user, :url => activate_path(@user.id)) do |f|
+  = f.error_messages
+  %dl
+    %dt
+      = f.label :password
+    %dd
+      = f.password_field :password
+    %dt
+      = f.label :password_confirmation
+    %dd
+      = f.password_field :password_confirmation
+    %dd
+      = f.submit 'Activate »', :class => 'button'
