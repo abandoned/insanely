@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   has_many :projects, :through => :participations, :order => 'projects.updated_at DESC'
   has_many :authored_tasks, :class_name => 'Task', :foreign_key => 'author_id'
   has_many :collaborations, :dependent => :destroy
+  has_many :reverse_collaborations, :class_name => 'Collaboration', :foreign_key => 'workmate_id', :dependent => :destroy
   has_many :workmates, :through => :collaborations
   has_many :active_workmates, :through => :collaborations, :conditions => "status='active'"
   has_many :requested_workmates, :through => :collaborations, :source => 'workmate', :conditions => "status = 'requested'"

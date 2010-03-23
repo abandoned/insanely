@@ -53,3 +53,8 @@ Factory.define :asset do |f|
   f.association :attachable, :factory => :task 
   f.association :attachable, :factory => :comment
 end
+
+Factory.define :collaboration do |f|
+  f.association :user
+  f.workmate { |workmate| workmate.association(:user) }
+end
