@@ -1,3 +1,7 @@
 == Insanely
 
+Insanely is a minimal project management app. It doesn't look like an engineer's tool, is somewhat SCRUM-y, and appropriates some Twitter idioms (hashtag, at).
+
 Read further {here}[http://onstartups.com/tabid/3339/bid/11978/The-10-Most-Tempting-Software-Startup-Categories].
+
+Somewhat polished, dismally unfinished.
